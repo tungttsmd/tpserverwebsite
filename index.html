@@ -1,13 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <!-- start <head> -->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexusFlow - The Future of Team Collaboration</title>
-    <link href="templatemo-nexus-style.css" rel="stylesheet">
+    <title>TP Server - Thuê Máy Chủ Vật Lý Giá Rẻ</title>
+    <link href="resources/css/template-style.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="resources/css/swiper-custom.css">
+
+    <!-- Accordion -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="resources/css/accordion-custom.css">
+
+    <!-- Hero Button -->
+    <link rel="stylesheet" href="resources/css/hero-button-custom.css">
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <!-- end <head> -->
 <!-- start <body> -->
@@ -30,11 +46,13 @@
     <div class="scanlines"></div>
     <div class="noise-overlay"></div>
     <!-- end Enhanced Background Elements -->
+
     <!-- start Navigation -->
     <nav>
         <div class="nav-container">
             <a class="navbar-brand" href="#home">
-                <img class="" src="images/logo-tpserver.png" class="img-fluid" alt="logo" style="max-width: 128px" />
+                <img class="" src="resources/images/logo-tpserver.png" class="img-fluid" alt="logo"
+                    style="max-width: 128px" />
             </a>
             <ul class="nav-links">
                 <li>
@@ -101,22 +119,38 @@
         </nav>
     </div>
     <!-- end Navigation -->
+
     <!-- start Hero Section -->
     <section class="hero">
         <div class="hero-container">
             <h1 class="hero-title">
-                <span class="hero-nexus">TP</span>
-                <span class="hero-flow">Server</span>
+                <span class="hero-nexus" style="margin-right: -2rem;">TP</span>
+                <span class="hero-flow normal-case">Server</span>
             </h1>
             <h2 class="hero-subtitle"> Máy chủ vật lý giá rẻ chất lượng tại Việt Nam! <br /> Đa dạng loại cấu hình, kết
                 nối mạng tốc độ cao. </h2>
             <div class="hero-buttons">
-                <a href="#" class="btn-secondary">Liên Hệ Chúng Tôi Facebook</a>
-                <a href="#" class="btn-primary">Liên Hệ Chúng Tôi Discord</a>
+                <a href="https://www.facebook.com/servertp" target="_blank" class="hero-btn primary-btn"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <div class="btn-content">
+                        <i class="fab fa-facebook-messenger"></i>
+                        <span>Liên Hệ Facebook</span>
+                    </div>
+                    <div class="btn-bg"></div>
+                </a>
+                <a href="https://discord.com/channels/1175455974287482900/1175462383968333865" target="_blank"
+                    class="hero-btn secondary-btn" data-aos="fade-up" data-aos-delay="600">
+                    <div class="btn-content">
+                        <i class="fab fa-discord"></i>
+                        <span>Tham Gia Discord</span>
+                    </div>
+                    <div class="btn-bg"></div>
+                </a>
             </div>
         </div>
     </section>
     <!-- end Hero Section -->
+
     <!-- start Stats Section -->
     <section class="stats fade-up" id="stats">
         <div class="stats-container">
@@ -141,50 +175,59 @@
         </div>
     </section>
     <!-- end Stats Section -->
+
     <!-- start Features Section -->
     <section class="features fade-up" id="features">
         <div class="features-container">
             <div class="section-header">
-                <h2 class="section-title">Core Systems</h2>
-                <p class="section-subtitle">Advanced modules designed for maximum efficiency and seamless integration
+                <h2 class="section-title">Cấu Hình Hệ Thống</h2>
+                <p class="section-subtitle">Tối ưu cho treo tác vụ nặng – Hoạt động liên tục, ổn định và bền bỉ cho
+                    gaming, render và xử lý dữ liệu chuyên nghiệp.
                 </p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Quantum Processing</h3>
-                    <p>Experience lightning-fast data processing with our quantum-inspired algorithms that handle
-                        complex workflows in microseconds.</p>
+                    <img src="resources/images/feature-cpu.png" class="feature-icon">
+                    <h3>Xeon E5-2680v4 - 14 nhân 28 luồng</h3>
+                    <p>Hiệu năng xử lý đa luồng cao, chuyên dụng cho tác vụ nặng, duy trì hiệu năng cao suốt nhiều giờ
+                        hoạt động liên tục, hoàn hảo cho tác vụ treo nhiều ứng dụng với cường độ cao cùng lúc.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🔮</div>
-                    <h3>Neural Networks</h3>
-                    <p>AI-powered decision making that learns from your team's patterns and optimizes collaboration in
-                        real-time.</p>
+                    <img src="resources/images/feature-gpu.png" class="feature-icon">
+                    <h3>NVIDIA GeForce GTX 1070/1080/2060</h3>
+                    <p>GTX 1070/1080/2060 xử lý đồ họa mượt mà, kể cả khi treo nhiều cửa sổ game hoặc chạy ứng dụng đồ
+                        họa
+                        chuyên sâu trong thời gian dài.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🌐</div>
-                    <h3>Holographic Interface</h3>
-                    <p>Immersive 3D workspace that transcends traditional boundaries, bringing remote teams into a
-                        shared reality.</p>
+                    <img src="resources/images/feature-ram.png" class="feature-icon">
+                    <h3>RAM 128GB 2400/2133 MHz Hiệu Suất Cao</h3>
+                    <p>RAM 128GB 2400/2133 MHz cho phép mở nhiều client, máy ảo hay phần mềm nặng cùng lúc mà không lo
+                        giật lag hay tràn bộ nhớ. Giúp cho các tác vụ luôn ổn định.
+                    </p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>Quantum Encryption</h3>
-                    <p>Military-grade security protocols with quantum encryption that makes your data literally
-                        impossible to breach.</p>
+                    <img src="resources/images/feature-ssd.png" class="feature-icon">
+                    <h3>SSD 512GB/1TB Dung Lượng Lớn</h3>
+                    <p>Với dung lượng lưu trữ khủng, công nghệ ổ cứng thể rắn SSD giúp giảm thời gian tải game, ứng dụng
+                        và lưu trữ, đồng thời duy trì tốc độ ổn định khi hệ thống hoạt động liên tục.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
-                    <h3>Hyperdrive Sync</h3>
-                    <p>Instantaneous synchronization across all devices and platforms with zero latency, no matter the
-                        distance.</p>
+                    <img src="resources/images/feature-power.png" class="feature-icon">
+                    <h3>Nguồn Xigmatek X-Power III 650
+                    </h3>
+                    <p>
+                        Nguồn Xigmatek X-Power III 650
+                        Bộ cấp nguồn bền bỉ, hiệu năng cung cấp điện ổn định, bảo vệ linh kiện khi hệ thống hoạt động
+                        24/7 ở tải cao, giảm rủi ro sụt áp hoặc ngắt đột ngột.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Mind Reading Analytics</h3>
-                    <p>Predictive analytics so advanced, it anticipates your team's needs before they even know what
-                        they need.</p>
+                    <img src="resources/images/feature-motherboard.png" class="feature-icon">
+                    <h3>HUANANZHI X10X99-16D Motherboard
+                    </h3>
+                    <p>Hệ thống được tối ưu về nhiệt độ và điện năng, giữ cho các ứng dụng treo máy hoạt động ổn định
+                        hàng giờ liền. Nhờ nguồn điện và bo mạch chủ chất lượng, bạn có thể yên tâm cày AFK hoặc chạy
+                        tiến trình dài mà không lo treo cứng hay gián đoạn.</p>
                 </div>
             </div>
         </div>
@@ -194,13 +237,13 @@
     <!-- start Brands Section -->
     <section class="stats fade-up" id="stats">
         <div class="stats-container flex justify-between client-logos brand-logos">
-            <img src="images/brand-1.webp" alt="client logos" class="img-fluid"
+            <img src="resources/images/brand-1.webp" alt="client logos" class="img-fluid"
                 style="max-height: 64px; opacity: 0.6; scale: 1.6" />
-            <img src="images/brand-2.webp" alt="client logos" class="img-fluid"
+            <img src="resources/images/brand-2.webp" alt="client logos" class="img-fluid"
                 style="max-width: 64px; opacity: 0.6; scale: 2" />
-            <img src="images/brand-3.webp" alt="client logos " class="img-fluid"
+            <img src="resources/images/brand-3.webp" alt="client logos " class="img-fluid"
                 style="max-width: 64px; opacity: 0.6; scale: 2" />
-            <img src="images/brand-4.webp" alt="client logos" class="img-fluid"
+            <img src="resources/images/brand-4.webp" alt="client logos" class="img-fluid"
                 style="max-width: 64px; opacity: 0.6; scale: 1.6" />
         </div>
     </section>
@@ -349,57 +392,250 @@
     </section>
     <!-- end Pricing Section -->
 
-    <!-- start Contact Section -->
-    <section class="contact fade-up" id="contact">
-        <div class="contact-container">
+    <!-- start Testimonial Section-->
+    <section class="testimonial-section fade-up">
+        <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Initialize Contact</h2>
-                <p class="section-subtitle">Send a transmission through the neural network</p>
+                <h2 class="section-title">Phản Hồi Khách Hàng</h2>
+                <p class="section-subtitle">Những đánh giá chân thực từ khách hàng của chúng tôi</p>
             </div>
-            <div class="contact-form-wrapper">
-                <div class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Neural ID</label>
-                        <input type="text" id="name" name="name" placeholder="Enter your designation" required>
+            <div class="swiper testimonial-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="testimonial-text">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-right"></i>
+                                </div>
+                                <p>Mình từng dùng ugphone để treo game nhưng rất lag và hay văng, từ khi sử dụng đồ của
+                                    TPSV mình cảm thấy sang thẳng, không còn crash, mượt mà và support 24/24.</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="resources/images/logo-feedback-1.webp" alt="D.D.D" class="author-img">
+                                <div class="author-info">
+                                    <h4>D.D.D</h4>
+                                    <span>Khách hàng thuê VPS 4</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Quantum Address</label>
-                        <input type="email" id="email" name="email" placeholder="your.id@nexusflow.com" required>
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="testimonial-text">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-right"></i>
+                                </div>
+                                <p>TPSV is the best VPS provider I've ever used. The support is top-notch and the
+                                    servers are always stable.</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="resources/images/logo-feedback-2.webp" alt="D.D.D" class="author-img">
+                                <div class="author-info">
+                                    <h4>dontworry311 (Discord)</h4>
+                                    <span>Khách hàng thuê VPS 3</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Transmission</label>
-                        <textarea id="message" name="message" rows="5"
-                            placeholder="Compose your message to the network..." required></textarea>
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="testimonial-text">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-right"></i>
+                                </div>
+                                <p>10/10 vps and support is so good.</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="resources/images/logo-feedback-3.webp" alt="D.D.D" class="author-img">
+                                <div class="author-info">
+                                    <h4>Thorfinn Karlsefni</h4>
+                                    <span>Khách hàng thuê VPS 3</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <button type="submit" class="btn-primary btn-submit">Transmit Message</button>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- Navigation Buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+    <!-- end Testimonial Section-->
+
+    <!-- start Contact Section -->
+    <section class="contact-section fade-up" id="contact">
+        <div class="container">
+            <div class="contact-card">
+                <h2 class="contact-title">Liên Hệ Với Chúng Tôi</h2>
+                <p class="contact-subtitle">Chúng tôi luôn sẵn sàng 24/7 để hỗ trợ quý khách. Hãy chọn hình thức liên hệ
+                    phù hợp nhất với bạn!</p>
+
+                <div class="contact-methods">
+                    <!-- Facebook Contact -->
+                    <div class="contact-method animate__animated" data-aos="fade-up" data-aos-delay="200">
+                        <div class="contact-icon">
+                            <i class="fab fa-facebook-messenger fa-2x"></i>
+                        </div>
+                        <h3>Facebook Messenger</h3>
+                        <p>Nhắn tin trực tiếp với chúng tôi qua Facebook Messenger</p>
+                        <a href="https://www.facebook.com/servertp" target="_blank" class="contact-btn">
+                            <i class="fab fa-facebook-messenger"></i> Nhắn tin ngay
+                        </a>
+                    </div>
+                    <!-- Discord Contact -->
+                    <div class="contact-method animate__animated" data-aos="fade-up" data-aos-delay="100">
+                        <div class="contact-icon">
+                            <i class="fab fa-discord fa-2x"></i>
+                        </div>
+                        <h3>Discord</h3>
+                        <p>Kết nối với đội ngũ hỗ trợ của chúng tôi qua Discord để được tư vấn nhanh nhất</p>
+                        <a href="https://discord.com/channels/1175455974287482900/1175462383968333865" target="_blank"
+                            class="contact-btn">
+                            <i class="fab fa-discord"></i> Tạo ticket ngay
+                        </a>
+                    </div>
+                    <!-- Youtube Contact -->
+                    <div class="contact-method animate__animated" data-aos="fade-up" data-aos-delay="300">
+                        <div class="contact-icon">
+                            <i class="fab fa-youtube fa-2x"></i>
+                        </div>
+                        <h3>Youtube</h3>
+                        <p>Đăng ký kênh Youtube của chúng tôi để nhận thông tin mới nhất</p>
+                        <a href="https://www.youtube.com/@tpserver" target="_blank" class="contact-btn">
+                            <i class="fab fa-youtube"></i> Đăng ký kênh
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- end Contact Section -->
+
+    <!-- start FAQ Section-->
+    <section class="faq-section fade-up" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hỏi Đáp</h2>
+                <p class="section-subtitle">Câu Hỏi Thường Gặp Về Dịch Vụ Máy Chủ Vật Lý</p>
+            </div>
+
+            <div class="accordion">
+                <!-- FAQ Item 1 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Làm thế nào để thuê máy?</h3>
+                        <div class="accordion-icon"></div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Quý khách vui lòng liên hệ với chúng tôi qua Discord hoặc Facebook để được tư vấn và gửi yêu
+                            cầu thuê máy.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Sau khi liên hệ, quy trình tiếp theo như thế nào?</h3>
+                        <div class="accordion-icon"></div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Đội ngũ hỗ trợ trực 24/7 sẽ tiếp nhận yêu cầu của quý khách. Sau khi xác nhận số lượng và cấu
+                            hình máy cần thuê, quý khách tiến hành thanh toán. Ngay sau đó, đội kỹ thuật sẽ bắt đầu
+                            chuẩn bị máy.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Bao lâu thì tôi nhận được máy sau khi thanh toán?</h3>
+                        <div class="accordion-icon"></div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Chỉ trong vòng 30 phút sau khi thanh toán thành công, đội kỹ thuật sẽ hoàn tất cài đặt và gửi
+                            thông tin truy cập cho quý khách. Quý khách có thể kết nối qua Remote Desktop Connection
+                            hoặc phương thức khác theo yêu cầu.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 4 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Tôi có thể dùng test thử trước khi thuê VPS không?</h3>
+                        <div class="accordion-icon"></div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Sau khi thanh toán, bạn luôn có 1 ngày để test thử VPS. Nếu không hài lòng trong ngày đầu sử
+                            dụng, bạn hoàn toàn có thể yêu cầu hoàn tiền 100% với bất kì lí do nào. Nhằm tạo trải nghiệm
+                            luôn sẵn hàng cho khách hàng và tránh khách thuê không thực sự cần làm giảm lượng máy sẵn
+                            có, ảnh hưởng tới khách hàng cần thuê, chúng tôi ra chính sách này nhằm tránh sự ảnh hưởng
+                            trải nghiệm của quý khách khi luôn tình trạng hết máy không cần thiết.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Loại thanh toán nào sẽ được sử dụng?</h3>
+                        <div class="accordion-icon"></div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Quý khách sau khi nhận tư vấn và xác định thuê VPS, quý khách có thể dùng hình thức chuyển
+                            khoản cho chúng tôi qua tài khoản ngân hàng.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Tôi có thể thay đổi cấu hình sau khi thuê không?</h3>
+                        <div class="accordion-icon"></div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Trong khoảng thời gian sử dụng, nếu quý khách không hài lòng với cấu hình hiện tại, trong đợt
+                            thuê sau khi hết hạn, quý khách có thể đặt trước thuê máy cấu hình lớn hơn. Hiện tại chúng
+                            tôi chưa hỗ trợ thay đổi cấu hình và bù tiền cho nâng cấp.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end FAQ Section-->
+
     <!-- start Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-links">
-                <a href="#">Privacy Policy</a>
+                <a href="#">Chính sách bảo mật</a>
                 <span class="footer-separator">•</span>
-                <a href="#">Terms of Service</a>
+                <a href="#">Điều khoản dịch vụ</a>
                 <span class="footer-separator">•</span>
-                <a href="#">Documentation</a>
+                <a href="#">Hướng dẫn</a>
                 <span class="footer-separator">•</span>
-                <a href="#">Contact Support</a>
+                <a href="#contact">Liên hệ</a>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 NexusFlow Systems. All realities reserved.</p>
-                <p class="footer-credit">Brought to you by <a href="https://templatemo.com" target="_blank"
-                        rel="noopener nofollow">TemplateMo</a>
-                </p>
+                <p>&copy; 2025 TP Server . Website thuộc về <a href="#">tpserver.com</a>.</p>
             </div>
         </div>
     </footer>
     <!-- end Footer -->
+
     <!-- start Scripts -->
-    <script src="templatemo-nexus-scripts.js"></script>
+    <script src="resources/js/template-script.js"></script>
+    <script src="resources/js/swiper-custom.js"></script>
+    <script src="resources/js/accordion-custom.js"></script>
+    <script src="resources/js/hero-button-custom.js"></script>
+
+    <!-- Initialize AOS (Animate On Scroll) -->
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: "ease-in-out",
+            once: true,
+        });
+    </script>
     <!-- end Scripts -->
 </body>
 <!-- end <body> -->

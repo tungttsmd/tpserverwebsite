@@ -946,13 +946,6 @@ nav {
   -webkit-text-fill-color: transparent;
 }
 
-.hero-buttons {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 .btn-primary {
   background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
   color: var(--darker-bg);
@@ -1081,14 +1074,12 @@ nav {
 .feature-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
   font-size: 2rem;
-  clip-path: polygon(15px 0%, 100% 0%, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0% 100%, 0% 15px);
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  filter: drop-shadow(0 4px 6px rgba(0, 255, 255, 0.5));
 }
 
 .feature-card h3 {
@@ -1105,6 +1096,15 @@ nav {
   line-height: 1.8;
 }
 
+.features-grid .faq-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-cyan);
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 /* Stats Section */
 .stats {
   padding: 80px 2rem;
@@ -1256,33 +1256,6 @@ nav {
   left: 0;
   color: var(--primary-cyan);
   font-size: 0.8rem;
-}
-
-/* Contact Section */
-.contact {
-  padding: 120px 2rem;
-  background: rgba(0, 255, 255, 0.02);
-  border-top: 1px solid var(--border-color);
-}
-
-.contact-container {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.contact-form-wrapper {
-  max-width: 600px;
-  margin: 0 auto;
-  margin-top: 4rem;
-}
-
-.contact-form {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  padding: 3rem;
-  backdrop-filter: blur(10px);
-  clip-path: polygon(30px 0%, 100% 0%, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0% 100%, 0% 30px);
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
 }
 
 .form-group {
@@ -1457,9 +1430,38 @@ nav {
     font-size: 2.5rem;
   }
 
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
+  /* Primary Button */
+  .primary-btn {
+    background: transparent;
+    border: 2px solid var(--primary-cyan);
+    color: white;
+  }
+
+  .primary-btn .btn-bg {
+    background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
+  }
+
+  /* Secondary Button */
+  .secondary-btn {
+    background: transparent;
+    border: 2px solid var(--primary-purple);
+    color: white;
+  }
+
+  .secondary-btn .btn-bg {
+    background: linear-gradient(135deg, var(--primary-purple), var(--primary-cyan));
+  }
+
+  /* Ripple Effect */
+  @keyframes ripple {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
   }
 
   .btn-primary,
