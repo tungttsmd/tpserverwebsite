@@ -246,34 +246,6 @@ document.addEventListener("mousemove", (e) => {
   }
 });
 
-// Add a glow that follows the cursor (desktop only)
-if (window.innerWidth > 768) {
-  const cursorGlow = document.createElement("div");
-  cursorGlow.style.cssText = `
-                position: fixed;
-                width: 400px;
-                height: 400px;
-                border-radius: 50%;
-                background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
-                pointer-events: none;
-                z-index: 9999;
-                transform: translate(-50%, -50%);
-                transition: opacity 0.3s ease;
-                opacity: 0;
-            `;
-  document.body.appendChild(cursorGlow);
-
-  document.addEventListener("mousemove", (e) => {
-    cursorGlow.style.left = e.clientX + "px";
-    cursorGlow.style.top = e.clientY + "px";
-    cursorGlow.style.opacity = "1";
-  });
-
-  document.addEventListener("mouseleave", () => {
-    cursorGlow.style.opacity = "0";
-  });
-}
-
 // Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
