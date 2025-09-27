@@ -3,6 +3,7 @@
 <!-- start <head> -->
 
 <head>
+
     <!-- start SEO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,29 +19,37 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- end Title -->
 
-    <!-- Swiper JS -->
+    <!-- start Swiper JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="resources/css/swiper-custom.css">
+    <!-- end Swiper JS -->
 
-    <!-- Accordion -->
+    <!-- start Accordion -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="resources/css/accordion-custom.css">
+    <!-- end Accordion -->
 
-    <!-- Hero Button -->
+    <!-- start Hero Button -->
     <link rel="stylesheet" href="resources/css/hero-button-custom.css">
+    <!-- end Hero Button -->
 
-    <!-- Back to top -->
-    <link rel="stylesheet" href="resources/css/backtotop.css">
+    <!-- start Back to top -->
+    <link rel="stylesheet" href="resources/css/back-to-top-button.css">
+    <!-- end Back to top -->
 
-    <!-- AOS -->
+    <!-- start AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- end AOS -->
+
 </head>
 <!-- end <head> -->
+
 <!-- start <body> -->
 
 <body id="top">
+
     <!-- start Enhanced Background Elements -->
     <div class="cyber-bg">
         <div class="cyber-gradient"></div>
@@ -143,9 +152,10 @@
                 nối mạng tốc độ cao. </h2>
 
             <div class="hero-buttons">
-                <a href="https://discord.com/channels/1175455974287482900/1175462383968333865" class="btn-primary">
+                <a href="https://discord.com/channels/1175455974287482900/1175462383968333865" target="_blank"
+                    class="btn-primary">
                     <i class="fab fa-discord mr-3"></i>Tham Gia Discord</a>
-                <a href="https://www.facebook.com/servertp" class="btn-secondary">
+                <a href="https://www.facebook.com/servertp" target="_blank" class="btn-secondary">
                     <i class="fab fa-facebook-messenger mr-3"></i>Liên Hệ Facebook</a>
             </div>
         </div>
@@ -668,19 +678,20 @@
     </footer>
     <!-- end Footer -->
 
-    <!-- Button Back to Top -->
+    <!-- start Button Back to Top -->
     <button id="scrollToTopBtn" hidden aria-label="backtotop button"
         class="scroll-top-btn fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full flex items-center justify-center text-xl transition-all duration-300">
         <i class="fas fa-angle-up"></i>
     </button>
-
+    <!-- end Button Back to Top -->
 
     <!-- start Scripts -->
     <script src="resources/js/template-script.js"></script>
     <script src="resources/js/swiper-custom.js"></script>
     <script src="resources/js/accordion-custom.js"></script>
     <script src="resources/js/hero-button-custom.js"></script>
-    <script src="resources/js/backtotop-button.js"></script>
+    <script src="resources/js/back-to-top-button.js"></script>
+
     <!-- Initialize AOS (Animate On Scroll) -->
     <script>
         AOS.init({
@@ -690,7 +701,9 @@
         });
     </script>
     <!-- end Scripts -->
+
 </body>
+
 <!-- end <body> -->
 
 </html>
