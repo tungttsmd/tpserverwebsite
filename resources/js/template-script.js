@@ -298,12 +298,22 @@ setInterval(() => {
         cyberTexts[Math.floor(Math.random() * cyberTexts.length)];
     const tempElement = document.createElement('div');
     tempElement.textContent = randomText;
+
+    // Ensure text stays within viewport bounds
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    const maxLeft = Math.max(0, viewportWidth - 200); // Leave some space for text
+    const maxTop = Math.max(0, viewportHeight - 100); // Leave some space for text
+
     tempElement.style.cssText = `
                 position: fixed;
-                top: ${Math.random() * 100}vh;
-                left: ${Math.random() * 100}vw;
+                top: ${Math.min(Math.random() * 100, 90)}vh;
+                left: ${Math.min(Math.random() * 100, 90)}vw;
                 color: var(--primary-cyan);
                 font-size: 0.8rem;
+                max-width: 200px;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
                 font-weight: 700;
                 z-index: 1000;
                 opacity: 0.7;

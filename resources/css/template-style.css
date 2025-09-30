@@ -1021,9 +1021,7 @@ nav {
     font-size: 1.5rem;
     color: var(--text-secondary);
     margin-bottom: 3rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+
     font-weight: 300;
     opacity: 0.9;
     background: linear-gradient(
