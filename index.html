@@ -13,11 +13,11 @@
     <meta http-equiv="Content-Language" content="vi">
     <!-- end SEO -->
 
-    <!-- start Title -->
+    <!-- start Title and core css -->
     <title>TP Server - Thuê Máy Chủ Vật Lý Giá Rẻ</title>
     <link href="resources/css/template-style.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- end Title -->
+    <!-- end Title and core css -->
 
     <!-- start Swiper JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
@@ -56,9 +56,7 @@
         <div class="matrix-rain" id="matrixRain"></div>
     </div>
     <div class="data-streams" id="dataStreams"></div>
-    <div class="orb orb1"></div>
-    <div class="orb orb2"></div>
-    <div class="orb orb3"></div>
+
     <div class="grid-overlay">
         <div class="grid-lines"></div>
         <div class="grid-glow"></div>
@@ -68,6 +66,8 @@
     <!-- end Enhanced Background Elements -->
 
     <!-- start Navigation -->
+
+    <!-- start Desktop navigation -->
     <nav>
         <div class="nav-container">
             <a class="navbar-brand" href="#home">
@@ -76,26 +76,20 @@
             </a>
             <ul class="nav-links">
                 <li>
-                    <a href="#features">TRANG CHỦ</a>
+                    <a href="#home">TRANG CHỦ</a>
                 </li>
                 <li>
-                    <a href="#features">CẤU HÌNH</a>
+                    <a href="#stats">GIỚI THIỆU</a>
                 </li>
                 <li>
-                    <a href="#pricing">GIỚI THIỆU</a>
-                </li>
-                <li>
-                    <a href="#stats">THƯ VIỆN</a>
-                </li>
-                <li>
-                    <a href="#contact">BẢNG GIÁ</a>
+                    <a href="#pricing">BẢNG GIÁ</a>
                 </li>
                 <li>
                     <a href="#contact">LIÊN HỆ</a>
                 </li>
             </ul>
             <div class="nav-bottom">
-                <a href="#" class="px-8 cyber-button primary-btn">Thuê máy chủ ngay!</a>
+                <a href="#contact" class="px-8 cyber-button primary-btn">Thuê máy chủ ngay!</a>
             </div>
             <button class="mobile-menu-button" id="mobileMenuBtn">
                 <div class="hamburger">
@@ -106,37 +100,31 @@
             </button>
         </div>
     </nav>
+    <!-- end Desktop navigation -->
 
     <!-- start Mobile navigation -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-header">
             <a href="#top" class="mobile-menu-logo">NexusFlow</a>
-            <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
+            <button class=" mobile-menu-close" id="mobileMenuClose">✕</button>
         </div>
-        <div class="mobile-menu-cta">
-            <a href="#" class="px-8 cyber-button primary-btn">Thuê máy chủ ngay!</a>
-        </div>
+
         <nav class="mobile-menu-nav">
-            <ul>
+            <ul style="padding-top: 5.6rem">
                 <li>
-                    <a href="#features">TRANG CHỦ</a>
+                    <a href=" #home">TRANG CHỦ</a>
                 </li>
                 <li>
-                    <a href="#features">CẤU HÌNH</a>
+                    <a href="#stats">GIỚI THIỆU</a>
                 </li>
                 <li>
-                    <a href="#pricing">GIỚI THIỆU</a>
-                </li>
-                <li>
-                    <a href="#stats">THƯ VIỆN</a>
-                </li>
-                <li>
-                    <a href="#contact">BẢNG GIÁ</a>
+                    <a href="#pricing">BẢNG GIÁ</a>
                 </li>
                 <li>
                     <a href="#contact">LIÊN HỆ</a>
                 </li>
+
             </ul>
         </nav>
     </div>
@@ -145,7 +133,7 @@
     <!-- end Navigation -->
 
     <!-- start Hero Section -->
-    <section class="hero">
+    <section id="home" class="hero">
         <div class="hero-container">
             <h1 class="hero-title">
                 <span class="hero-nexus" style="margin-right: -2rem;">TP</span>
@@ -192,7 +180,7 @@
     <!-- end Stats Section -->
 
     <!-- start Features Section -->
-    <section class="features fade-up" id="features">
+    <section class="features fade-up" id="about">
         <div class="features-container">
             <div class="section-header">
                 <h2 class="section-title">Cấu Hình Hệ Thống</h2>
@@ -250,13 +238,13 @@
     <!-- end Features Section -->
 
     <!-- start Brands Section -->
-    <section class="stats fade-up" id="stats">
+    <section class="stats fade-up" id="brands">
         <div class="stats-container flex justify-between client-logos brand-logos">
             <img src="resources/images/brand-1.webp" alt="client logos" class="img-fluid"
                 style="max-height: 64px; opacity: 0.6; scale: 1.6" />
-            <img src="resources/images/brand-2.webp" alt="client logos" class="img-fluid"
+            <img src="resources/images/brand-2.webp" alt="client logos" class="mobile-big img-fluid"
                 style="max-width: 64px; opacity: 0.6; scale: 2" />
-            <img src="resources/images/brand-3.webp" alt="client logos " class="img-fluid"
+            <img src="resources/images/brand-3.webp" alt="client logos " class="mobile-big img-fluid"
                 style="max-width: 64px; opacity: 0.6; scale: 2" />
             <img src="resources/images/brand-4.webp" alt="client logos" class="img-fluid"
                 style="max-width: 64px; opacity: 0.6; scale: 1.6" />
@@ -271,9 +259,10 @@
                 <h2 class="section-title">Bảng Giá Thuê Máy Chủ Vật Lí</h2>
                 <p class="section-subtitle">Chọn cấu hình phù hợp với nhu cầu của bạn</p>
             </div>
-            <div class="pricing-grid">
+            <div class="pricing-grid ">
                 <div class="pricing-card">
-                    <div class="plan-name">CẤU HÌNH 1 - DÙNG THỬ</div>
+                    <div class="plan-name-subtitle">DÙNG THỬ</div>
+                    <div class="plan-name">CẤU HÌNH 1</div>
                     <div class="plan-price">300.000 ₫</div>
                     <div class="plan-period">/1 tuần</div>
                     <ul class="plan-features">
@@ -297,41 +286,7 @@
                         </li>
                     </ul>
                     <div class="hero-buttons">
-                        <a href="#" target="_blank" class="px-16 cyber-button primary-btn" data-aos="fade-up"
-                            data-aos-delay="600">
-                            <div class="btn-content">
-                                <img src="resources/images/logo-tp.webp" alt="TP Server" class="btn-icon">
-                                <span>Thuê Máy Chủ</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="pricing-card featured">
-                    <div class="plan-name">CẤU HÌNH 3 - TIÊU CHUẨN</div>
-                    <div class="plan-price">450.000 ₫</div>
-                    <div class="plan-period">/1 tuần</div>
-                    <ul class="plan-features">
-                        <li>
-                            <strong>Chip:</strong> Dual Xeon 2680v4
-                        </li>
-                        <li>
-                            <strong>Core:</strong> 28 core / 56 vCore
-                        </li>
-                        <li>
-                            <strong>RAM:</strong> 128GB
-                        </li>
-                        <li>
-                            <strong>Disk:</strong> 500GB SSD NVMe
-                        </li>
-                        <li>
-                            <strong>VGA:</strong> GTX 1060 6GB/ RTX 2060 hoặc GTX 1070 8GB
-                        </li>
-                        <li>
-                            <strong>Giá tháng:</strong> 1.700.000 ₫
-                        </li>
-                    </ul>
-                    <div class="hero-buttons">
-                        <a href="#" target="_blank" class="cybpx-16 cyber-button primary-btn" data-aos="fade-up"
+                        <a href="#contact" target="_blank" class="px-16 cyber-button primary-btn" data-aos="fade-up"
                             data-aos-delay="600">
                             <div class="btn-content">
                                 <img src="resources/images/logo-tp.webp" alt="TP Server" class="btn-icon">
@@ -341,7 +296,8 @@
                     </div>
                 </div>
                 <div class="pricing-card">
-                    <div class="plan-name">CẤU HÌNH 2 - CƠ BẢN</div>
+                    <div class="plan-name-subtitle">CƠ BẢN</div>
+                    <div class="plan-name">CẤU HÌNH 2</div>
                     <div class="plan-price">380.000 ₫</div>
                     <div class="plan-period">/1 tuần</div>
                     <ul class="plan-features">
@@ -365,7 +321,43 @@
                         </li>
                     </ul>
                     <div class="hero-buttons">
-                        <a href="#" target="_blank" class="px-16 cyber-button primary-btn" data-aos="fade-up"
+                        <a href="#contact" target="_blank" class="px-16 cyber-button primary-btn" data-aos="fade-up"
+                            data-aos-delay="600">
+                            <div class="btn-content">
+                                <img src="resources/images/logo-tp.webp" alt="TP Server" class="btn-icon">
+                                <span>Thuê Máy Chủ</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="featured-tag">KHUYÊN DÙNG</div>
+                    <div class="plan-name-subtitle">TIÊU CHUẨN</div>
+                    <div class="plan-name">CẤU HÌNH 3</div>
+                    <div class="plan-price">450.000 ₫</div>
+                    <div class="plan-period">/1 tuần</div>
+                    <ul class="plan-features">
+                        <li>
+                            <strong>Chip:</strong> Dual Xeon 2680v4
+                        </li>
+                        <li>
+                            <strong>Core:</strong> 28 core / 56 vCore
+                        </li>
+                        <li>
+                            <strong>RAM:</strong> 128GB
+                        </li>
+                        <li>
+                            <strong>Disk:</strong> 500GB SSD NVMe
+                        </li>
+                        <li>
+                            <strong>VGA:</strong> GTX 1060 6GB/ RTX 2060 hoặc GTX 1070 8GB
+                        </li>
+                        <li>
+                            <strong>Giá tháng:</strong> 1.700.000 ₫
+                        </li>
+                    </ul>
+                    <div class="hero-buttons">
+                        <a href="#contact" target="_blank" class="cybpx-16 cyber-button primary-btn" data-aos="fade-up"
                             data-aos-delay="600">
                             <div class="btn-content">
                                 <img src="resources/images/logo-tp.webp" alt="TP Server" class="btn-icon">
@@ -375,7 +367,8 @@
                     </div>
                 </div>
                 <div class="pricing-card">
-                    <div class="plan-name">CẤU HÌNH 4 - NÂNG CAO</div>
+                    <div class="plan-name-subtitle">NÂNG CAO</div>
+                    <div class="plan-name">CẤU HÌNH 4</div>
                     <div class="plan-price">550.000 ₫</div>
                     <div class="plan-period">/1 tuần</div>
                     <ul class="plan-features">
@@ -399,7 +392,7 @@
                         </li>
                     </ul>
                     <div class="hero-buttons">
-                        <a href="#" target="_blank" class="px-16 cyber-button primary-btn" data-aos="fade-up"
+                        <a href="#contact" target="_blank" class="px-16 cyber-button primary-btn" data-aos="fade-up"
                             data-aos-delay="600">
                             <div class="btn-content">
                                 <img src="resources/images/logo-tp.webp" alt="TP Server" class="btn-icon">
@@ -409,7 +402,8 @@
                     </div>
                 </div>
                 <div class="pricing-card">
-                    <div class="plan-name">CẤU HÌNH 5 - CHUYÊN NGHIỆP</div>
+                    <div class="plan-name-subtitle">CHUYÊN NGHIỆP</div>
+                    <div class="plan-name">CẤU HÌNH 5</div>
                     <div class="plan-price">800.000 ₫</div>
                     <div class="plan-period">/1 tuần</div>
                     <ul class="plan-features">
@@ -433,7 +427,7 @@
                         </li>
                     </ul>
                     <div class="hero-buttons">
-                        <a href="#" target="_blank" class="px-16 cyber-button primary-btn" data-aos="fade-up"
+                        <a href="#contact" target="_blank" class="px-16 cyber-button primary-btn" data-aos="fade-up"
                             data-aos-delay="600">
                             <div class="btn-content">
                                 <img src="resources/images/logo-tp.webp" alt="TP Server" class="btn-icon">

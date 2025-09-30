@@ -1,109 +1,114 @@
 /* Testimonial Section */
 .testimonial-section {
-  display: flex;
-  justify-content: center;
-  padding: 100px 0;
-  background: rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding-top: 120px !important;
+    padding-bottom: 120px !important;
+    background: rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
 .testimonial-item {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
-  padding: 30px;
-  margin: 20px 0;
-  transition: all 0.3s ease;
-  height: 100%;
-  position: relative;
-  backdrop-filter: blur(10px);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 30px;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+    backdrop-filter: blur(10px);
 }
 
 .testimonial-text {
-  position: relative;
-  padding: 0 0 20px 0;
-  margin-bottom: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    padding: 0 0 20px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .quote-icon {
-  position: absolute;
-  top: -15px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 14px;
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(
+        135deg,
+        var(--primary-cyan),
+        var(--primary-purple)
+    );
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
 }
 
 .testimonial-author {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .author-img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  margin-right: 15px;
-  border: 2px solid var(--primary-cyan);
-  padding: 2px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid var(--primary-cyan);
+    padding: 2px;
 }
 
 .author-info h4 {
-  margin: 0;
-  color: var(--primary-cyan);
-  font-size: 18px;
+    margin: 0;
+    color: var(--primary-cyan);
+    font-size: 18px;
 }
 
 .author-info span {
-  color: var(--text-secondary);
-  font-size: 14px;
+    color: var(--text-secondary);
+    font-size: 14px;
 }
 
 /* Swiper Customization */
 .swiper {
-  padding: 30px 0 70px;
+    padding: 30px 0 70px;
 }
 
 .swiper-slide {
-  opacity: 0.5;
-  transform: scale(0.9);
-  transition: all 0.3s ease;
+    opacity: 0.5;
+    transform: scale(0.9);
+    transition: all 0.3s ease;
 }
 
 .swiper-slide-active {
-  opacity: 1;
-  transform: scale(1);
+    opacity: 1;
+    transform: scale(1);
 }
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: var(--primary-cyan) !important;
-  background: rgba(0, 255, 255, 0.1);
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  transition: all 0.3s ease;
+    color: var(--primary-cyan) !important;
+    background: rgba(0, 255, 255, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
 }
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  font-size: 20px !important;
+    font-size: 20px !important;
 }
 
 .swiper-pagination-bullet {
-  background: var(--text-secondary);
-  opacity: 0.5;
+    background: var(--text-secondary);
+    opacity: 0.5;
 }
 
 .swiper-pagination-bullet-active {
-  background: var(--primary-cyan);
-  opacity: 1;
+    background: var(--primary-cyan);
+    opacity: 1;
 }

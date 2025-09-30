@@ -25,34 +25,15 @@ function initializeMobileMenu() {
         mobileMenuOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
 
-        // Reset and trigger animations for links
+        // Trigger staggered animations via delay
         mobileMenuLinks.forEach((link, index) => {
             if (link) {
-                link.style.animation = 'none';
-                link.style.opacity = '0';
-                link.style.transform = 'translateX(20px)';
-
-                // Apply animation with delay
-                setTimeout(() => {
-                    if (link) {
-                        link.style.animation = `slideInLeft 0.4s ease forwards`;
-                    }
-                }, 250 + index * 100);
+                link.style.animationDelay = `${0.25 + index * 0.1}s`;
             }
         });
 
-        // Animate CTA button
         if (mobileMenuCta) {
-            mobileMenuCta.style.animation = 'none';
-            mobileMenuCta.style.opacity = '0';
-            mobileMenuCta.style.transform = 'translateY(20px)';
-
-            setTimeout(() => {
-                if (mobileMenuCta) {
-                    mobileMenuCta.style.animation =
-                        'slideInUp 0.4s ease forwards';
-                }
-            }, 100);
+            mobileMenuCta.style.animationDelay = '0.5s';
         }
     }
 
@@ -61,6 +42,14 @@ function initializeMobileMenu() {
         mobileMenu.classList.remove('active');
         mobileMenuOverlay.classList.remove('active');
         document.body.style.overflow = '';
+
+        // Clear animation delays
+        mobileMenuLinks.forEach((link) => {
+            link.style.animationDelay = '';
+        });
+        if (mobileMenuCta) {
+            mobileMenuCta.style.animationDelay = '';
+        }
     }
 
     // Toggle mobile menu
