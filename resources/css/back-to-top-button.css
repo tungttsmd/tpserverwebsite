@@ -2,7 +2,7 @@
     background: rgba(59, 130, 246, 0.5); /* màu mờ mờ */
     color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(4px); /* blur nhẹ nền */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     opacity: 0.6;
     transition: all 0.3s ease;
 }
@@ -15,3 +15,7 @@
     transform: scale(1.1);
     cursor: pointer;
 }
+#scrollToTopBtn {
+    display: none;
+}
+
