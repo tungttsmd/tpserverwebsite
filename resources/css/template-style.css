@@ -1278,7 +1278,7 @@ nav {
 
 /* Pricing Section */
 .pricing {
-    padding: 80px 2rem;
+    padding: 120px 2rem;
     background: var(--darker-bg);
 }
 
@@ -1363,13 +1363,6 @@ nav {
     line-height: 1.4;
     color: var(--text-secondary);
     border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
-}
-
-/* Adjust button size */
-.hero-buttons .cyber-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-    margin-top: auto;
 }
 
 .pricing-card.featured {
@@ -1703,10 +1696,6 @@ nav {
 .btn-secondary {
     width: 100%;
     max-width: 300px;
-}
-
-.features-grid {
-    grid-template-columns: 1fr;
 }
 
 /* ===========================================
