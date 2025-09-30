@@ -35,6 +35,10 @@
     <link rel="stylesheet" href="resources/css/back-to-top-button.css">
     <!-- end Back to top -->
 
+    <!-- start Enhance button-->
+    <link rel="stylesheet" href="resources/css/enhance-button.css">
+    <!-- end Enhance button-->
+
     <!-- start AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- end AOS -->
@@ -51,7 +55,6 @@
         <div class="cyber-gradient"></div>
         <div class="matrix-rain" id="matrixRain"></div>
     </div>
-    <div class="particles" id="particlesContainer"></div>
     <div class="data-streams" id="dataStreams"></div>
     <div class="orb orb1"></div>
     <div class="orb orb2"></div>
@@ -92,7 +95,7 @@
                 </li>
             </ul>
             <div class="nav-bottom">
-                <a href="#" class="cyber-button">Thuê máy chủ ngay!</a>
+                <a href="#" class="px-8 cyber-button primary-btn">Thuê máy chủ ngay!</a>
             </div>
             <button class="mobile-menu-button" id="mobileMenuBtn">
                 <div class="hamburger">
@@ -103,6 +106,8 @@
             </button>
         </div>
     </nav>
+
+    <!-- start Mobile navigation -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-header">
@@ -110,7 +115,7 @@
             <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
         </div>
         <div class="mobile-menu-cta">
-            <a href="#" class="cyber-button">Thuê máy chủ ngay!</a>
+            <a href="#" class="px-8 cyber-button primary-btn">Thuê máy chủ ngay!</a>
         </div>
         <nav class="mobile-menu-nav">
             <ul>
@@ -135,6 +140,8 @@
             </ul>
         </nav>
     </div>
+    <!-- end Mobile navigation -->
+
     <!-- end Navigation -->
 
     <!-- start Hero Section -->
@@ -149,9 +156,10 @@
 
             <div class="hero-buttons">
                 <a href="https://discord.com/channels/1175455974287482900/1175462383968333865" target="_blank"
-                    class="btn-primary">
+                    class="px-16 cyber-button primary-btn">
                     <i class="fab fa-discord mr-3"></i>Tham Gia Discord</a>
-                <a href="https://www.facebook.com/servertp" target="_blank" class="btn-secondary">
+                <a href="https://www.facebook.com/servertp" target="_blank" data-aos-delay="600" data-aos="fade-up"
+                    class="px-16 cyber-button secondary-btn">
                     <i class="fab fa-facebook-messenger mr-3"></i>Liên Hệ Facebook</a>
             </div>
         </div>
@@ -159,7 +167,7 @@
     <!-- end Hero Section -->
 
     <!-- start Stats Section -->
-    <section class="stats fade-up" id="stats">
+    <section class="p-8 stats fade-up" id="stats">
         <div class="stats-container">
             <div class="stats-grid">
                 <div class="stat-item">
@@ -289,13 +297,12 @@
                         </li>
                     </ul>
                     <div class="hero-buttons">
-                        <a href="#" target="_blank" class="hero-btn secondary-btn" data-aos="fade-up"
+                        <a href="#" target="_blank" class="px-16 cyber-button primary-btn" data-aos="fade-up"
                             data-aos-delay="600">
                             <div class="btn-content">
-                                <img src="resources/images/logo-tp.webp" class="h-[48px]">
+                                <img src="resources/images/logo-tp.webp" alt="TP Server" class="btn-icon">
                                 <span>Thuê Máy Chủ</span>
                             </div>
-                            <div class="btn-bg"></div>
                         </a>
                     </div>
                 </div>
@@ -324,13 +331,12 @@
                         </li>
                     </ul>
                     <div class="hero-buttons">
-                        <a href="#" target="_blank" class="hero-btn secondary-btn" data-aos="fade-up"
+                        <a href="#" target="_blank" class="cybpx-16 cyber-button primary-btn" data-aos="fade-up"
                             data-aos-delay="600">
                             <div class="btn-content">
-                                <img src="resources/images/logo-tp.webp" class="h-[48px]">
+                                <img src="resources/images/logo-tp.webp" alt="TP Server" class="btn-icon">
                                 <span>Thuê Máy Chủ</span>
                             </div>
-                            <div class="btn-bg"></div>
                         </a>
                     </div>
                 </div>
@@ -359,13 +365,12 @@
                         </li>
                     </ul>
                     <div class="hero-buttons">
-                        <a href="#" target="_blank" class="hero-btn secondary-btn" data-aos="fade-up"
+                        <a href="#" target="_blank" class="px-16 cyber-button primary-btn" data-aos="fade-up"
                             data-aos-delay="600">
                             <div class="btn-content">
-                                <img src="resources/images/logo-tp.webp" class="h-[48px]">
+                                <img src="resources/images/logo-tp.webp" alt="TP Server" class="btn-icon">
                                 <span>Thuê Máy Chủ</span>
                             </div>
-                            <div class="btn-bg"></div>
                         </a>
                     </div>
                 </div>
@@ -394,13 +399,12 @@
                         </li>
                     </ul>
                     <div class="hero-buttons">
-                        <a href="#" target="_blank" class="hero-btn secondary-btn" data-aos="fade-up"
+                        <a href="#" target="_blank" class="px-16 cyber-button primary-btn" data-aos="fade-up"
                             data-aos-delay="600">
                             <div class="btn-content">
-                                <img src="resources/images/logo-tp.webp" class="h-[48px]">
+                                <img src="resources/images/logo-tp.webp" alt="TP Server" class="btn-icon">
                                 <span>Thuê Máy Chủ</span>
                             </div>
-                            <div class="btn-bg"></div>
                         </a>
                     </div>
                 </div>
@@ -429,13 +433,12 @@
                         </li>
                     </ul>
                     <div class="hero-buttons">
-                        <a href="#" target="_blank" class="hero-btn secondary-btn" data-aos="fade-up"
+                        <a href="#" target="_blank" class="px-16 cyber-button primary-btn" data-aos="fade-up"
                             data-aos-delay="600">
                             <div class="btn-content">
-                                <img src="resources/images/logo-tp.webp" class="h-[48px]">
+                                <img src="resources/images/logo-tp.webp" alt="TP Server" class="btn-icon">
                                 <span>Thuê Máy Chủ</span>
                             </div>
-                            <div class="btn-bg"></div>
                         </a>
                     </div>
                 </div>
@@ -445,7 +448,7 @@
     <!-- end Pricing Section -->
 
     <!-- start Testimonial Section-->
-    <section class="testimonial-section fade-up">
+    <section class="p-8 testimonial-section fade-up">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Phản Hồi Khách Hàng</h2>
@@ -519,9 +522,9 @@
     <!-- end Testimonial Section-->
 
     <!-- start Contact Section -->
-    <section class="contact-section fade-up" id="contact">
+    <section class="p-8 contact-section fade-up" id="contact">
         <div class="container">
-            <div class="contact-card">
+            <div class="p-8 contact-card">
                 <h2 class="contact-title">Liên Hệ Với Chúng Tôi</h2>
                 <p class="contact-subtitle">Chúng tôi luôn sẵn sàng 24/7 để hỗ trợ quý khách. Hãy chọn hình thức liên hệ
                     phù hợp nhất với bạn!</p>
@@ -557,7 +560,7 @@
                         </div>
                         <h3>Youtube</h3>
                         <p>Đăng ký kênh Youtube của chúng tôi để nhận thông tin mới nhất</p>
-                        <a href="https://www.youtube.com/@tpserver" target="_blank" class="contact-btn">
+                        <a href="https://www.youtube.com/tpserver" target="_blank" class="contact-btn">
                             <i class="fab fa-youtube"></i> Đăng ký kênh
                         </a>
                     </div>
@@ -568,7 +571,7 @@
     <!-- end Contact Section -->
 
     <!-- start FAQ Section-->
-    <section class="faq-section fade-up" id="faq">
+    <section class="p-8 faq-section fade-up" id="faq">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Hỏi Đáp</h2>

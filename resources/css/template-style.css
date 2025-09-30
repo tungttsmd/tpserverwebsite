@@ -1562,7 +1562,7 @@ nav {
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 5rem;
     }
     .hero-buttons {
         flex-direction: column;
@@ -1685,7 +1685,7 @@ nav {
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 4rem;
     }
 
     .hero-nexus,
@@ -1824,9 +1824,27 @@ nav {
     background: linear-gradient(var(--primary-pink), var(--primary-cyan));
 }
 .brand-logos {
-    padding-left: 256px !important;
-    padding-right: 256px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+.brand-logos img {
+    transition: transform 0.3s ease; /* khai báo hiệu ứng cho transform */
+}
+
+.brand-logos img:hover {
+    transform: translateY(-2px); /* di chuyển sang trái 10px */
+    scale: 1.12 !important;
 }
 .brand-logos img {
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.8) !important;
+}
+
+@media (max-width: 784px) {
+    .brand-logos {
+        gap: 20px;
+    }
+    .brand-logos img {
+        scale: 1 !important;
+        padding-right: 10px;
+    }
 }
