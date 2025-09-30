@@ -1,14 +1,4 @@
-/*
-
-TemplateMo 594 nexus flow
-
-https://templatemo.com/tm-594-nexus-flow
-
-*/
-
 @charset "utf-8";
-/* CSS Document */
-
 * {
     margin: 0;
     padding: 0;
@@ -28,6 +18,16 @@ https://templatemo.com/tm-594-nexus-flow
     --text-secondary: #a1a1aa;
     --primary-cyan: #00ffff;
     --primary-pink: #ff00ff;
+}
+
+html {
+    scroll-padding-top: 80px; /* Adjust this value to match your header height */
+}
+/* For mobile menu */
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 60px; /* Slightly less for mobile if needed */
+    }
 }
 
 body {
@@ -203,35 +203,6 @@ body {
     100% {
         transform: translate(50px, 50px);
     }
-}
-
-/* Floating particles */
-.particles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -3;
-}
-
-.particle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: var(--primary-cyan);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--primary-cyan);
-    animation: float 20s infinite;
-    opacity: 0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.particle:nth-child(odd) {
-    background: var(--primary-pink);
-    box-shadow: 0 0 10px var(--primary-pink);
-    animation-duration: 25s;
 }
 
 @keyframes float {
@@ -470,27 +441,75 @@ nav {
     background: var(--primary-orange);
 }
 
+/* Mobile Menu Animations */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutRight {
+    to {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOutDown {
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /* Mobile Menu */
 .mobile-menu {
     position: fixed;
-    top: 78px;
+    top: 0;
     right: -100%;
     width: 80%;
-    max-width: 350px;
-    height: calc(100vh - 78px);
+    max-width: 320px;
+    height: 100vh;
     background: var(--darker-bg);
     backdrop-filter: blur(20px);
     border-left: 2px solid var(--border-color);
-    z-index: 9999;
-    transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 1000;
+    transition: right 0.3s ease, opacity 0.3s ease;
     overflow-y: auto;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
+    opacity: 0;
 }
 
 .mobile-menu.active {
     right: 0;
+    opacity: 1;
 }
 
 .mobile-menu-overlay {
@@ -500,24 +519,16 @@ nav {
     width: 100%;
     height: 100vh;
     background: rgba(0, 0, 0, 0.7);
-    z-index: 9998;
+    z-index: 999;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    backdrop-filter: blur(5px);
 }
 
 .mobile-menu-overlay.active {
-    opacity: 1;
     visibility: visible;
-}
-
-.mobile-menu-header {
-    padding: 2rem;
-    border-bottom: 1px solid var(--border-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-shrink: 0;
+    animation: fadeIn 0.3s ease forwards;
 }
 
 .mobile-menu-logo {
@@ -532,7 +543,7 @@ nav {
 
 .mobile-menu-logo::before {
     content: '>';
-    margin-right: 0.5rem;
+    padding-right: 4rem !important;
     color: var(--primary-orange);
     transition: all 0.3s ease;
 }
@@ -589,22 +600,23 @@ nav {
 
 .mobile-menu-nav a {
     display: block;
-    padding: 1.5rem 2rem;
+    padding: 1.2rem 2rem;
     color: var(--text-secondary);
     text-decoration: none;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     transition: all 0.3s ease;
     position: relative;
     border-bottom: 1px solid rgba(229, 231, 235, 0.1);
+    animation: none !important;
 }
 
 .mobile-menu-nav a:hover {
     color: var(--primary-cyan);
     background: rgba(0, 255, 255, 0.05);
-    padding-left: 3rem;
+    padding-left: 2.5rem;
     text-shadow: 0 0 10px var(--primary-cyan);
 }
 
@@ -612,15 +624,14 @@ nav {
     content: '>';
     position: absolute;
     left: 2rem;
-    opacity: 0;
-    transform: translateX(-10px);
+    transform: translateX(-20px);
     transition: all 0.3s ease;
     color: var(--primary-orange);
 }
 
 .mobile-menu-nav a:hover::before {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(-10px);
 }
 
 .mobile-menu-nav li:last-child a {
@@ -1268,100 +1279,141 @@ nav {
 /* Pricing Section */
 .pricing {
     padding: 120px 2rem;
+    background: var(--darker-bg);
 }
 
 .pricing-container {
     max-width: 1400px;
     margin: 0 auto;
-}
-
-.pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 3rem;
-    margin-top: 5rem;
+    padding: 0 20px;
 }
 
 .pricing-card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
-    padding: 3rem;
+    padding: 20px 15px;
     text-align: center;
     position: relative;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
     backdrop-filter: blur(10px);
     clip-path: polygon(
-        30px 0%,
+        15px 0%,
         100% 0%,
-        100% calc(100% - 30px),
-        calc(100% - 30px) 100%,
+        100% calc(100% - 15px),
+        calc(100% - 15px) 100%,
         0% 100%,
-        0% 30px
+        0% 15px
     );
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Pricing card typography */
+.plan-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 5px 0;
+    line-height: 1.2;
+}
+
+.plan-name-subtitle {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-cyan);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 5px 0;
+    opacity: 0.9;
+}
+
+.plan-price {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: white;
+    margin: 10px 0;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: -0.5px;
+}
+
+.plan-period {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.plan-period {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.plan-features {
+    margin: 20px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.plan-features li {
+    padding: 6px 0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
 }
 
 .pricing-card.featured {
-    border-color: var(--primary-cyan);
+    border: 2px solid var(--primary-cyan);
     background: rgba(0, 255, 255, 0.05);
-    transform: scale(1.05);
-    box-shadow: 0 0 50px rgba(0, 255, 255, 0.3);
-    margin-bottom: 2rem;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+    transform: scale(1.1);
 }
 
-.pricing-card.featured::before {
-    content: 'LỰA CHỌN TỐT NHÂT';
-    position: absolute;
-    top: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
+.featured-tag {
+    margin-top: -1rem;
+    margin-bottom: 0.6rem;
     background: linear-gradient(
         135deg,
         var(--primary-cyan),
         var(--primary-pink)
     );
     color: var(--darker-bg);
-    padding: 0.5rem 2rem;
-    font-size: 0.8rem;
+    padding: 0.3rem 1.5rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    letter-spacing: 2px;
-    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+    letter-spacing: 1px;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
     white-space: nowrap;
 }
-.pricing-card.featured .plan-name {
-    margin-top: 3rem;
-}
+
 .pricing-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 50px rgba(0, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.15);
 }
 
 .pricing-card.featured:hover {
-    transform: scale(1.05) translateY(-10px);
-}
-
-.plan-name {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-cyan);
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    transform: scale(1.1) translateY(-5px);
     margin-bottom: 2rem;
     text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
 }
 
 .plan-price {
-    font-size: 4rem;
-    font-weight: 900;
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: white;
+    margin: 8px 0;
     text-shadow: 0 0 20px var(--primary-cyan);
 }
 
 .plan-period {
     color: var(--text-secondary);
-    margin-bottom: 3rem;
+    margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-size: 0.8rem;
 }
 
 .plan-features {
@@ -1598,39 +1650,8 @@ nav {
             var(--primary-cyan)
         );
     }
-
-    /* Ripple Effect */
-    @keyframes ripple {
-        0% {
-            transform: scale(0);
-            opacity: 1;
-        }
-        100% {
-            transform: scale(2);
-            opacity: 0;
-        }
-    }
-
-    .btn-primary,
-    .btn-secondary {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .pricing-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .pricing-card.featured {
-        transform: none;
-    }
-
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .stat-number {
+        font-size: 3rem;
     }
 
     .contact {
@@ -1659,7 +1680,95 @@ nav {
         padding: 40px 1rem 30px;
     }
 }
+/* Ripple Effect */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
 
+.btn-primary,
+.btn-secondary {
+    width: 100%;
+    max-width: 300px;
+}
+
+/* ===========================================
+   Responsive Styles
+   =========================================== */
+
+/* Base Grid Layout */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-top: 40px;
+}
+
+/* Large Desktops (1201px - 1600px) */
+@media (max-width: 1600px) {
+    .pricing-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1400px;
+        margin: 40px auto 0;
+    }
+}
+
+/* Small Desktops (1025px - 1200px) */
+@media (max-width: 1200px) {
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1000px;
+    }
+}
+
+/* Tablets (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    /* Center last row with 2 items */
+    .pricing-grid::after {
+        content: '';
+        width: calc(33.333% - 10px);
+    }
+
+    .pricing-card:nth-last-child(-n + 2):nth-child(3n + 1) {
+        grid-column: 2 / span 1;
+    }
+
+    /* Typography adjustments */
+    .plan-name {
+        font-size: 1.8rem;
+    }
+    .plan-price {
+        font-size: 2rem;
+    }
+}
+
+/* Mobile (up to 767px) */
+@media (max-width: 767px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        gap: 3rem;
+    }
+
+    .plan-name {
+        font-size: 2rem;
+    }
+    .plan-price {
+        font-size: 2.4rem;
+    }
+}
 @media (max-width: 480px) {
     .mobile-menu {
         width: 90%;
@@ -1675,10 +1784,17 @@ nav {
         font-size: 1rem;
     }
 
+    .mobile-menu.active .mobile-menu-nav a {
+        animation: slideInLeft 0.4s ease forwards;
+    }
+
     .mobile-menu-cta {
         padding: 1.5rem;
     }
 
+    .mobile-menu.active .mobile-menu-cta {
+        animation: slideInUp 0.4s ease forwards;
+    }
     .cyber-button {
         padding: 0.8rem 1.5rem;
         font-size: 0.9rem;
@@ -1686,12 +1802,16 @@ nav {
 
     .hero-title {
         font-size: 4rem;
+        display: flex;
+        justify-content: space-between;
     }
-
     .hero-nexus,
     .hero-flow {
         display: block;
         margin: 0;
+    }
+    .hero-nexus {
+        margin-right: 0rem !important;
     }
 }
 
@@ -1827,14 +1947,7 @@ nav {
     padding-left: 16px !important;
     padding-right: 16px !important;
 }
-.brand-logos img {
-    transition: transform 0.3s ease; /* khai báo hiệu ứng cho transform */
-}
 
-.brand-logos img:hover {
-    transform: translateY(-2px); /* di chuyển sang trái 10px */
-    scale: 1.12 !important;
-}
 .brand-logos img {
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.8) !important;
 }
@@ -1846,5 +1959,11 @@ nav {
     .brand-logos img {
         scale: 1 !important;
         padding-right: 10px;
+    }
+    .brand-logos img {
+        transition: transform 0.3s ease; /* khai báo hiệu ứng cho transform */
+    }
+    .brand-logos img.mobile-big {
+        scale: 1.4 !important;
     }
 }
