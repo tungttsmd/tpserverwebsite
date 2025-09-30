@@ -1759,7 +1759,7 @@ nav {
     .pricing-grid {
         grid-template-columns: 1fr;
         max-width: 500px;
-        gap: 25px;
+        gap: 3rem;
     }
 
     .plan-name {
