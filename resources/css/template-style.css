@@ -181,21 +181,6 @@ body {
     animation: gridMove 20s linear infinite;
 }
 
-.grid-glow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(
-            rgba(255, 0, 255, 0.03) 2px,
-            transparent 2px
-        ),
-        linear-gradient(90deg, rgba(255, 0, 255, 0.03) 2px, transparent 2px);
-    background-size: 100px 100px;
-    animation: gridMove 30s linear infinite reverse;
-}
-
 @keyframes gridMove {
     0% {
         transform: translate(0, 0);
