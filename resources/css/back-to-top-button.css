@@ -1,0 +1,20 @@
+.scroll-top-btn {
+    background: rgba(59, 130, 246, 0.5); /* màu mờ mờ */
+    color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px); /* blur nhẹ nền */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+    background: rgba(59, 130, 246, 1); /* màu đầy đủ */
+    color: #fff;
+    opacity: 1;
+    backdrop-filter: blur(0); /* bỏ blur khi hover */
+    transform: scale(1.1);
+    cursor: pointer;
+}
+#scrollToTopBtn {
+    display: none;
+}

@@ -1,0 +1,5 @@
+v1d1 (05/10/2025):
+ - Cập nhật lại index.html cấu hình 2 và một số thông số chưa đúng trong bảng giá.
+ - Cập nhật lại link facebook và discord trong index.html
+ - Tạm ẩn nút contact Youtube
+ - Đưa font chữ monospaced và Jetbrains vào source, tránh bị lỗi font ở Iphone vì không tự tải font cdn
