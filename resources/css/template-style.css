@@ -32,7 +32,7 @@ html {
 
 /* Chống lỗi fonts ở iphone */
 @font-face {
-    font-family: 'JetBrains Mono';
+    font-family: 'jet';
     src: url('../fonts/JetBrainsMono-Regular.woff2') format('woff2'),
         url('../fonts/JetBrainsMono-Regular.ttf') format('truetype');
     font-weight: normal;
@@ -40,15 +40,21 @@ html {
     unicode-range: U+0000-FFFF;
 }
 @font-face {
-    font-family: monospace;
+    font-family: 'mono';
     src: url('../fonts/monospaced.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     unicode-range: U+0000-FFFF;
 }
-
+@font-face {
+    font-family: 'fira';
+    src: url('../fonts/FiraCode-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+0000-FFFF;
+}
 body {
-    font-family: monospace, 'JetBrains Mono', 'Fira Code';
+    font-family: 'jet';
     background: var(--darker-bg);
     color: var(--text-primary);
     line-height: 1.6;
