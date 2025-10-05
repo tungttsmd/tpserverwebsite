@@ -123,55 +123,6 @@ if (document.readyState === 'loading') {
     initializeMobileMenu();
 }
 
-// Interactive mouse glow effect (throttled for performance)
-let mouseTimer;
-document.addEventListener('mousemove', (e) => {
-    if (!mouseTimer) {
-        mouseTimer = setTimeout(() => {
-            const mouseX = e.clientX;
-            const mouseY = e.clientY;
-
-            // Move orbs slightly based on mouse position
-            const orbs = document.querySelectorAll('.orb');
-            orbs.forEach((orb, index) => {
-                const speed = (index + 1) * 0.02;
-                const x = (mouseX - window.innerWidth / 2) * speed;
-                const y = (mouseY - window.innerHeight / 2) * speed;
-                orb.style.transform = `translate(${x}px, ${y}px)`;
-            });
-
-            // Make nearby particles glow brighter (desktop only)
-            if (window.innerWidth > 768) {
-                const particles = document.querySelectorAll('.particle');
-                particles.forEach((particle) => {
-                    const rect = particle.getBoundingClientRect();
-                    const particleX = rect.left + rect.width / 2;
-                    const particleY = rect.top + rect.height / 2;
-                    const distance = Math.sqrt(
-                        Math.pow(mouseX - particleX, 2) +
-                            Math.pow(mouseY - particleY, 2)
-                    );
-
-                    if (distance < 150) {
-                        const brightness = 1 - distance / 150;
-                        particle.style.boxShadow = `0 0 ${
-                            20 + brightness * 30
-                        }px rgba(0, 255, 255, ${0.5 + brightness * 0.5})`;
-                        particle.style.transform = `scale(${
-                            1 + brightness * 0.5
-                        })`;
-                    } else {
-                        particle.style.boxShadow = '';
-                        particle.style.transform = '';
-                    }
-                });
-            }
-
-            mouseTimer = null;
-        }, 16); // ~60fps
-    }
-});
-
 // Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {

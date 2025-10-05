@@ -660,15 +660,15 @@ nav {
 .mobile-menu-nav a::before {
     content: '>';
     position: absolute;
-    left: 2rem;
-    transform: translateX(-20px);
+    left: 0.8rem;
+    transform: translateX(-6px);
     transition: all 0.3s ease;
     color: var(--primary-orange);
 }
 
 .mobile-menu-nav a:hover::before {
     opacity: 1;
-    transform: translateX(-10px);
+    transform: translateX(-6px);
 }
 
 .mobile-menu-nav li:last-child a {
@@ -902,7 +902,7 @@ nav {
     flex-wrap: wrap;
 }
 .hero-nexus {
-    background: linear-gradient(135deg, var(--primary-cyan), #00ccff);
+    background: linear-gradi ent(135deg, var(--primary-cyan), #00ccff);
     background: -webkit-linear-gradient(135deg, var(--primary-cyan), #00ccff);
     -webkit-background-clip: text;
     background-clip: text;
@@ -910,7 +910,6 @@ nav {
     display: inline-block;
     transition: all 0.3s ease;
     animation: cyanPulse 3s ease-in-out infinite;
-    position: relative;
 }
 
 .hero-flow {
@@ -994,7 +993,6 @@ nav {
     content: '';
     position: absolute;
     top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
     width: 200%;
     height: 200%;
