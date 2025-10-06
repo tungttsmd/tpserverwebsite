@@ -7,3 +7,5 @@ v1d1 (05/10/2025):
  - Cập nhật lại template-style.css, thêm padding-left và padding-right cho section
  - Cập nhật lại pricing.css, chỉnh sửa lại max-width cho pricing-grid
  - Sửa bố cục responsive cho pricing-grid và các section khác
+ - Nâng từ 7 lên 25 feedback
+ - Tạo thêm store.html
