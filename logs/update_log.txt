@@ -1,0 +1,9 @@
+v1d1 (05/10/2025):
+ - Cập nhật lại index.html cấu hình 2 và một số thông số chưa đúng trong bảng giá.
+ - Cập nhật lại link facebook và discord trong index.html
+ - Tạm ẩn nút contact Youtube
+ - Đưa font chữ monospaced và Jetbrains vào source, tránh bị lỗi font ở Iphone vì không tự tải font cdn
+ - Cập nhật lại footer, thêm link chính sách bảo mật và điều khoản dịch vụ
+ - Cập nhật lại template-style.css, thêm padding-left và padding-right cho section
+ - Cập nhật lại pricing.css, chỉnh sửa lại max-width cho pricing-grid
+ - Sửa bố cục responsive cho pricing-grid và các section khác
