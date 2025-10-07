@@ -1,0 +1,320 @@
+/* Compatibility Fixes for Cross-Browser Support */
+
+/* 1. Smooth Scrolling */
+html {
+    -webkit-overflow-scrolling: touch;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* 2. Better Font Rendering */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* 3. Tap Highlight Color for Mobile */
+a, button, [role="button"], input, textarea, select, label {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 4. Keyframes with Vendor Prefixes */
+@-webkit-keyframes slideInLeft {
+    from {
+        opacity: 0;
+        -webkit-transform: translateX(20px);
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        -webkit-transform: translateX(20px);
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+/* 5. Flexbox with Vendor Prefixes */
+.flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+/* 6. Transform with Vendor Prefixes */
+.transform {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+/* 7. Backface Visibility for Better Performance */
+* {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* 8. Input Placeholder Styling */
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: var(--text-secondary);
+    opacity: 1;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+    color: var(--text-secondary);
+    opacity: 1;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+    color: var(--text-secondary);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: var(--text-secondary);
+    opacity: 1;
+}
+
+/* 9. iOS Form Element Styling */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+textarea,
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+}
+
+/* 10. Prevent iOS Zoom on Input Focus */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    select:focus,
+    textarea:focus,
+    input:focus {
+        font-size: 16px;
+    }
+}
+
+/* 11. Smooth Scrolling for iOS */
+.scroll-smooth {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+/* 12. Prevent Text Size Adjustment on Orientation Change */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* 13. Fix for iOS Button Styling */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    background-color: buttonface;
+    box-sizing: border-box;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+}
+
+/* 14. Fix for iOS and IE11 Flexbox Issues */
+.flex-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+/* 15. Fix for iOS Scrolling */
+.scroll-fix {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+}
+
+/* 16. Fix for Mobile Viewport Height */
+@supports (-webkit-touch-callout: none) {
+    .full-height {
+        height: -webkit-fill-available;
+        height: -moz-available;
+        height: fill-available;
+    }
+}
+
+/* 17. Fix for iOS Form Elements */
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* 18. Fix for iOS Button Active State */
+a:active,
+button:active {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+/* 19. Fix for iOS Input Zoom */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    select,
+    textarea,
+    input {
+        font-size: 16px !important;
+    }
+}
+
+/* 20. Fix for iOS Scrolling Inertia */
+.scroll-container {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+}
+
+/* 21. Fix for iOS Text Input Zoom */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="password"],
+    textarea,
+    select {
+        font-size: 16px !important;
+    }
+}
+
+/* 22. Fix for iOS Button Styling */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+/* 23. Fix for iOS Input Shadow */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+textarea,
+select {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/* 24. Fix for iOS Input Focus */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+/* 25. Fix for iOS Button Active State */
+button:active {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+}
+
+/* 26. Fix for iOS Input Placeholder */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #999;
+    opacity: 1;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: #999;
+    opacity: 1;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #999;
+    opacity: 1;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #999;
+}
+
+/* 27. Fix for iOS Button Text Wrapping */
+button,
+.button {
+    white-space: nowrap;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* 28. Fix for iOS Scrolling Performance */
+.scroll-container {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+/* 29. Fix for iOS Input Zoom on Focus */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    select:focus,
+    textarea:focus,
+    input:focus {
+        font-size: 16px !important;
+    }
+}
+
+/* 30. Fix for iOS Button Active State */
+button:active,
+.button:active {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+}

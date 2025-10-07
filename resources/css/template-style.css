@@ -659,15 +659,14 @@ nav {
 .mobile-menu-nav a:hover {
     color: var(--primary-cyan);
     background: rgba(0, 255, 255, 0.05);
-    padding-left: 6.2 rem;
+    padding-left: 5.2rem;
     text-shadow: 0 0 10px var(--primary-cyan);
 }
 
 .mobile-menu-nav a::before {
     content: '>';
     position: absolute;
-    left: 20px;
-    opacity: 0;
+    left: 48px;
     -webkit-transform: translateX(-20px);
     transform: translateX(-20px);
     -webkit-transition: all 0.3s ease;
@@ -676,7 +675,6 @@ nav {
 }
 
 .mobile-menu-nav a:hover::before {
-    opacity: 1;
     -webkit-transform: translateX(0);
     transform: translateX(0);
 }
@@ -933,7 +931,7 @@ nav {
     content: '';
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 0;
     transform: translate(-50%, -50%);
     width: 200%;
     height: 200%;
@@ -1818,24 +1816,6 @@ section {
     background: var(--darker-bg);
 }
 
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(var(--primary-cyan), var(--primary-pink));
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(var(--primary-pink), var(--primary-cyan));
-}
-
-.brand-logos {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-}
-
-.brand-logos img {
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8) !important;
-}
-
 /* For mobile menu */
 @media (max-width: 768px) {
     html {
@@ -1845,21 +1825,13 @@ section {
         display: block !important;
     }
     #brands {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+        padding-left: 6rem !important;
+        padding-right: 6rem !important;
     }
     .brand-logos {
         gap: 20px;
     }
-    .brand-logos img {
-        scale: 1 !important;
-    }
-    .brand-logos img {
-        transition: transform 0.3s ease; /* khai báo hiệu ứng cho transform */
-    }
-    .brand-logos img.mobile-big {
-        scale: 1.4 !important;
-    }
+
     .nav-links {
         display: none;
     }
@@ -1937,7 +1909,7 @@ section {
         padding: 40px 1rem 30px;
     }
     .pricing-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(1, 1fr);
         max-width: 100%;
         gap: 3rem;
     }
@@ -2021,6 +1993,10 @@ section {
 
 /* Mobile (up to 480px) */
 @media (max-width: 480px) {
+    #brands {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
     .mobile-menu {
         width: 90%;
         max-width: none;

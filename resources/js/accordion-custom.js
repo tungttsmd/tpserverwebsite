@@ -1,46 +1,458 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Initialize Accordion
-  const accordionItems = document.querySelectorAll(".accordion-item");
+/**
+ * Enhanced Accordion Component
+ * - Better accessibility (ARIA attributes, keyboard navigation)
+ * - Smooth animations with requestAnimationFrame
+ * - Event delegation for better performance
+ * - Configurable options
+ */
+const Accordion = (() => {
+    // Default configuration
+    const defaults = {
+        selector: '.accordion',
+        itemSelector: '.accordion-item',
+        headerSelector: '.accordion-header',
+        contentSelector: '.accordion-content',
+        activeClass: 'active',
+        animate: true,
+        duration: 300,
+        easing: 'ease-in-out',
+        openFirst: true,
+        onlyOneOpen: true,
+        onOpen: null,
+        onClose: null,
+        onInit: null,
+    };
 
-  accordionItems.forEach((item) => {
-    const header = item.querySelector(".accordion-header");
+    // State
+    let config = {};
+    let accordion = null;
+    let items = [];
+    let isAnimating = false;
 
-    header.addEventListener("click", () => {
-      // Close all other accordion items
-      accordionItems.forEach((otherItem) => {
-        if (otherItem !== item && otherItem.classList.contains("active")) {
-          otherItem.classList.remove("active");
-          otherItem.querySelector(".accordion-content").style.maxHeight = 0;
+    // Initialize the accordion
+    const init = (options = {}) => {
+        // Merge defaults with user options
+        config = { ...defaults, ...options };
+
+        // Get the accordion element
+        accordion =
+            typeof config.selector === 'string'
+                ? document.querySelector(config.selector)
+                : config.selector;
+
+        if (!accordion) {
+            console.warn(
+                'Accordion: No element found with selector',
+                config.selector
+            );
+            return;
         }
-      });
 
-      // Toggle current item
-      item.classList.toggle("active");
-      const content = item.querySelector(".accordion-content");
+        // Initialize accordion items
+        initItems();
 
-      if (item.classList.contains("active")) {
-        content.style.maxHeight = content.scrollHeight + "px";
-      } else {
-        content.style.maxHeight = 0;
-      }
+        // Open first item if configured
+        if (config.openFirst && items.length > 0) {
+            openItem(items[0], false);
+        }
+
+        // Add event delegation for accordion headers
+        accordion.addEventListener('click', handleClick);
+        accordion.addEventListener('keydown', handleKeyDown);
+
+        // Call onInit callback if provided
+        if (typeof config.onInit === 'function') {
+            config.onInit(accordion, items);
+        }
+
+        return {
+            open: openItem,
+            close: closeItem,
+            toggle: toggleItem,
+            destroy,
+            getItems: () => items,
+        };
+    };
+
+    // Initialize accordion items
+    const initItems = () => {
+        items = [];
+        const itemElements = accordion.querySelectorAll(config.itemSelector);
+
+        itemElements.forEach((item, index) => {
+            const header = item.querySelector(config.headerSelector);
+            const content = item.querySelector(config.contentSelector);
+
+            if (!header || !content) {
+                console.warn(
+                    'Accordion: Missing header or content element in item',
+                    item
+                );
+                return;
+            }
+
+            // Set ARIA attributes
+            const itemId = `accordion-item-${index}`;
+            const contentId = `accordion-content-${index}`;
+
+            header.setAttribute('id', itemId);
+            header.setAttribute('aria-expanded', 'false');
+            header.setAttribute('aria-controls', contentId);
+            header.setAttribute('tabindex', '0');
+            header.setAttribute('role', 'button');
+
+            content.setAttribute('id', contentId);
+            content.setAttribute('aria-labelledby', itemId);
+            content.setAttribute('aria-hidden', 'true');
+            content.style.overflow = 'hidden';
+            content.style.transition = config.animate
+                ? `max-height ${config.duration}ms ${config.easing}, opacity ${config.duration}ms ${config.easing}`
+                : 'none';
+
+            // Store item data
+            items.push({
+                element: item,
+                header,
+                content,
+                isOpen: false,
+                id: itemId,
+            });
+        });
+    };
+
+    // Handle click events on accordion headers
+    const handleClick = (e) => {
+        const header = e.target.closest(config.headerSelector);
+        if (!header) return;
+
+        e.preventDefault();
+
+        const item = header.closest(config.itemSelector);
+        const itemData = items.find((i) => i.element === item);
+
+        if (!itemData) return;
+
+        toggleItem(itemData);
+    };
+
+    // Handle keyboard navigation
+    const handleKeyDown = (e) => {
+        const header = e.target.closest(config.headerSelector);
+        if (!header) return;
+
+        const item = header.closest(config.itemSelector);
+        const itemData = items.find((i) => i.element === item);
+
+        if (!itemData) return;
+
+        switch (e.key) {
+            case 'Enter':
+            case ' ':
+                e.preventDefault();
+                toggleItem(itemData);
+                break;
+
+            case 'ArrowDown':
+                e.preventDefault();
+                focusNextItem(itemData);
+                break;
+
+            case 'ArrowUp':
+                e.preventDefault();
+                focusPrevItem(itemData);
+                break;
+
+            case 'Home':
+                e.preventDefault();
+                if (items.length > 0) focusItem(items[0]);
+                break;
+
+            case 'End':
+                e.preventDefault();
+                if (items.length > 0) focusItem(items[items.length - 1]);
+                break;
+        }
+    };
+
+    // Toggle accordion item
+    const toggleItem = (itemData, animate = true) => {
+        if (isAnimating) return;
+
+        if (itemData.isOpen) {
+            closeItem(itemData, animate);
+        } else {
+            openItem(itemData, animate);
+        }
+    };
+
+    // Open accordion item
+    const openItem = (itemData, animate = true) => {
+        if (itemData.isOpen || isAnimating) return;
+
+        // Close other items if only one can be open
+        if (config.onlyOneOpen) {
+            items.forEach((item) => {
+                if (item !== itemData && item.isOpen) {
+                    closeItem(item, animate);
+                }
+            });
+        }
+
+        // Set initial height for animation
+        const content = itemData.content;
+        content.style.display = 'block';
+        const startHeight = content.offsetHeight;
+        content.style.maxHeight = '0';
+        content.style.opacity = '0';
+
+        // Trigger reflow
+        content.offsetHeight;
+
+        // Start animation
+        isAnimating = true;
+        itemData.isOpen = true;
+        itemData.element.classList.add(config.activeClass);
+        itemData.header.setAttribute('aria-expanded', 'true');
+        content.setAttribute('aria-hidden', 'false');
+
+        // Animate height
+        if (animate && config.animate) {
+            const targetHeight = content.scrollHeight;
+            const startTime = performance.now();
+
+            const animateHeight = (currentTime) => {
+                const elapsedTime = currentTime - startTime;
+                const progress = Math.min(elapsedTime / config.duration, 1);
+
+                // Easing function (easeInOutQuad)
+                const easeInOutQuad = (t) =>
+                    t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+                const height =
+                    startHeight +
+                    (targetHeight - startHeight) * easeInOutQuad(progress);
+                const opacity = easeInOutQuad(progress);
+
+                content.style.maxHeight = `${height}px`;
+                content.style.opacity = opacity;
+
+                if (progress < 1) {
+                    requestAnimationFrame(animateHeight);
+                } else {
+                    // Animation complete
+                    content.style.maxHeight = '';
+                    content.style.opacity = '';
+                    isAnimating = false;
+
+                    // Call onOpen callback if provided
+                    if (typeof config.onOpen === 'function') {
+                        config.onOpen(itemData);
+                    }
+                }
+            };
+
+            requestAnimationFrame(animateHeight);
+        } else {
+            // No animation
+            content.style.maxHeight = '';
+            content.style.opacity = '';
+            isAnimating = false;
+
+            // Call onOpen callback if provided
+            if (typeof config.onOpen === 'function') {
+                config.onOpen(itemData);
+            }
+        }
+    };
+
+    // Close accordion item
+    const closeItem = (itemData, animate = true) => {
+        if (!itemData.isOpen || isAnimating) return;
+
+        const content = itemData.content;
+        const startHeight = content.offsetHeight;
+
+        // Start animation
+        isAnimating = true;
+        itemData.isOpen = false;
+        itemData.element.classList.remove(config.activeClass);
+        itemData.header.setAttribute('aria-expanded', 'false');
+        content.setAttribute('aria-hidden', 'true');
+
+        // Animate height
+        if (animate && config.animate) {
+            const startTime = performance.now();
+
+            const animateHeight = (currentTime) => {
+                const elapsedTime = currentTime - startTime;
+                const progress = Math.min(elapsedTime / config.duration, 1);
+
+                // Easing function (easeInOutQuad)
+                const easeInOutQuad = (t) =>
+                    t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+                const height = startHeight * (1 - easeInOutQuad(progress));
+                const opacity = 1 - easeInOutQuad(progress);
+
+                content.style.maxHeight = `${height}px`;
+                content.style.opacity = opacity;
+
+                if (progress < 1) {
+                    requestAnimationFrame(animateHeight);
+                } else {
+                    // Animation complete
+                    content.style.display = 'none';
+                    content.style.maxHeight = '';
+                    content.style.opacity = '';
+                    isAnimating = false;
+
+                    // Call onClose callback if provided
+                    if (typeof config.onClose === 'function') {
+                        config.onClose(itemData);
+                    }
+                }
+            };
+
+            requestAnimationFrame(animateHeight);
+        } else {
+            // No animation
+            content.style.display = 'none';
+            content.style.maxHeight = '';
+            content.style.opacity = '';
+            isAnimating = false;
+
+            // Call onClose callback if provided
+            if (typeof config.onClose === 'function') {
+                config.onClose(itemData);
+            }
+        }
+    };
+
+    // Focus management
+    const focusItem = (itemData) => {
+        if (itemData && itemData.header) {
+            itemData.header.focus();
+        }
+    };
+
+    const focusNextItem = (currentItem) => {
+        const currentIndex = items.indexOf(currentItem);
+        const nextIndex = (currentIndex + 1) % items.length;
+        focusItem(items[nextIndex]);
+    };
+
+    const focusPrevItem = (currentItem) => {
+        const currentIndex = items.indexOf(currentItem);
+        const prevIndex = (currentIndex - 1 + items.length) % items.length;
+        focusItem(items[prevIndex]);
+    };
+
+    // Destroy the accordion and clean up
+    const destroy = () => {
+        if (!accordion) return;
+
+        // Remove event listeners
+        accordion.removeEventListener('click', handleClick);
+        accordion.removeEventListener('keydown', handleKeyDown);
+
+        // Reset ARIA attributes and styles
+        items.forEach((item) => {
+            if (item) {
+                item.header.removeAttribute('aria-expanded');
+                item.header.removeAttribute('aria-controls');
+                item.header.removeAttribute('tabindex');
+                item.header.removeAttribute('role');
+
+                item.content.removeAttribute('aria-labelledby');
+                item.content.removeAttribute('aria-hidden');
+                item.content.style.cssText = '';
+
+                if (item.element) {
+                    item.element.classList.remove(config.activeClass);
+                }
+            }
+        });
+
+        // Reset state
+        accordion = null;
+        items = [];
+        isAnimating = false;
+    };
+
+    // Public API
+    return {
+        init,
+        destroy,
+    };
+})();
+
+// Initialize accordion when DOM is ready
+const initAccordion = () => {
+    try {
+        Accordion.init({
+            // Custom options can be passed here
+            onOpen: (item) => {},
+            onClose: (item) => {},
+            onInit: (accordion, items) => {},
+        });
+    } catch (error) {}
+};
+
+// Initialize contact button animations
+const initContactButtons = () => {
+    const contactButtons = document.querySelectorAll('.contact-btn');
+
+    const handleMouseEnter = (e) => {
+        const button = e.currentTarget;
+        button.classList.add('animate__animated', 'animate__pulse');
+    };
+
+    const handleAnimationEnd = (e) => {
+        const button = e.currentTarget;
+        if (e.animationName === 'pulse') {
+            button.classList.remove('animate__animated', 'animate__pulse');
+        }
+    };
+
+    contactButtons.forEach((button) => {
+        if (button) {
+            button.addEventListener('mouseenter', handleMouseEnter);
+            button.addEventListener('animationend', handleAnimationEnd);
+        }
     });
-  });
 
-  // Open first accordion item by default
-  if (accordionItems.length > 0) {
-    accordionItems[0].classList.add("active");
-    accordionItems[0].querySelector(".accordion-content").style.maxHeight = accordionItems[0].querySelector(".accordion-content").scrollHeight + "px";
-  }
+    // Return cleanup function
+    return () => {
+        contactButtons.forEach((button) => {
+            if (button) {
+                button.removeEventListener('mouseenter', handleMouseEnter);
+                button.removeEventListener('animationend', handleAnimationEnd);
+            }
+        });
+    };
+};
 
-  // Add animation to contact buttons
-  const contactButtons = document.querySelectorAll(".contact-btn");
-  contactButtons.forEach((button) => {
-    button.addEventListener("mouseenter", function () {
-      this.classList.add("animate__animated", "animate__pulse");
-    });
+// Initialize accordion module
+const initAccordionModule = () => {
+    initAccordion();
+    initContactButtons();
+};
 
-    button.addEventListener("animationend", function () {
-      this.classList.remove("animate__animated", "animate__pulse");
-    });
-  });
-});
+// Export for module usage
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        Accordion,
+        initAccordion,
+        initContactButtons,
+        initAccordionModule,
+    };
+}
+
+// Auto-initialize if not in a module
+if (typeof module === 'undefined' || !module.exports) {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAccordionModule);
+    } else {
+        initAccordionModule();
+    }
+}

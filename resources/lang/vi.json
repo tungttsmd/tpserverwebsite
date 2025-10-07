@@ -1,0 +1,309 @@
+{
+    "language": "Tiếng Việt",
+    "language.vietnamese": "Tiếng Việt",
+    "language.english": "English",
+    "nav": {
+        "home": "TRANG CHỦ",
+        "features": "GIỚI THIỆU",
+        "pricing": "BẢNG GIÁ",
+        "testimonials": "ĐÁNH GIÁ",
+        "faq": "HỎI ĐÁP",
+        "contact": "LIÊN HỆ",
+        "shop": "CỬA HÀNG",
+        "cta": "THUÊ MÁY CHỦ VẬT LÍ NGAY"
+    },
+    "hero": {
+        "subtitle1": "Dịch vụ Máy chủ Vật lý",
+        "subtitle2": "Giá rẻ chất lượng cao",
+        "discord": "Discord",
+        "facebook": "Facebook"
+    },
+    "stats": {
+        "members": "Thành viên hoạt động",
+        "machines": "Máy đang hoạt động",
+        "customers": "Khách hàng tích cực",
+        "countries": "Quốc gia khả dụng"
+    },
+    "features": {
+        "title": "Hệ Thống",
+        "subtitle": "Tối ưu treo & render ổn định. Hoạt động bền bỉ 24/24",
+        "cpu": {
+            "title": "CPU Xeon",
+            "desc": "[Intel Xeon E5-2680v4 14 nhân 28 luồng] Intel Xeon cho hiệu suất đa luồng mạnh mẽ, xử lý mượt các tác vụ nặng, hoạt động ổn định suốt nhiều giờ."
+        },
+        "gpu": {
+            "title": "NVIDIA GeForce",
+            "desc": "[GTX 1070/1080/2060] Card đồ họa NVIDIA tối ưu cho hiển thị đa nhiệm, đảm bảo hình ảnh mượt mà và hiệu suất ổn định."
+        },
+        "ram": {
+            "title": "RAM DDR4",
+            "desc": "[32GB/64GB] Bộ nhớ RAM dung lượng lớn, tốc độ cao, đa nhiệm mượt mà, tối ưu cho các tác vụ nặng và chạy nhiều ứng dụng cùng lúc."
+        },
+        "storage": {
+            "title": "Ổ Cứng SSD",
+            "desc": "[500GB/1TB] Ổ cứng thể rắn SSD tốc độ cao, khởi động hệ thống và tải ứng dụng nhanh chóng, độ bền cao."
+        },
+        "power": {
+            "title": "Nguồn 650W",
+            "desc": "[Xigmatek X-Power III] Nguồn ổn định, hoạt động 24/7, bảo vệ linh kiện khi tải cao, giảm thiểu nguy cơ sụt áp."
+        },
+        "motherboard": {
+            "title": "X10X99-16D",
+            "desc": "[HUANANZHI X10X99-16D] Bo mạch chủ cao cấp, tối ưu hiệu năng và nhiệt độ, đảm bảo hệ thống hoạt động ổn định lâu dài."
+        }
+    },
+    "pricing": {
+        "title": "Bảng Giá",
+        "subtitle": "Chọn cấu hình phù hợp với nhu cầu của bạn",
+        "pack1": {
+            "subtitle": "DÙNG THỬ",
+            "name": "CẤU HÌNH 1",
+            "price": "300.000 ₫",
+            "period": "/tuần",
+            "config1": "Chip: E2Xeon 2680v4",
+            "config2": "Nhân: 14 nhân / 28 luồng",
+            "config3": "RAM: 64GB",
+            "config4": "Ổ cứng: 256GB SSD NVMe",
+            "config5": "VGA: GTX 1060 3GB",
+            "config6": "Giá thuê tháng: 1.100.000 ₫"
+        },
+        "pack2": {
+            "subtitle": "CƠ BẢN",
+            "name": "CẤU HÌNH 2",
+            "price": "400.000 ₫",
+            "period": "/tuần",
+            "config1": "Chip: Xeon 2696v4",
+            "config2": "Nhân: 22 nhân / 44 luồng",
+            "config3": "RAM: 128GB",
+            "config4": "Ổ cứng: 256GB SSD NVMe",
+            "config5": "VGA: GTX 1060 6GB/ GTX 1070 8GB",
+            "config6": "Giá thuê tháng: 1.500.000 ₫"
+        },
+        "pack3": {
+            "featured": "KHUYÊN DÙNG",
+            "subtitle": "TIÊU CHUẨN",
+            "name": "CẤU HÌNH 3",
+            "price": "450.000 ₫",
+            "period": "/tuần",
+            "config1": "Chip: Dual Xeon 2680v4",
+            "config2": "Nhân: 28 nhân / 56 luồng",
+            "config3": "RAM: 128GB",
+            "config4": "Ổ cứng: 500GB SSD NVMe",
+            "config5": "VGA: GTX 1060 6GB/ RTX 2060 6GB hoặc GTX 1070 8GB",
+            "config6": "Giá thuê tháng: 1.700.000 ₫"
+        },
+        "pack4": {
+            "subtitle": "CAO CẤP",
+            "name": "CẤU HÌNH 4",
+            "price": "550.000 ₫",
+            "period": "/tuần",
+            "config1": "Chip: Dual Xeon 2686v4",
+            "config2": "Nhân: 36 nhân / 72 luồng",
+            "config3": "RAM: 128GB",
+            "config4": "Ổ cứng: 500GB SSD NVMe",
+            "config5": "VGA: GTX 1070 6GB/ RTX 2060 6GB hoặc GTX 1080 8GB",
+            "config6": "Giá thuê tháng: 2.000.000 ₫"
+        },
+        "pack5": {
+            "subtitle": "CHUYÊN NGHIỆP",
+            "name": "CẤU HÌNH 5",
+            "price": "800.000 ₫",
+            "period": "/tuần",
+            "config1": "Chip: Dual Xeon 2696v4",
+            "config2": "Nhân: 44 nhân / 88 luồng",
+            "config3": "RAM: 256GB",
+            "config4": "Ổ cứng: 1TB SSD NVMe",
+            "config5": "VGA: RTX 3060 12GB",
+            "config6": "Giá thuê tháng: 3.000.000 ₫"
+        },
+        "btn": "Thuê Máy Ngay"
+    },
+    "testimonial": {
+        "title": "Đánh Giá Từ Khách Hàng",
+        "subtitle": "Những phản hồi chân thực từ khách hàng của chúng tôi",
+        "item1": {
+            "content": "Mình từng dùng ugphone để chơi game nhưng rất lag và hay bị văng. Từ khi chuyển sang TPSV, mọi thứ đều mượt mà, không còn bị giật lag và được hỗ trợ 24/7.",
+            "name": "D.D.D (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 3"
+        },
+        "item2": {
+            "content": "TPSV là nhà cung cấp Máy chủ Vật lí tốt nhất mà tôi từng sử dụng. Hỗ trợ tuyệt vời và máy chủ luôn ổn định.",
+            "name": "dontworry311 (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 3"
+        },
+        "item3": {
+            "content": "Điểm 10/10 cho Máy chủ Vật lí và dịch vụ hỗ trợ quá tốt.",
+            "name": "Thorfinn Karlsefni (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 4"
+        },
+        "item4": {
+            "content": "Dịch vụ tốt nhất tôi từng trải nghiệm! Điểm trừ duy nhất là không có sẵn vô hạn máy mới.",
+            "name": "Maryto (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 3"
+        },
+        "item5": {
+            "content": "Hiện tôi đang sử dụng 10 Máy chủ Vật lí của họ, đơn giản là rất tốt, dịch vụ hoàn hảo, họ luôn giúp đỡ tôi mọi lúc cần thiết, chắc chắn là Máy chủ Vật lí tốt nhất trên thị trường.",
+            "name": "lim (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 2"
+        },
+        "item6": {
+            "content": "Cửa hàng quá tuyệt vời, hỗ trợ cực kỳ nhiệt tình. Cảm ơn nhé!",
+            "name": "yeilqcs (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 3"
+        },
+        "item7": {
+            "content": "Điểm 10/10 cho Máy chủ Vật lí, tôi đã thuê nhiều máy chủ Máy chủ Vật lí ở đây và luôn hài lòng 100%.",
+            "name": "Nays (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 1"
+        },
+        "item8": {
+            "content": "Tuyệt vời. Hỗ trợ phản hồi rất nhanh.",
+            "name": "0x936 (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 3"
+        },
+        "item9": {
+            "content": "Hỗ trợ 10/10 + chủ quán thân thiện + máy mạnh mẽ.",
+            "name": "Zero (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 4"
+        },
+        "item10": {
+            "content": "Dịch vụ tốt, Máy chủ Vật lí giá cả phải chăng, chăm sóc khách hàng chu đáo.",
+            "name": "brick (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 3"
+        },
+        "item11": {
+            "content": "Tôi sử dụng máy chủ này để tự động hóa và chạy nhiều tiến trình song song, cực kỳ ổn định. Không còn bị ngắt kết nối giữa chừng nữa.",
+            "name": "N.P.L (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 3"
+        },
+        "item12": {
+            "content": "Phản hồi nhanh và hiệu suất rất đáng tin cậy.",
+            "name": "R.L (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 2"
+        },
+        "item13": {
+            "content": "Chạy cả tuần không cần khởi động lại, CPU không bao giờ quá tải. Tuyệt nhất là đội ngũ hỗ trợ, họ phản hồi ngay lập tức.",
+            "name": "T.N.K (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 3"
+        },
+        "item14": {
+            "content": "Máy chủ hoạt động 24/7, tôi dùng để chạy các công cụ và tác vụ nặng, vẫn rất mượt. Đáng đồng tiền bát gạo.",
+            "name": "P.D.H (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 3"
+        },
+        "item15": {
+            "content": "Thời gian hoạt động tuyệt vời và chất lượng phần cứng cao cấp. Excellent uptime and great hardware quality.",
+            "name": "M.J (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 1"
+        },
+        "item16": {
+            "content": "Dịch vụ tuyệt vời, phản hồi cực nhanh, mình đã chuyển toàn bộ hệ thống sang đây.",
+            "name": "H.N.T (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 2"
+        },
+        "item17": {
+            "content": "Mình chạy Node.js và Python API trên đây, uptime luôn 99.99%. Rất đáng tiền.",
+            "name": "T.P.Q (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 4"
+        },
+        "item18": {
+            "content": "Tôi thuê để chạy AI training nhỏ, GPU mạnh ổn định và không bị giới hạn như cloud khác.",
+            "name": "K.L (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 3"
+        },
+        "item19": {
+            "content": "Máy chạy ổn định, không bị treo giật như các nơi khác. Hỗ trợ nhiệt tình, rất hài lòng.",
+            "name": "L.V.H (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 2"
+        },
+        "item20": {
+            "content": "Giá cả hợp lý, cấu hình mạnh, phù hợp để chạy nhiều ứng dụng cùng lúc. Đội ngũ support rất chuyên nghiệp.",
+            "name": "N.T.K (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 3"
+        },
+        "item21": {
+            "content": "Mình dùng để render video 4K, tốc độ xử lý nhanh hơn nhiều so với dùng máy cá nhân. Rất hài lòng với dịch vụ.",
+            "name": "P.V.D (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 4"
+        },
+        "item22": {
+            "content": "Uptime 99.9% đúng như cam kết. Chưa gặp sự cố nào trong suốt thời gian sử dụng.",
+            "name": "T.M.H (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 2"
+        },
+        "item23": {
+            "content": "Máy chủ mạnh, đường truyền ổn định. Phù hợp cho các dự án cần hiệu năng cao.",
+            "name": "N.V.T (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 3"
+        },
+        "item24": {
+            "content": "Mình dùng để chạy bot trade, hoạt động 24/7 không ngừng nghỉ. Hỗ trợ kỹ thuật rất nhanh và chuyên nghiệp.",
+            "name": "L.Q.M (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 1"
+        },
+        "item25": {
+            "content": "Tôi đến từ Singapore, và độ trễ đến các máy chủ TPSV rất tốt. Rất đáng để thử.",
+            "name": "A.L (Discord)",
+            "kind": "Khách thuê Máy chủ Vật lý 1"
+        }
+    },
+    "contact": {
+        "title": "Liên Hệ Với Chúng Tôi",
+        "subtitle": "Chúng tôi luôn sẵn sàng 24/7 để hỗ trợ quý khách. Hãy chọn hình thức liên hệ phù hợp nhất với bạn!",
+        "name": "Họ và tên",
+        "email": "Email",
+        "message": "Nội dung",
+        "send": "Gửi tin nhắn",
+        "facebook": {
+            "title": "Facebook Messenger",
+            "subtitle": "Nhắn tin trực tiếp với chúng tôi qua Facebook Messenger để được phản hồi nhanh nhất",
+            "btn": "Nhắn tin ngay"
+        },
+        "discord": {
+            "title": "Discord",
+            "subtitle": "Kết nối với đội ngũ hỗ trợ của chúng tôi trên Discord để được hỗ trợ kỹ thuật và tư vấn",
+            "btn": "Tạo ticket ngay"
+        },
+        "shopee": {
+            "title": "Cửa Hàng Shopee",
+            "subtitle": "Ghé thăm cửa hàng Shopee của chúng tôi để thuê máy chủ chất lượng cao với giá cả phải chăng",
+            "btn": "Ghé thăm Shopee"
+        }
+    },
+    "faq": {
+        "title": "Hỏi Đáp",
+        "subtitle": "Các Câu Hỏi Thường Gặp Về Dịch Vụ Máy Chủ Vật Lý",
+        "item1": {
+            "title": "Làm thế nào để thuê máy chủ?",
+            "content": "Vui lòng liên hệ với chúng tôi qua Discord hoặc Facebook để được tư vấn và yêu cầu thuê."
+        },
+        "item2": {
+            "title": "Quy trình sau khi liên hệ là gì?",
+            "content": "Đội ngũ hỗ trợ 24/7 sẽ tiếp nhận yêu cầu của bạn. Sau khi xác nhận số lượng và cấu hình cần thiết, bạn có thể tiến hành thanh toán. Sau đó, đội kỹ thuật sẽ chuẩn bị máy chủ cho bạn."
+        },
+        "item3": {
+            "title": "Sau khi thanh toán, bao lâu thì nhận được máy chủ?",
+            "content": "Chỉ trong vòng 30 phút sau khi thanh toán thành công, đội kỹ thuật sẽ hoàn tất việc cài đặt và gửi thông tin truy cập cho bạn. Bạn có thể kết nối qua Remote Desktop Connection hoặc phương thức khác theo yêu cầu."
+        },
+        "item4": {
+            "title": "Tôi có thể dùng thử trước khi thuê Máy chủ Vật lí không?",
+            "content": "Sau khi thanh toán, bạn luôn có 1 ngày để dùng thử Máy chủ Vật lí. Nếu không hài lòng trong ngày đầu sử dụng, bạn có thể yêu cầu hoàn tiền 100% vì bất kỳ lý do gì. Chính sách này giúp đảm bảo tài nguyên máy chủ luôn sẵn sàng cho tất cả khách hàng."
+        },
+        "item5": {
+            "title": "Chấp nhận những phương thức thanh toán nào?",
+            "content": "Sau khi được tư vấn và quyết định thuê Máy chủ Vật lí, bạn có thể chuyển khoản ngân hàng vào tài khoản của chúng tôi."
+        },
+        "item6": {
+            "title": "Tôi có thể thay đổi cấu hình sau khi đã thuê không?",
+            "content": "Trong thời gian thuê, nếu bạn không hài lòng với cấu hình hiện tại, bạn có thể chọn cấu hình cao hơn cho kỳ thuê tiếp theo sau khi kỳ hiện tại kết thúc. Hiện tại, chúng tôi chưa hỗ trợ thay đổi cấu hình kèm điều chỉnh giá trong khi hợp đồng còn hiệu lực."
+        }
+    },
+    "footer": {
+        "shop": "Ghé thăm cửa hàng",
+        "policy": "Chính sách & điều khoản dịch vụ",
+        "guidance": "Hướng dẫn",
+        "contact": "Liên hệ",
+        "home": "tpservers.com",
+        "copyright": "© 2025 TP Server. Bản quyền thuộc về tpservers.com"
+    }
+}

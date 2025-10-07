@@ -16,7 +16,7 @@
     <!-- start Title and core css -->
     <title>TP Server - Thuê Máy Chủ Vật Lý Giá Rẻ</title>
     <link href="resources/css/template-style.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
     <!-- end Title and core css -->
 
     <!-- start Custom Css -->
@@ -41,13 +41,18 @@
     <!-- end Back to top -->
 
     <!-- start Enhance button-->
-    <link rel="stylesheet" href="resources/css/enhance-button.css">
-    <!-- end Enhance button-->
-
-    <!-- start AOS -->
+    <link rel="stylesheet" href="resources/css/enhance-button.css">></sc <!-- start AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- end AOS -->
 
+    <!-- start brand logo -->
+    <link rel="stylesheet" href="resources/css/brand-logo.css">
+    <!-- end brand logo -->
+
+    <!-- start language switcher -->
+    <link rel="stylesheet" href="resources/css/language-switcher.css">
+    <link rel="stylesheet" href="resources/css/language-dropdown.css">
+    <!-- end language switcher -->
 </head>
 <!-- end <head> -->
 
@@ -81,25 +86,48 @@
             </a>
             <ul class="nav-links">
                 <li>
-                    <a href="#home">TRANG CHỦ</a>
+                    <a href="#home" data-i18n="nav.home">TRANG CHỦ</a>
                 </li>
                 <li>
-                    <a href="#pricing">BẢNG GIÁ</a>
+                    <a href="#pricing" data-i18n="nav.pricing">BẢNG GIÁ</a>
                 </li>
                 <li>
-                    <a href="store.html">CỬA HÀNG</a>
+                    <a href="#stats" data-i18n="nav.features">GIỚI THIỆU</a>
                 </li>
                 <li>
-                    <a href="#stats">GIỚI THIỆU</a>
+                    <a href="https://shopee.vn/shop/162891857/recommendation-landing" target="_blank"
+                        data-i18n="nav.shop">CỬA HÀNG</a>
                 </li>
                 <li>
-                    <a href="#contact">LIÊN HỆ</a>
+                    <a href="#contact" data-i18n="nav.contact">LIÊN HỆ</a>
+                </li>
+                <li class="language-dropdown">
+                    <button class="language-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                        <img src="resources/images/lang-vi.webp" alt="Current Language" width="24" height="18"
+                            class="current-flag">
+                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L6 6L11 1" stroke="currentColor" style="color: var(--text-secondary)"
+                                stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </button>
+                    <div class="language-dropdown-menu" role="menu">
+                        <button class="language-option" data-lang="vi" role="menuitem">
+                            <img src="resources/images/lang-vi.webp" alt="Tiếng Việt" width="24" height="18">
+                            <span>Tiếng Việt</span>
+                        </button>
+                        <button class="language-option" data-lang="en" role="menuitem">
+                            <img src="resources/images/lang-us.webp" alt="English" width="24" height="18">
+                            <span>English</span>
+                        </button>
+                    </div>
                 </li>
             </ul>
             <div class="nav-bottom">
-                <a href="#contact" class="px-8 cyber-button primary-btn">Thuê máy chủ ngay!</a>
+                <a href="#contact" class="px-8 cyber-button primary-btn" data-i18n="nav.cta">THUÊ MÁY CHỦ VẬT LÍ
+                    NGAY</a>
             </div>
             <button class="mobile-menu-button" id="mobileMenuBtn">
+
                 <div class="hamburger">
                     <span></span>
                     <span></span>
@@ -113,29 +141,46 @@
     <!-- start Mobile navigation -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
     <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-header">
-            <a href="#top" class="mobile-menu-logo">NexusFlow</a>
-            <button class=" mobile-menu-close" id="mobileMenuClose">✕</button>
-        </div>
+
 
         <nav class="mobile-menu-nav">
             <ul style="padding-top: 5.6rem">
                 <li>
-                    <a href="index.html #home">TRANG CHỦ</a>
+                    <a href="index.html #home" data-i18n="nav.home">TRANG CHỦ</a>
                 </li>
                 <li>
-                    <a href="#pricing">BẢNG GIÁ</a>
+                    <a href="#pricing" data-i18n="nav.pricing">BẢNG GIÁ</a>
                 </li>
                 <li>
-                    <a href="store.html">CỬA HÀNG</a>
+                    <a href="#stats" target="_blank" data-i18n="nav.features">TÍNH NĂNG</a>
                 </li>
                 <li>
-                    <a href="#stats">GIỚI THIỆU</a>
+                    <a href="https://shopee.vn/shop/162891857/recommendation-landing" target="_blank"
+                        data-i18n="nav.shop">CỬA HÀNG</a>
                 </li>
                 <li>
-                    <a href="#contact">LIÊN HỆ</a>
+                    <a href="#contact" data-i18n="nav.contact">LIÊN HỆ</a>
                 </li>
-
+                <li class="language-dropdown mobile-language-dropdown">
+                    <button class="language-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                        <img src="resources/images/lang-vi.webp" alt="Current Language" width="24" height="18"
+                            class="current-flag">
+                        <span data-i18n="language">Tiếng Việt</span>
+                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </button>
+                    <div class="language-dropdown-menu" role="menu">
+                        <button class="language-option" data-lang="vi" role="menuitem">
+                            <img src="resources/images/lang-vi.webp" alt="Tiếng Việt" width="24" height="18">
+                            <span data-i18n="language.vietnamese">Tiếng Việt</span>
+                        </button>
+                        <button class="language-option" data-lang="en" role="menuitem">
+                            <img src="resources/images/lang-us.webp" alt="English" width="24" height="18">
+                            <span data-i18n="language.english">English</span>
+                        </button>
+                    </div>
+                </li>
             </ul>
         </nav>
     </div>
@@ -151,16 +196,16 @@
                 <span class="hero-flow normal-case">Server</span>
             </h1>
             <h2 class="hero-subtitle">
-                Dịch vụ Máy chủ Vật lý
-                <br>Giá rẻ chất lượng cao
+                <span data-i18n="hero.subtitle1">Dịch vụ Máy chủ Vật lý</span>
+                <br><span data-i18n="hero.subtitle2">Giá rẻ chất lượng cao</span>
             </h2>
 
             <div class="hero-buttons">
                 <a href="https://discord.gg/tpserver" target="_blank" class="px-16 cyber-button primary-btn">
-                    <i class="fab fa-discord mr-3"></i>Discord</a>
+                    <i class="fab fa-discord mr-3"></i><span data-i18n="hero.discord">Discord</span></a>
                 <a href="https://fb.com/servertp" target="_blank" data-aos-delay="600" data-aos="fade-up"
                     class="px-16 cyber-button secondary-btn">
-                    <i class="fab fa-facebook-messenger mr-3"></i>Facebook</a>
+                    <i class="fab fa-facebook-messenger mr-3"></i><span data-i18n="hero.facebook">Facebook</span></a>
             </div>
         </div>
     </section>
@@ -172,19 +217,19 @@
             <div class="stats-grid">
                 <div class="stat-item">
                     <span class="stat-number">3500+</span>
-                    <span class="stat-label">Thành viên hoạt động</span>
+                    <span class="stat-label" data-i18n="stats.members">Thành viên hoạt động</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">365+</span>
-                    <span class="stat-label">Máy đang hoạt động</span>
+                    <span class="stat-label" data-i18n="stats.machines">Máy đang hoạt động</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">500+</span>
-                    <span class="stat-label">Khách hàng tích cực</span>
+                    <span class="stat-label" data-i18n="stats.customers">Khách hàng tích cực</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">12+</span>
-                    <span class="stat-label">Quốc gia khả dụng</span>
+                    <span class="stat-label" data-i18n="stats.countries">Quốc gia khả dụng</span>
                 </div>
             </div>
         </div>
@@ -195,54 +240,61 @@
     <section class="features fade-up" id="about">
         <div class="features-container">
             <div class="section-header">
-                <h2 class="section-title">Hệ Thống</h2>
-                <p class="section-subtitle">Tối ưu treo & render ổn định. Hoạt động bền bỉ 24/24
+                <h2 class="section-title" data-i18n="features.title">Hệ Thống</h2>
+                <p class="section-subtitle" data-i18n="features.subtitle">Tối ưu treo & render ổn định. Hoạt động bền bỉ
+                    24/24
                 </p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <img src="resources/images/feature-cpu.png" class="feature-icon" alt="Intel Xeon E5-2680v4">
-                    <h3>CPU Xeon</h3>
-                    <p>[Intel Xeon E5-2680v4 14 nhân 28 luồng] Intel Xeon cho hiệu suất đa luồng mạnh mẽ, xử lý mượt các
+                    <h3 data-i18n="features.cpu.title">CPU Xeon</h3>
+                    <p data-i18n="features.cpu.desc">[Intel Xeon E5-2680v4 14 nhân 28 luồng] Intel Xeon cho hiệu suất đa
+                        luồng mạnh mẽ, xử lý mượt các
                         tác vụ nặng, hoạt động ổn định suốt nhiều giờ.</p>
                 </div>
 
                 <div class="feature-card">
                     <img src="resources/images/feature-gpu.png" class="feature-icon"
                         alt="NVIDIA GeForce GTX 1070 1080 2060">
-                    <h3>NVIDIA GeForce</h3>
-                    <p>[GTX 1070/1080/2060] Card đồ họa NVIDIA tối ưu cho hiển thị đa nhiệm, đảm bảo hình ảnh mượt mà và
+                    <h3 data-i18n="features.gpu.title">NVIDIA GeForce</h3>
+                    <p data-i18n="features.gpu.desc">[GTX 1070/1080/2060] Card đồ họa NVIDIA tối ưu cho hiển thị đa
+                        nhiệm, đảm bảo hình ảnh mượt mà và
                         hiệu suất ổn định.</p>
                 </div>
 
                 <div class="feature-card">
                     <img src="resources/images/feature-ram.png" class="feature-icon" alt="RAM 128GB 2400 2133 MHz">
-                    <h3>RAM 2400/2133</h3>
-                    <p>[RAM 128GB 2400/2133 MHz] Bộ nhớ và bus cao lớn giúp chạy đồng thời nhiều ứng dụng và tiến trình
+                    <h3 data-i18n="features.ram.title">RAM 2400/2133</h3>
+                    <p data-i18n="features.ram.desc">[RAM 128GB 2400/2133 MHz] Bộ nhớ và bus cao lớn giúp chạy đồng thời
+                        nhiều ứng dụng và tiến trình
                         mà không
                         giật lag hay tràn bộ nhớ.</p>
                 </div>
 
                 <div class="feature-card">
                     <img src="resources/images/feature-ssd.png" class="feature-icon" alt="SSD 512GB 1TB tốc độ cao">
-                    <h3>Lưu trữ SSD</h3>
-                    <p>[512GB/1TB] Ổ SSD tốc độ cao giúp khởi động, tải dữ liệu và ứng dụng nhanh hơn, duy trì phản hồi
+                    <h3 data-i18n="features.storage.title">Lưu trữ SSD</h3>
+                    <p data-i18n="features.storage.desc">[512GB/1TB] Ổ SSD tốc độ cao giúp khởi động, tải dữ liệu và ứng
+                        dụng nhanh hơn, duy trì phản hồi
                         ổn định lâu dài.</p>
                 </div>
 
                 <div class="feature-card">
                     <img src="resources/images/feature-power.png" class="feature-icon"
                         alt="Nguồn Xigmatek X-Power III 650W">
-                    <h3>Nguồn 650W</h3>
-                    <p>[Xigmatek X-Power III] Cấp điện ổn định, vận hành bền bỉ 24/7, bảo vệ linh kiện khi tải cao và
+                    <h3 data-i18n="features.power.title">Nguồn 650W</h3>
+                    <p data-i18n="features.power.desc">[Xigmatek X-Power III] Cấp điện ổn định, vận hành bền bỉ 24/7,
+                        bảo vệ linh kiện khi tải cao và
                         giảm nguy cơ sụt áp.</p>
                 </div>
 
                 <div class="feature-card">
                     <img src="resources/images/feature-motherboard.png" class="feature-icon"
                         alt="Mainboard HUANANZHI X10X99-16D">
-                    <h3>X10X99-16D</h3>
-                    <p>[HUANANZHI X10X99-16D] Bo mạch chủ cao cấp tối ưu hiệu suất và nhiệt độ, đảm bảo hệ thống hoạt
+                    <h3 data-i18n="features.motherboard.title">X10X99-16D</h3>
+                    <p data-i18n="features.motherboard.desc">[HUANANZHI X10X99-16D] Bo mạch chủ cao cấp tối ưu hiệu suất
+                        và nhiệt độ, đảm bảo hệ thống hoạt
                         động ổn
                         định trong thời gian dài.</p>
                 </div>
@@ -254,14 +306,10 @@
     <!-- start Brands Section -->
     <section class="stats fade-up" id="brands">
         <div class="stats-container flex justify-between client-logos brand-logos">
-            <img src="resources/images/brand-1.webp" alt="client logos" class="img-fluid"
-                style="max-height: 64px; opacity: 0.6; scale: 1.6" />
-            <img src="resources/images/brand-2.webp" alt="client logos" class="mobile-big img-fluid"
-                style="max-width: 64px; opacity: 0.6; scale: 2" />
-            <img src="resources/images/brand-3.webp" alt="client logos " class="mobile-big img-fluid"
-                style="max-width: 64px; opacity: 0.6; scale: 2" />
-            <img src="resources/images/brand-4.webp" alt="client logos" class="img-fluid"
-                style="max-width: 64px; opacity: 0.6; scale: 1.6" />
+            <img src="resources/images/brand-1.webp" alt="client logos" class="img-fluid brand-logo brand-logo-1" />
+            <img src="resources/images/brand-2.webp" alt="client logos" class="img-fluid brand-logo brand-logo-2" />
+            <img src="resources/images/brand-3.webp" alt="client logos" class="img-fluid brand-logo brand-logo-3" />
+            <img src="resources/images/brand-4.webp" alt="client logos" class="img-fluid brand-logo brand-logo-4" />
         </div>
     </section>
     <!-- end Brands Section -->
@@ -270,33 +318,34 @@
     <section class="pricing fade-up" id="pricing">
         <div class="pricing-container">
             <div class="section-header">
-                <h2 class="section-title">Bảng Giá </h2>
-                <p class="section-subtitle">Chọn cấu hình phù hợp với nhu cầu của bạn</p>
+                <h2 class="section-title" data-i18n="pricing.title">Bảng Giá </h2>
+                <p class="section-subtitle" data-i18n="pricing.subtitle">Chọn cấu hình phù hợp với nhu cầu của bạn</p>
             </div>
             <div class="pricing-grid ">
+                <!-- Gói 1 -->
                 <div class="pricing-card">
-                    <div class="plan-name-subtitle">DÙNG THỬ</div>
-                    <div class="plan-name">CẤU HÌNH 1</div>
-                    <div class="plan-price">300.000 ₫</div>
-                    <div class="plan-period">/1 tuần</div>
+                    <div class="plan-name-subtitle" data-i18n="pricing.pack1.subtitle">DÙNG THỬ</div>
+                    <div class="plan-name" data-i18n="pricing.pack1.name">CẤU HÌNH 1</div>
+                    <div class="plan-price" data-i18n="pricing.pack1.price">300.000 ₫</div>
+                    <div class="plan-period" data-i18n="pricing.pack1.period">/1 tuần</div>
                     <ul class="plan-features">
                         <li>
-                            <strong>Chip:</strong> E2Xeon 2680v4
+                            <p data-i18n="pricing.pack1.config1">Chip: E2Xeon 2680v4</p>
                         </li>
                         <li>
-                            <strong>Core:</strong> 14 core / 28 vCore
+                            <p data-i18n="pricing.pack1.config2">Core: 14 core / 28 vCore</p>
                         </li>
                         <li>
-                            <strong>RAM:</strong> 64GB
+                            <p data-i18n="pricing.pack1.config3">RAM: 64GB</p>
                         </li>
                         <li>
-                            <strong>Disk:</strong> 256GB SSD NVMe
+                            <p data-i18n="pricing.pack1.config4">Disk: 256GB SSD NVMe</p>
                         </li>
                         <li>
-                            <strong>VGA:</strong> GTX 1060 3GB
+                            <p data-i18n="pricing.pack1.config5">VGA: GTX 1060 3GB</p>
                         </li>
                         <li>
-                            <strong>Giá tháng:</strong> 1.100.000 ₫
+                            <p data-i18n="pricing.pack1.config6">Giá tháng: 1.100.000 ₫</p>
                         </li>
                     </ul>
                     <div class="hero-buttons">
@@ -304,34 +353,36 @@
                             data-aos-delay="600">
                             <div class="btn-content">
                                 <img src="resources/images/logo-tp.webp" alt="TP Server" class="btn-icon">
-                                <span>Thuê Máy Chủ</span>
+                                <span data-i18n="pricing.btn">Thuê Máy Chủ</span>
                             </div>
                         </a>
                     </div>
                 </div>
+
+                <!-- Gói 2 -->
                 <div class="pricing-card">
-                    <div class="plan-name-subtitle">CƠ BẢN</div>
-                    <div class="plan-name">CẤU HÌNH 2</div>
-                    <div class="plan-price">400.000 ₫</div>
-                    <div class="plan-period">/1 tuần</div>
+                    <div class="plan-name-subtitle" data-i18n="pricing.pack2.subtitle">CƠ BẢN</div>
+                    <div class="plan-name" data-i18n="pricing.pack2.name">CẤU HÌNH 2</div>
+                    <div class="plan-price" data-i18n="pricing.pack2.price">400.000 ₫</div>
+                    <div class="plan-period" data-i18n="pricing.pack2.period">/1 tuần</div>
                     <ul class="plan-features">
                         <li>
-                            <strong>Chip:</strong> Xeon 2696v4
+                            <p data-i18n="pricing.pack2.config1">Chip: Xeon 2696v4</p>
                         </li>
                         <li>
-                            <strong>Core:</strong> 22 core / 44 vCore
+                            <p data-i18n="pricing.pack2.config2">Core: 22 core / 44 vCore</p>
                         </li>
                         <li>
-                            <strong>RAM:</strong> 128GB
+                            <p data-i18n="pricing.pack2.config3">RAM: 128GB</p>
                         </li>
                         <li>
-                            <strong>Disk:</strong> 256GB SSD NVMe
+                            <p data-i18n="pricing.pack2.config4">Disk: 256GB SSD NVMe</p>
                         </li>
                         <li>
-                            <strong>VGA:</strong> GTX 1060 6GB/ GTX 1070 8GB
+                            <p data-i18n="pricing.pack2.config5">VGA: GTX 1060 6GB/ GTX 1070 8GB</p>
                         </li>
                         <li>
-                            <strong>Giá tháng:</strong> 1.500.000 ₫
+                            <p data-i18n="pricing.pack2.config6">Giá tháng: 1.500.000 ₫</p>
                         </li>
                     </ul>
                     <div class="hero-buttons">
@@ -339,35 +390,38 @@
                             data-aos-delay="600">
                             <div class="btn-content">
                                 <img src="resources/images/logo-tp.webp" alt="TP Server" class="btn-icon">
-                                <span>Thuê Máy Chủ</span>
+                                <span data-i18n="pricing.btn">Thuê Máy Chủ</span>
                             </div>
                         </a>
                     </div>
                 </div>
+
+                <!-- Gói 3 -->
                 <div class="pricing-card featured">
-                    <div class="featured-tag">KHUYÊN DÙNG</div>
-                    <div class="plan-name-subtitle">TIÊU CHUẨN</div>
-                    <div class="plan-name">CẤU HÌNH 3</div>
-                    <div class="plan-price">450.000 ₫</div>
-                    <div class="plan-period">/1 tuần</div>
+                    <div class="featured-tag" data-i18n="pricing.pack3.featured">KHUYÊN DÙNG</div>
+                    <div class="plan-name-subtitle" data-i18n="pricing.pack3.subtitle">TIÊU CHUẨN</div>
+                    <div class="plan-name" data-i18n="pricing.pack3.name">CẤU HÌNH 3</div>
+                    <div class="plan-price" data-i18n="pricing.pack3.price">450.000 ₫</div>
+                    <div class="plan-period" data-i18n="pricing.pack3.period">/1 tuần</div>
                     <ul class="plan-features">
                         <li>
-                            <strong>Chip:</strong> Dual Xeon 2680v4
+                            <p data-i18n="pricing.pack3.config1">Chip: Dual Xeon 2680v4</p>
                         </li>
                         <li>
-                            <strong>Core:</strong> 28 core / 56 vCore
+                            <p data-i18n="pricing.pack3.config2">Core: 28 core / 56 vCore</p>
                         </li>
                         <li>
-                            <strong>RAM:</strong> 128GB
+                            <p data-i18n="pricing.pack3.config3">RAM: 128GB</p>
                         </li>
                         <li>
-                            <strong>Disk:</strong> 500GB SSD NVMe
+                            <p data-i18n="pricing.pack3.config4">Disk: 500GB SSD NVMe</p>
                         </li>
                         <li>
-                            <strong>VGA:</strong> GTX 1060 6GB/ RTX 2060 6GB hoặc GTX 1070 8GB
+                            <p data-i18n="pricing.pack3.config5">VGA: GTX 1060 6GB/ RTX 2060 6GB hoặc GTX 1070 8GB
+                            </p>
                         </li>
                         <li>
-                            <strong>Giá tháng:</strong> 1.700.000 ₫
+                            <p data-i18n="pricing.pack3.config6">Giá tháng: 1.700.000 ₫</p>
                         </li>
                     </ul>
                     <div class="hero-buttons">
@@ -375,34 +429,37 @@
                             data-aos-delay="600">
                             <div class="btn-content">
                                 <img src="resources/images/logo-tp.webp" alt="TP Server" class="btn-icon">
-                                <span>Thuê Máy Chủ</span>
+                                <span data-i18n="pricing.btn">Thuê Máy Chủ</span>
                             </div>
                         </a>
                     </div>
                 </div>
+
+                <!-- Gói 4 -->
                 <div class="pricing-card">
-                    <div class="plan-name-subtitle">NÂNG CAO</div>
-                    <div class="plan-name">CẤU HÌNH 4</div>
-                    <div class="plan-price">550.000 ₫</div>
-                    <div class="plan-period">/1 tuần</div>
+                    <div class="plan-name-subtitle" data-i18n="pricing.pack4.subtitle">NÂNG CAO</div>
+                    <div class="plan-name" data-i18n="pricing.pack4.name">CẤU HÌNH 4</div>
+                    <div class="plan-price" data-i18n="pricing.pack4.price">550.000 ₫</div>
+                    <div class="plan-period" data-i18n="pricing.pack4.period">/1 tuần</div>
                     <ul class="plan-features">
                         <li>
-                            <strong>Chip:</strong> Dual Xeon 2686v4
+                            <p data-i18n="pricing.pack4.config1">Chip: Dual Xeon 2686v4</p>
                         </li>
                         <li>
-                            <strong>Core:</strong> 36 core / 72 vCore
+                            <p data-i18n="pricing.pack4.config2">Core: 36 core / 72 vCore</p>
                         </li>
                         <li>
-                            <strong>RAM:</strong> 128GB
+                            <p data-i18n="pricing.pack4.config3">RAM: 128GB</p>
                         </li>
                         <li>
-                            <strong>Disk:</strong> 500GB SSD NVMe
+                            <p data-i18n="pricing.pack4.config4">Disk: 500GB SSD NVMe</p>
                         </li>
                         <li>
-                            <strong>VGA:</strong> GTX 1070 6GB/ RTX 2060 6GB hoặc GTX 1080 8GB
+                            <p data-i18n="pricing.pack4.config5">VGA: GTX 1070 6GB/ RTX 2060 6GB hoặc GTX 1080 8GB
+                            </p>
                         </li>
                         <li>
-                            <strong>Giá tháng:</strong> 2.000.000 ₫
+                            <p data-i18n="pricing.pack4.config6">Giá tháng: 2.000.000 ₫</p>
                         </li>
                     </ul>
                     <div class="hero-buttons">
@@ -410,34 +467,36 @@
                             data-aos-delay="600">
                             <div class="btn-content">
                                 <img src="resources/images/logo-tp.webp" alt="TP Server" class="btn-icon">
-                                <span>Thuê Máy Chủ</span>
+                                <span data-i18n="pricing.btn">Thuê Máy Chủ</span>
                             </div>
                         </a>
                     </div>
                 </div>
+
+                <!-- Gói 5 -->
                 <div class="pricing-card">
-                    <div class="plan-name-subtitle">CHUYÊN NGHIỆP</div>
-                    <div class="plan-name">CẤU HÌNH 5</div>
-                    <div class="plan-price">800.000 ₫</div>
-                    <div class="plan-period">/1 tuần</div>
+                    <div class="plan-name-subtitle" data-i18n="pricing.pack5.subtitle">CHUYÊN NGHIỆP</div>
+                    <div class="plan-name" data-i18n="pricing.pack5.name">CẤU HÌNH 5</div>
+                    <div class="plan-price" data-i18n="pricing.pack5.price">800.000 ₫</div>
+                    <div class="plan-period" data-i18n="pricing.pack5.period">/1 tuần</div>
                     <ul class="plan-features">
                         <li>
-                            <strong>Chip:</strong> Dual Xeon 2696v4
+                            <p data-i18n="pricing.pack5.config1">Chip: Dual Xeon 2696v4</p>
                         </li>
                         <li>
-                            <strong>Core:</strong> 44 core / 88 vCore
+                            <p data-i18n="pricing.pack5.config2">Core: 44 core / 88 vCore</p>
                         </li>
                         <li>
-                            <strong>RAM:</strong> 256GB
+                            <p data-i18n="pricing.pack5.config3">RAM: 256GB</p>
                         </li>
                         <li>
-                            <strong>Disk:</strong> 1TB SSD NVMe
+                            <p data-i18n="pricing.pack5.config4">Disk: 1TB SSD NVMe</p>
                         </li>
                         <li>
-                            <strong>VGA:</strong> RTX 3060 12GB
+                            <p data-i18n="pricing.pack5.config5">VGA: RTX 3060 12GB</p>
                         </li>
                         <li>
-                            <strong>Giá tháng:</strong> 3.000.000 ₫
+                            <p data-i18n="pricing.pack5.config6">Giá tháng: 3.000.000 ₫</p>
                         </li>
                     </ul>
                     <div class="hero-buttons">
@@ -445,12 +504,14 @@
                             data-aos-delay="600">
                             <div class="btn-content">
                                 <img src="resources/images/logo-tp.webp" alt="TP Server" class="btn-icon">
-                                <span>Thuê Máy Chủ</span>
+                                <span data-i18n="pricing.btn">Thuê Máy Chủ</span>
                             </div>
                         </a>
                     </div>
                 </div>
             </div>
+
+        </div>
         </div>
     </section>
     <!-- end Pricing Section -->
@@ -459,24 +520,25 @@
     <section class="p-8 testimonial-section fade-up">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Phản hồi</h2>
-                <p class="section-subtitle">Những đánh giá chân thật từ khách hàng chúng tôi</p>
+                <h2 class="section-title" data-i18n="testimonial.title">Phản hồi</h2>
+                <p class="section-subtitle" data-i18n="testimonial.subtitle">Những đánh giá chân thật từ khách hàng
+                    chúng tôi</p>
             </div>
             <div class="swiper testimonial-swiper">
                 <div class="swiper-wrapper">
-                    <!-- feedback-vi.html -->
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <div class="testimonial-text">
-                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
-                                <p>Mình từng dùng ugphone để treo game nhưng rất lag và hay văng, từ khi sử dụng đồ của
-                                    TPSV mình cảm thấy sang thẳng, không còn crash, mượt mà và support 24/24.</p>
+                                <p data-i18n="testimonial.item1.content">
+                                    Mình từng dùng ugphone để treo game nhưng rất lag và hay văng, từ khi sử dụng đồ của
+                                    TPSV mình cảm thấy sang thẳng, không còn crash, mượt mà và support 24/24.
+                                </p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="resources/images/logo-feedback-1.webp" alt="D.D.D" class="author-img">
                                 <div class="author-info">
-                                    <h4>D.D.D (Discord)</h4>
-                                    <span>Khách hàng thuê Máy chủ Vật lý 3</span>
+                                    <h4 data-i18n="testimonial.item1.name">D.D.D (Discord)</h4>
+                                    <span data-i18n="testimonial.item1.kind">Khách hàng thuê Máy chủ Vật lý 3</span>
                                 </div>
                             </div>
                         </div>
@@ -485,18 +547,16 @@
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <div class="testimonial-text">
-                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
-                                <p>TPSV is the best VPS provider I've ever used. The support is top-notch and the
+                                <p data-i18n="testimonial.item2.content">
+                                    TPSV is the best VPS provider I've ever used. The support is top-notch and the
                                     servers are always stable.<br>
-                                    <strong>[Bản dịch]</strong> TPSV là nhà cung cấp VPS tốt nhất mà tôi từng dùng. Hỗ
-                                    trợ cực kỳ nhanh và máy chủ luôn ổn định.
                                 </p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="resources/images/logo-feedback-2.webp" alt="dontworry311" class="author-img">
                                 <div class="author-info">
-                                    <h4>dontworry311 (Discord)</h4>
-                                    <span>Khách hàng thuê Máy chủ Vật lý 3</span>
+                                    <h4 data-i18n="testimonial.item2.name">dontworry311 (Discord)</h4>
+                                    <span data-i18n="testimonial.item2.kind">Khách hàng thuê Máy chủ Vật lý 3</span>
                                 </div>
                             </div>
                         </div>
@@ -505,17 +565,16 @@
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <div class="testimonial-text">
-                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
-                                <p>10/10 vps and support is so good.<br>
-                                    <strong>[Bản dịch]</strong> 10/10 VPS, dịch vụ hỗ trợ cực kỳ tốt.
+                                <p data-i18n="testimonial.item3.content">
+                                    10/10 vps and support is so good.<br>
                                 </p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="resources/images/logo-feedback-3.webp" alt="Thorfinn Karlsefni"
                                     class="author-img">
                                 <div class="author-info">
-                                    <h4>Thorfinn Karlsefni (Discord)</h4>
-                                    <span>Khách hàng thuê Máy chủ Vật lý 4</span>
+                                    <h4 data-i18n="testimonial.item3.name">Thorfinn Karlsefni (Discord)</h4>
+                                    <span data-i18n="testimonial.item3.kind">Khách hàng thuê Máy chủ Vật lý 4</span>
                                 </div>
                             </div>
                         </div>
@@ -524,18 +583,16 @@
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <div class="testimonial-text">
-                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
-                                <p>Best service I've ever had! The only defect is the lack of infinite stock of new
+                                <p data-i18n="testimonial.item4.content">
+                                    Best service I've ever had! The only defect is the lack of infinite stock of new
                                     machines.<br>
-                                    <strong>[Bản dịch]</strong> Dịch vụ tốt nhất tôi từng sử dụng! Điểm trừ duy nhất là
-                                    không có sẵn vô hạn máy mới.
                                 </p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="resources/images/logo-feedback-4.webp" alt="Maryto" class="author-img">
                                 <div class="author-info">
-                                    <h4>Maryto (Discord)</h4>
-                                    <span>Khách hàng thuê Máy chủ Vật lý 3</span>
+                                    <h4 data-i18n="testimonial.item4.name">Maryto (Discord)</h4>
+                                    <span data-i18n="testimonial.item4.kind">Khách hàng thuê Máy chủ Vật lý 3</span>
                                 </div>
                             </div>
                         </div>
@@ -544,19 +601,17 @@
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <div class="testimonial-text">
-                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
-                                <p>I currently have 10 VPS from them, simply very good, perfect service, they always
+                                <p data-i18n="testimonial.item5.content">
+                                    I currently have 10 VPS from them, simply very good, perfect service, they always
                                     help me and assist me with what is necessary, the best VPS on the market for
                                     sure.<br>
-                                    <strong>[Bản dịch]</strong> Tôi hiện có 10 VPS thuê ở đây, dịch vụ tuyệt vời, họ
-                                    luôn hỗ trợ tận tình. Chắc chắn là VPS tốt nhất trên thị trường.
                                 </p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="resources/images/logo-feedback-5.webp" alt="lim" class="author-img">
                                 <div class="author-info">
-                                    <h4>lim (Discord)</h4>
-                                    <span>Khách hàng thuê Máy chủ Vật lý 2</span>
+                                    <h4 data-i18n="testimonial.item5.name">lim (Discord)</h4>
+                                    <span data-i18n="testimonial.item5.kind">Khách hàng thuê Máy chủ Vật lý 2</span>
                                 </div>
                             </div>
                         </div>
@@ -565,14 +620,15 @@
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <div class="testimonial-text">
-                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
-                                <p>Shop tốt quá trời lun , hỗ trợ quá nhiệt tình cảm ơn shop.</p>
+                                <p data-i18n="testimonial.item6.content">
+                                    Shop tốt quá trời lun , hỗ trợ quá nhiệt tình cảm ơn shop.
+                                </p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="resources/images/logo-feedback-6.webp" alt="yeilqcs" class="author-img">
                                 <div class="author-info">
-                                    <h4>yeilqcs (Discord)</h4>
-                                    <span>Khách hàng thuê Máy chủ Vật lý 3</span>
+                                    <h4 data-i18n="testimonial.item6.name">yeilqcs (Discord)</h4>
+                                    <span data-i18n="testimonial.item6.kind">Khách hàng thuê Máy chủ Vật lý 3</span>
                                 </div>
                             </div>
                         </div>
@@ -581,18 +637,16 @@
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <div class="testimonial-text">
-                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
-                                <p>10/10 vps I have already rented many VPS servers here, and I have made a profit 100%
+                                <p data-i18n="testimonial.item7.content">
+                                    10/10 vps I have already rented many VPS servers here, and I have made a profit 100%
                                     of the time.<br>
-                                    <strong>[Bản dịch]</strong> 10/10 VPS, tôi đã thuê nhiều máy ở đây và luôn đạt hiệu
-                                    suất tối đa mỗi lần.
                                 </p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="resources/images/logo-feedback-7.webp" alt="Nays" class="author-img">
                                 <div class="author-info">
-                                    <h4>Nays (Discord)</h4>
-                                    <span>Khách hàng thuê Máy chủ Vật lý 1</span>
+                                    <h4 data-i18n="testimonial.item7.name">Nays (Discord)</h4>
+                                    <span data-i18n="testimonial.item7.kind">Khách hàng thuê Máy chủ Vật lý 1</span>
                                 </div>
                             </div>
                         </div>
@@ -601,14 +655,13 @@
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <div class="testimonial-text">
-                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
-                                <p>Tuyệt đấy. Support nhanh nhẹn.</p>
+                                <p data-i18n="testimonial.item8.content">Tuyệt đấy. Support nhanh nhẹn.</p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="resources/images/logo-feedback-8.webp" alt="0x936" class="author-img">
                                 <div class="author-info">
-                                    <h4>0x936 (Discord)</h4>
-                                    <span>Khách hàng thuê Máy chủ Vật lý 3</span>
+                                    <h4 data-i18n="testimonial.item8.name">0x936 (Discord)</h4>
+                                    <span data-i18n="testimonial.item8.kind">Khách hàng thuê Máy chủ Vật lý 3</span>
                                 </div>
                             </div>
                         </div>
@@ -617,14 +670,29 @@
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <div class="testimonial-text">
-                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
-                                <p>Support 10/10 + a chủ tốt tính + máy mạnh.</p>
+                                <p data-i18n="testimonial.item9.content">Support 10/10 + a chủ tốt tính + máy mạnh.</p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="resources/images/logo-feedback-9.webp" alt="Zero" class="author-img">
                                 <div class="author-info">
-                                    <h4>Zero (Discord)</h4>
-                                    <span>Khách hàng thuê Máy chủ Vật lý 4</span>
+                                    <h4 data-i18n="testimonial.item9.name">Zero (Discord)</h4>
+                                    <span data-i18n="testimonial.item9.kind">Khách hàng thuê Máy chủ Vật lý 4</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="testimonial-text">
+                                <p data-i18n="testimonial.item10.content">Good service, affordable vps, good customer
+                                    service.<br></p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="resources/images/logo-feedback-10.webp" alt="brick" class="author-img">
+                                <div class="author-info">
+                                    <h4 data-i18n="testimonial.item10.name">brick (Discord)</h4>
+                                    <span data-i18n="testimonial.item10.kind">Khách hàng thuê Máy chủ Vật lý 3</span>
                                 </div>
                             </div>
                         </div>
@@ -634,34 +702,16 @@
                         <div class="testimonial-item">
                             <div class="testimonial-text">
                                 <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
-                                <p>Good service, affordable vps, good customer service.<br>
-                                    <strong>[Bản dịch]</strong> Dịch vụ tốt, VPS giá hợp lý và chăm sóc khách hàng tận
-                                    tình.
+                                <p data-i18n="testimonial.item11.content">
+                                    Mình dùng server này để xử lý tự động và chạy nhiều tiến trình song song, cực kỳ ổn
+                                    định. Không còn cảnh bị disconnect giữa chừng nữa.
                                 </p>
-                            </div>
-                            <div class="testimonial-author">
-                                <img src="resources/images/logo-feedback-10.webp" alt="brick" class="author-img">
-                                <div class="author-info">
-                                    <h4>brick (Discord)</h4>
-                                    <span>Khách hàng thuê Máy chủ Vật lý 3</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <div class="testimonial-text">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-right"></i>
-                                </div>
-                                <p>Mình dùng server này để xử lý tự động và chạy nhiều tiến trình song song, cực kỳ ổn
-                                    định. Không còn cảnh bị disconnect giữa chừng nữa.</p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="resources/images/logo-feedback-11.webp" alt="N.P.L" class="author-img">
                                 <div class="author-info">
-                                    <h4>N.P.L (Discord)</h4>
-                                    <span>Khách hàng thuê Máy chủ vật lý 3</span>
+                                    <h4 data-i18n="testimonial.item11.name">N.P.L (Discord)</h4>
+                                    <span data-i18n="testimonial.item11.kind">Khách hàng thuê Máy chủ vật lý 3</span>
                                 </div>
                             </div>
                         </div>
@@ -670,18 +720,16 @@
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <div class="testimonial-text">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-right"></i>
-                                </div>
-                                <p>Fast response and very reliable performance.<br>
-                                    <strong>[Bản dịch]</strong> Phản hồi nhanh và hiệu năng cực kỳ ổn định.
+                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                                <p data-i18n="testimonial.item12.content">
+                                    Fast response and very reliable performance.<br>
                                 </p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="resources/images/logo-feedback-12.webp" alt="R.L" class="author-img">
                                 <div class="author-info">
-                                    <h4>R.L (Discord)</h4>
-                                    <span>Khách hàng thuê Máy chủ vật lý 2</span>
+                                    <h4 data-i18n="testimonial.item12.name">R.L (Discord)</h4>
+                                    <span data-i18n="testimonial.item12.kind">Khách hàng thuê Máy chủ vật lý 2</span>
                                 </div>
                             </div>
                         </div>
@@ -690,17 +738,17 @@
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <div class="testimonial-text">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-right"></i>
-                                </div>
-                                <p>Chạy cả tuần không restart mà vẫn ổn định, CPU không quá tải. Thích nhất là đội hỗ
-                                    trợ, hỏi là có người rep ngay.</p>
+                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                                <p data-i18n="testimonial.item13.content">
+                                    Chạy cả tuần không restart mà vẫn ổn định, CPU không quá tải. Thích nhất là đội hỗ
+                                    trợ, hỏi là có người rep ngay.
+                                </p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="resources/images/logo-feedback-13.webp" alt="T.N.K" class="author-img">
                                 <div class="author-info">
-                                    <h4>T.N.K (Discord)</h4>
-                                    <span>Khách hàng thuê Máy chủ vật lý 3</span>
+                                    <h4 data-i18n="testimonial.item13.name">T.N.K (Discord)</h4>
+                                    <span data-i18n="testimonial.item13.kind">Khách hàng thuê Máy chủ vật lý 3</span>
                                 </div>
                             </div>
                         </div>
@@ -709,17 +757,17 @@
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <div class="testimonial-text">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-right"></i>
-                                </div>
-                                <p>Server hoạt động liên tục 24/7, mình dùng để treo tool và chạy task nặng mà vẫn rất
-                                    mượt. Đúng là đáng tiền.</p>
+                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                                <p data-i18n="testimonial.item14.content">
+                                    Server hoạt động liên tục 24/7, mình dùng để treo tool và chạy task nặng mà vẫn rất
+                                    mượt. Đúng là đáng tiền.
+                                </p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="resources/images/logo-feedback-14.webp" alt="P.D.H" class="author-img">
                                 <div class="author-info">
-                                    <h4>P.D.H (Discord)</h4>
-                                    <span>Khách hàng thuê Máy chủ vật lý 3</span>
+                                    <h4 data-i18n="testimonial.item14.name">P.D.H (Discord)</h4>
+                                    <span data-i18n="testimonial.item14.kind">Khách hàng thuê Máy chủ vật lý 3</span>
                                 </div>
                             </div>
                         </div>
@@ -728,18 +776,17 @@
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <div class="testimonial-text">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-right"></i>
-                                </div>
-                                <p>Excellent uptime and great hardware quality.<br>
-                                    <strong>[Bản dịch]</strong> Thời gian hoạt động ổn định và phần cứng chất lượng cao.
+                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                                <p data-i18n="testimonial.item15.content">
+                                    Excellent uptime and great hardware quality.<br>Thời gian hoạt động ổn định và phần
+                                    cứng chất lượng cao.
                                 </p>
                             </div>
                             <div class="testimonial-author">
                                 <img src="resources/images/logo-feedback-15.webp" alt="M.J" class="author-img">
                                 <div class="author-info">
-                                    <h4>M.J (Discord)</h4>
-                                    <span>Khách hàng thuê Máy chủ vật lý 1</span>
+                                    <h4 data-i18n="testimonial.item15.name">M.J (Discord)</h4>
+                                    <span data-i18n="testimonial.item15.kind">Khách hàng thuê Máy chủ vật lý 1</span>
                                 </div>
                             </div>
                         </div>
@@ -747,37 +794,16 @@
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <div class="testimonial-text">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-right"></i>
-                                </div>
-                                <p>Mình dùng server này để xử lý tự động và chạy nhiều tiến trình song song, cực kỳ ổn
-                                    định. Không còn cảnh bị disconnect giữa chừng nữa.</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <img src="resources/images/logo-feedback-11.webp" alt="N.P.L" class="author-img">
-                                <div class="author-info">
-                                    <h4>N.P.L (Discord)</h4>
-                                    <span>Khách hàng thuê Máy chủ vật lý 3</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <div class="testimonial-text">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-right"></i>
-                                </div>
-                                <p>Fast response and very reliable performance.<br>
-                                    <strong>[Bản dịch]</strong> Phản hồi nhanh và hiệu năng cực kỳ ổn định.
+                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                                <p data-i18n="testimonial.item16.content">
+                                    Dịch vụ tuyệt vời, phản hồi cực nhanh, mình đã chuyển toàn bộ hệ thống sang đây.
                                 </p>
                             </div>
                             <div class="testimonial-author">
-                                <img src="resources/images/logo-feedback-12.webp" alt="R.L" class="author-img">
+                                <img src="resources/images/logo-feedback-16.webp" alt="H.N.T" class="author-img">
                                 <div class="author-info">
-                                    <h4>R.L (Discord)</h4>
-                                    <span>Khách hàng thuê Máy chủ vật lý 2</span>
+                                    <h4 data-i18n="testimonial.item16.name">H.N.T (Discord)</h4>
+                                    <span data-i18n="testimonial.item16.kind">Khách hàng thuê Máy chủ vật lý 2</span>
                                 </div>
                             </div>
                         </div>
@@ -786,56 +812,165 @@
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <div class="testimonial-text">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-right"></i>
-                                </div>
-                                <p>Chạy cả tuần không restart mà vẫn ổn định, CPU không quá tải. Thích nhất là đội hỗ
-                                    trợ, hỏi là có người rep ngay.</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <img src="resources/images/logo-feedback-13.webp" alt="T.N.K" class="author-img">
-                                <div class="author-info">
-                                    <h4>T.N.K (Discord)</h4>
-                                    <span>Khách hàng thuê Máy chủ vật lý 3</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <div class="testimonial-text">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-right"></i>
-                                </div>
-                                <p>Server hoạt động liên tục 24/7, mình dùng để treo tool và chạy task nặng mà vẫn rất
-                                    mượt. Đúng là đáng tiền.</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <img src="resources/images/logo-feedback-14.webp" alt="P.D.H" class="author-img">
-                                <div class="author-info">
-                                    <h4>P.D.H (Discord)</h4>
-                                    <span>Khách hàng thuê Máy chủ vật lý 3</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <div class="testimonial-text">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-right"></i>
-                                </div>
-                                <p>Excellent uptime and great hardware quality.<br>
-                                    <strong>[Bản dịch]</strong> Thời gian hoạt động ổn định và phần cứng chất lượng cao.
+                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                                <p data-i18n="testimonial.item17.content">
+                                    Mình chạy Node.js và Python API trên đây, uptime luôn 99.99%. Rất đáng tiền.
                                 </p>
                             </div>
                             <div class="testimonial-author">
-                                <img src="resources/images/logo-feedback-15.webp" alt="M.J" class="author-img">
+                                <img src="resources/images/logo-feedback-17.webp" alt="T.P.Q" class="author-img">
                                 <div class="author-info">
-                                    <h4>M.J (Discord)</h4>
-                                    <span>Khách hàng thuê Máy chủ vật lý 1</span>
+                                    <h4 data-i18n="testimonial.item17.name">T.P.Q (Discord)</h4>
+                                    <span data-i18n="testimonial.item17.kind">Khách hàng thuê Máy chủ vật lý 4</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="testimonial-text">
+                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                                <p data-i18n="testimonial.item18.content">
+                                    Tôi thuê để chạy AI training nhỏ, GPU mạnh ổn định và không bị giới hạn như cloud
+                                    khác.
+                                </p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="resources/images/logo-feedback-18.webp" alt="K.L" class="author-img">
+                                <div class="author-info">
+                                    <h4 data-i18n="testimonial.item18.name">K.L (Discord)</h4>
+                                    <span data-i18n="testimonial.item18.kind">Khách hàng thuê Máy chủ vật lý 3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="testimonial-text">
+                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                                <p data-i18n="testimonial.item19.content">
+                                    Giá rẻ mà chất lượng vượt mong đợi, lần đầu thấy chỗ nào xử lý ticket trong 5 phút.
+                                </p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="resources/images/logo-feedback-19.webp" alt="D.M.H" class="author-img">
+                                <div class="author-info">
+                                    <h4 data-i18n="testimonial.item19.name">D.M.H (Discord)</h4>
+                                    <span data-i18n="testimonial.item19.kind">Khách hàng thuê Máy chủ vật lý 2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="testimonial-text">
+                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                                <p data-i18n="testimonial.item20.content">
+                                    Rất ổn định, kể cả khi mình chạy nhiều tiến trình Docker nặng vẫn không drop.
+                                </p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="resources/images/logo-feedback-20.webp" alt="V.N.A" class="author-img">
+                                <div class="author-info">
+                                    <h4 data-i18n="testimonial.item20.name">V.N.A (Discord)</h4>
+                                    <span data-i18n="testimonial.item20.kind">Khách hàng thuê Máy chủ vật lý 3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="testimonial-text">
+                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                                <p data-i18n="testimonial.item21.content">
+                                    Mình thuê 3 VPS song song, cả 3 đều chạy ổn, chưa gặp downtime bao giờ.
+                                </p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="resources/images/logo-feedback-21.webp" alt="P.L.T" class="author-img">
+                                <div class="author-info">
+                                    <h4 data-i18n="testimonial.item21.name">P.L.T (Discord)</h4>
+                                    <span data-i18n="testimonial.item21.kind">Khách hàng thuê Máy chủ vật lý 2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="testimonial-text">
+                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                                <p data-i18n="testimonial.item22.content">
+                                    Tôi chạy web bán hàng và automation, TPSV cho tốc độ phản hồi cực nhanh, khách không
+                                    bị lag.
+                                </p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="resources/images/logo-feedback-22.webp" alt="Q.T" class="author-img">
+                                <div class="author-info">
+                                    <h4 data-i18n="testimonial.item22.name">Q.T (Discord)</h4>
+                                    <span data-i18n="testimonial.item22.kind">Khách hàng thuê Máy chủ vật lý 4</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="testimonial-text">
+                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                                <p data-i18n="testimonial.item23.content">
+                                    Excellent support and uptime. I’ve been a customer for over a year and never
+                                    disappointed.
+                                </p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="resources/images/logo-feedback-23.webp" alt="J.S" class="author-img">
+                                <div class="author-info">
+                                    <h4 data-i18n="testimonial.item23.name">J.S (Discord)</h4>
+                                    <span data-i18n="testimonial.item23.kind">Customer of Physical Server 3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="testimonial-text">
+                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                                <p data-i18n="testimonial.item24.content">
+                                    Mình từng thuê nhiều chỗ khác, nhưng chỉ TPSV là support tới nơi tới chốn và có
+                                    trách nhiệm.
+                                </p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="resources/images/logo-feedback-24.webp" alt="T.M.H" class="author-img">
+                                <div class="author-info">
+                                    <h4 data-i18n="testimonial.item24.name">T.M.H (Discord)</h4>
+                                    <span data-i18n="testimonial.item24.kind">Khách hàng thuê Máy chủ vật lý 3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="testimonial-text">
+                                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                                <p data-i18n="testimonial.item25.content">
+                                    I'm from Singapore, and the latency to TPSV servers is fantastic. Highly
+                                    recommended.
+                                </p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="resources/images/logo-feedback-25.webp" alt="A.L" class="author-img">
+                                <div class="author-info">
+                                    <h4 data-i18n="testimonial.item25.name">A.L (Discord)</h4>
+                                    <span data-i18n="testimonial.item25.kind">Customer of Physical Server 1</span>
                                 </div>
                             </div>
                         </div>
@@ -857,8 +992,9 @@
     <section class="p-8 contact-section fade-up" id="contact">
         <div class="container">
             <div class="p-8 contact-card">
-                <h2 class="contact-title">Liên Hệ Với Chúng Tôi</h2>
-                <p class="contact-subtitle">Chúng tôi luôn sẵn sàng 24/7 để hỗ trợ quý khách. Hãy chọn hình thức liên hệ
+                <h2 class="contact-title" data-i18n="contact.title">Liên Hệ Với Chúng Tôi</h2>
+                <p class="contact-subtitle" data-i18n="contact.subtitle">Chúng tôi luôn sẵn sàng 24/7 để hỗ trợ quý
+                    khách. Hãy chọn hình thức liên hệ
                     phù hợp nhất với bạn!</p>
 
                 <div class="contact-methods">
@@ -867,10 +1003,12 @@
                         <div class="contact-icon">
                             <i class="fab fa-facebook-messenger fa-2x"></i>
                         </div>
-                        <h3>Facebook Messenger</h3>
-                        <p>Nhắn tin trực tiếp với chúng tôi qua Facebook Messenger</p>
+                        <h3 data-i18n="contact.facebook.title">Facebook Messenger</h3>
+                        <p data-i18n="contact.facebook.subtitle">Nhắn tin trực tiếp với chúng tôi qua Facebook Messenger
+                        </p>
                         <a href="https://fb.com/servertp" target="_blank" class="contact-btn">
-                            <i class="fab fa-facebook-messenger"></i> Nhắn tin ngay
+                            <i class="fab fa-facebook-messenger"></i> <span data-i18n="contact.facebook.btn">Nhắn tin
+                                ngay</span>
                         </a>
                     </div>
                     <!-- Discord Contact -->
@@ -878,10 +1016,26 @@
                         <div class="contact-icon">
                             <i class="fab fa-discord fa-2x"></i>
                         </div>
-                        <h3>Discord</h3>
-                        <p>Kết nối với đội ngũ hỗ trợ của chúng tôi qua Discord để được tư vấn nhanh nhất</p>
+                        <h3 data-i18n="contact.discord.title">Discord</h3>
+                        <p data-i18n="contact.discord.subtitle">Kết nối với đội ngũ hỗ trợ của chúng tôi qua Discord để
+                            được tư vấn nhanh nhất</p>
                         <a href="https://discord.gg/tpserver" target="_blank" class="contact-btn">
-                            <i class="fab fa-discord"></i> Tạo ticket ngay
+                            <i class="fab fa-discord"></i> <span data-i18n="contact.discord.btn">Tạo ticket ngay</span>
+                        </a>
+                    </div>
+
+                    <!-- Shopee Contact -->
+                    <div class="contact-method animate__animated" data-aos="fade-up" data-aos-delay="200">
+                        <div class="contact-icon">
+                            <i class="fas fa-store fa-2x"></i>
+                        </div>
+                        <h3 data-i18n="contact.shopee.title">Shopee</h3>
+                        <p data-i18n="contact.shopee.subtitle">Ghé thăm cửa hàng của chúng tôi, chuyên các linh kiện, bo
+                            mạch giá rẻ chất lượng cao</p>
+                        <a href="https://shopee.vn/shop/162891857/recommendation-landing" target="_blank"
+                            class="contact-btn shopee-btn">
+                            <i class="fas fa-shopping-bag"></i> <span data-i18n="contact.shopee.btn">Ghé thăm
+                                Shopee</span>
                         </a>
                     </div>
                 </div>
@@ -894,30 +1048,31 @@
     <section class="p-8 faq-section fade-up" id="faq">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Hỏi Đáp</h2>
-                <p class="section-subtitle">Câu Hỏi Thường Gặp Về Dịch Vụ Máy Chủ Vật Lý</p>
+                <h2 class="section-title" data-i18n="faq.title">Hỏi Đáp</h2>
+                <p class="section-subtitle" data-i18n="faq.subtitle">Câu Hỏi Thường Gặp Về Dịch Vụ Máy Chủ Vật Lý</p>
             </div>
-
             <div class="accordion">
                 <!-- FAQ Item 1 -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h3>Làm thế nào để thuê máy?</h3>
+                        <h3 data-i18n="faq.item1.title">Làm thế nào để thuê máy?</h3>
                         <div class="accordion-icon"></div>
                     </div>
                     <div class="accordion-content">
-                        <p>Quý khách vui lòng liên hệ với chúng tôi qua Discord hoặc Facebook để được tư vấn và gửi yêu
+                        <p data-i18n="faq.item1.content">Quý khách vui lòng liên hệ với chúng tôi qua Discord hoặc
+                            Facebook để được tư vấn và gửi yêu
                             cầu thuê máy.</p>
                     </div>
                 </div>
                 <!-- FAQ Item 2 -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h3>Sau khi liên hệ, quy trình tiếp theo như thế nào?</h3>
+                        <h3 data-i18n="faq.item2.title">Sau khi liên hệ, quy trình tiếp theo như thế nào?</h3>
                         <div class="accordion-icon"></div>
                     </div>
                     <div class="accordion-content">
-                        <p>Đội ngũ hỗ trợ trực 24/7 sẽ tiếp nhận yêu cầu của quý khách. Sau khi xác nhận số lượng và cấu
+                        <p data-i18n="faq.item2.content">Đội ngũ hỗ trợ trực 24/7 sẽ tiếp nhận yêu cầu của quý khách.
+                            Sau khi xác nhận số lượng và cấu
                             hình máy cần thuê, quý khách tiến hành thanh toán. Ngay sau đó, đội kỹ thuật sẽ bắt đầu
                             chuẩn bị máy.</p>
                     </div>
@@ -925,11 +1080,12 @@
                 <!-- FAQ Item 3 -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h3>Bao lâu thì tôi nhận được máy sau khi thanh toán?</h3>
+                        <h3 data-i18n="faq.item3.title">Bao lâu thì tôi nhận được máy sau khi thanh toán?</h3>
                         <div class="accordion-icon"></div>
                     </div>
                     <div class="accordion-content">
-                        <p>Chỉ trong vòng 30 phút sau khi thanh toán thành công, đội kỹ thuật sẽ hoàn tất cài đặt và gửi
+                        <p data-i18n="faq.item3.content">Chỉ trong vòng 30 phút sau khi thanh toán thành công, đội kỹ
+                            thuật sẽ hoàn tất cài đặt và gửi
                             thông tin truy cập cho quý khách. Quý khách có thể kết nối qua Remote Desktop Connection
                             hoặc phương thức khác theo yêu cầu.</p>
                     </div>
@@ -937,11 +1093,12 @@
                 <!-- FAQ Item 4 -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h3>Tôi có thể dùng test thử trước khi thuê VPS không?</h3>
+                        <h3 data-i18n="faq.item4.title">Tôi có thể dùng test thử trước khi thuê VPS không?</h3>
                         <div class="accordion-icon"></div>
                     </div>
                     <div class="accordion-content">
-                        <p>Sau khi thanh toán, bạn luôn có 1 ngày để test thử VPS. Nếu không hài lòng trong ngày đầu sử
+                        <p data-i18n="faq.item4.content">Sau khi thanh toán, bạn luôn có 1 ngày để test thử VPS. Nếu
+                            không hài lòng trong ngày đầu sử
                             dụng, bạn hoàn toàn có thể yêu cầu hoàn tiền 100% với bất kì lí do nào. Nhằm tạo trải nghiệm
                             luôn sẵn hàng cho khách hàng và tránh khách thuê không thực sự cần làm giảm lượng máy sẵn
                             có, ảnh hưởng tới khách hàng cần thuê, chúng tôi ra chính sách này nhằm tránh sự ảnh hưởng
@@ -952,11 +1109,12 @@
                 <!-- FAQ Item 5 -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h3>Loại thanh toán nào sẽ được sử dụng?</h3>
+                        <h3 data-i18n="faq.item5.title">Loại thanh toán nào sẽ được sử dụng?</h3>
                         <div class="accordion-icon"></div>
                     </div>
                     <div class="accordion-content">
-                        <p>Quý khách sau khi nhận tư vấn và xác định thuê VPS, quý khách có thể dùng hình thức chuyển
+                        <p data-i18n="faq.item5.content">Quý khách sau khi nhận tư vấn và xác định thuê VPS, quý khách
+                            có thể dùng hình thức chuyển
                             khoản cho chúng tôi qua tài khoản ngân hàng.</p>
                     </div>
                 </div>
@@ -964,11 +1122,12 @@
                 <!-- FAQ Item 6 -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h3>Tôi có thể thay đổi cấu hình sau khi thuê không?</h3>
+                        <h3 data-i18n="faq.item6.title">Tôi có thể thay đổi cấu hình sau khi thuê không?</h3>
                         <div class="accordion-icon"></div>
                     </div>
                     <div class="accordion-content">
-                        <p>Trong khoảng thời gian sử dụng, nếu quý khách không hài lòng với cấu hình hiện tại, trong đợt
+                        <p data-i18n="faq.item6.content">Trong khoảng thời gian sử dụng, nếu quý khách không hài lòng
+                            với cấu hình hiện tại, trong đợt
                             thuê sau khi hết hạn, quý khách có thể đặt trước thuê máy cấu hình lớn hơn. Hiện tại chúng
                             tôi chưa hỗ trợ thay đổi cấu hình và bù tiền cho nâng cấp.</p>
                     </div>
@@ -982,17 +1141,23 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-links">
-                <a href="https://discord.com/channels/1175455974287482900/1175462383968333865" target="_blank">Chính
+                <a href="https://shopee.vn/shop/162891857/recommendation-landing" target="_blank"
+                    data-i18n="footer.shop">Ghé thăm cửa hàng</a>
+                <span class="footer-separator">•</span>
+                <a href="https://discord.com/channels/1175455974287482900/1175462383968333865" target="_blank"
+                    data-i18n="footer.policy">Chính
                     sách & điều khoản
                     dịch vụ</a>
                 <span class="footer-separator">•</span>
-                <a href="https://discord.com/channels/1175455974287482900/1287435596977148049" target="_blank">Hướng
+                <a href="https://discord.com/channels/1175455974287482900/1287435596977148049" target="_blank"
+                    data-i18n="footer.guidance">Hướng
                     dẫn</a>
                 <span class="footer-separator">•</span>
-                <a href="#contact">Liên hệ</a>
+                <a href="#contact" data-i18n="footer.contact">Liên hệ</a>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 TP Server . Website thuộc về <a href="#home">tpservers.com</a>.</p>
+                <p data-i18n="footer.copyright">&copy; 2025 TP Server . Website thuộc về tpservers.com.
+                </p>
             </div>
         </div>
     </footer>
@@ -1010,6 +1175,8 @@
     <script src="resources/js/swiper-custom.js"></script>
     <script src="resources/js/accordion-custom.js"></script>
     <script src="resources/js/back-to-top-button.js"></script>
+    <script src="resources/js/language-switcher.js"></script>
+    <script src="resources/js/language-dropdown.js"></script>
 
     <!-- Initialize AOS (Animate On Scroll) -->
     <script>

@@ -1,126 +1,297 @@
-// Initialize mobile menu functionality
-function initializeMobileMenu() {
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-    const mobileMenuClose = document.getElementById('mobileMenuClose');
-    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-nav a');
-    const mobileMenuCta = document.querySelector('.mobile-menu-cta');
-    const mobileMenuCtaButton = document.querySelector('.mobile-menu-cta a');
-    const mobileMenuLogo = document.querySelector('.mobile-menu-logo');
+/**
+ * Modern Mobile Menu
+ * - Enhanced with better performance and accessibility
+ * - Uses event delegation for dynamic elements
+ * - Adds keyboard navigation support
+ */
+const MobileMenu = (() => {
+    // Cache DOM elements
+    const selectors = {
+        menu: '#mobileMenu',
+        menuBtn: '#mobileMenuBtn',
+        closeBtn: '#mobileMenuClose',
+        overlay: '#mobileMenuOverlay',
+        navLinks: '.mobile-menu-nav a',
+        activeClass: 'active',
+        noScrollClass: 'no-scroll',
+    };
 
-    // Check if essential elements exist
-    if (
-        !mobileMenuBtn ||
-        !mobileMenu ||
-        !mobileMenuOverlay ||
-        !mobileMenuClose
-    ) {
-        return;
-    }
+    // State
+    let isOpen = false;
+    let firstFocusableElement = null;
+    let lastFocusableElement = null;
 
-    function openMobileMenu() {
-        mobileMenuBtn.classList.add('active');
-        mobileMenu.classList.add('active');
-        mobileMenuOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
+    // Initialize the mobile menu
+    const init = () => {
+        try {
+            // Check for required elements
+            const requiredElements = [
+                document.querySelector(selectors.menu),
+                document.querySelector(selectors.overlay),
+                document.querySelector(selectors.menuBtn),
+            ];
 
-        // Trigger staggered animations via delay
-        mobileMenuLinks.forEach((link, index) => {
-            if (link) {
-                link.style.animationDelay = `${0.25 + index * 0.1}s`;
+            if (requiredElements.some((el) => !el)) {
+                console.warn('Mobile menu: Required elements not found', {
+                    menu: selectors.menu,
+                    overlay: selectors.overlay,
+                    menuBtn: selectors.menuBtn,
+                });
+                return;
             }
+
+            // Set up event listeners
+            setupEventListeners();
+
+            // Set initial state
+            document.body.classList.add('js-mobile-menu-initialized');
+        } catch (error) {
+            console.error('Error initializing mobile menu:', error);
+        }
+    };
+
+    // Set up all event listeners
+    const setupEventListeners = () => {
+        const { menuBtn, menu, overlay, closeBtn, navLinks } = selectors;
+
+        // Toggle menu button
+        const menuButton = document.querySelector(menuBtn);
+        if (!menuButton) {
+            console.warn('Menu button not found:', menuBtn);
+            return;
+        }
+        menuButton.addEventListener('click', toggleMenu, { passive: false });
+
+        // Overlay
+        const overlayElement = document.querySelector(overlay);
+        if (overlayElement) {
+            overlayElement.addEventListener('click', closeMenu, {
+                passive: true,
+            });
+        } else {
+            console.warn('Overlay not found:', overlay);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', handleKeyDown, { passive: true });
+
+        // Close on resize (if menu is open and we cross the mobile breakpoint)
+        window.addEventListener('resize', () => handleResize(), {
+            passive: true,
         });
 
-        if (mobileMenuCta) {
-            mobileMenuCta.style.animationDelay = '0.5s';
+        // Close menu when clicking on nav links
+        if (navLinks) {
+            const navLinksElements = document.querySelectorAll(navLinks);
+            if (navLinksElements.length > 0) {
+                navLinksElements.forEach((link) => {
+                    link.addEventListener('click', closeMenu, {
+                        passive: true,
+                    });
+                });
+            } else {
+                console.warn(
+                    'No navigation links found with selector:',
+                    navLinks
+                );
+            }
         }
-    }
+    };
 
-    function closeMobileMenu() {
-        mobileMenuBtn.classList.remove('active');
-        mobileMenu.classList.remove('active');
-        mobileMenuOverlay.classList.remove('active');
-        document.body.style.overflow = '';
+    // Toggle menu state
+    const toggleMenu = (e) => {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        isOpen ? closeMenu() : openMenu();
+    };
 
-        // Clear animation delays
-        mobileMenuLinks.forEach((link) => {
+    // Open the mobile menu
+    const openMenu = () => {
+        if (isOpen) return;
+
+        const { menuBtn, menu, overlay, activeClass, noScrollClass } =
+            selectors;
+        const menuEl = document.querySelector(menu);
+
+        // Add active classes
+        document.querySelector(menuBtn).classList.add(activeClass);
+        menuEl.classList.add(activeClass);
+        document.querySelector(overlay).classList.add(activeClass);
+        document.body.classList.add(noScrollClass);
+
+        // Set focus to first focusable element
+        const focusableElements = getFocusableElements(menuEl);
+        if (focusableElements.length > 0) {
+            firstFocusableElement = focusableElements[0];
+            lastFocusableElement =
+                focusableElements[focusableElements.length - 1];
+            setTimeout(() => firstFocusableElement.focus(), 100);
+        }
+
+        // Animate menu items
+        animateMenuItems();
+
+        isOpen = true;
+
+        // Dispatch custom event
+        document.dispatchEvent(new CustomEvent('mobileMenu:opened'));
+    };
+
+    // Close the mobile menu
+    const closeMenu = () => {
+        if (!isOpen) return;
+
+        const { menuBtn, menu, overlay, activeClass, noScrollClass } =
+            selectors;
+
+        // Remove active classes
+        document.querySelector(menuBtn).classList.remove(activeClass);
+        document.querySelector(menu).classList.remove(activeClass);
+        document.querySelector(overlay).classList.remove(activeClass);
+        document.body.classList.remove(noScrollClass);
+
+        // Return focus to menu button
+        document.querySelector(menuBtn).focus();
+
+        isOpen = false;
+
+        // Dispatch custom event
+        document.dispatchEvent(new CustomEvent('mobileMenu:closed'));
+    };
+
+    // Handle keyboard navigation
+    const handleKeyDown = (e) => {
+        if (!isOpen) return;
+
+        const { key } = e;
+        const activeElement = document.activeElement;
+
+        // Close on Escape
+        if (key === 'Escape') {
+            e.preventDefault();
+            closeMenu();
+            return;
+        }
+
+        // Handle tab navigation within menu
+        if (key === 'Tab') {
+            if (e.shiftKey) {
+                if (activeElement === firstFocusableElement) {
+                    e.preventDefault();
+                    lastFocusableElement.focus();
+                }
+            } else {
+                if (activeElement === lastFocusableElement) {
+                    e.preventDefault();
+                    firstFocusableElement.focus();
+                }
+            }
+        }
+    };
+
+    // Get all focusable elements within an element
+    const getFocusableElements = (element) => {
+        return [
+            ...element.querySelectorAll(
+                'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            ),
+        ].filter(
+            (el) =>
+                !el.hasAttribute('disabled') && !el.getAttribute('aria-hidden')
+        );
+    };
+
+    // Animate menu items with staggered delay
+    const animateMenuItems = () => {
+        const { navLinks, cta } = selectors;
+        const links = document.querySelectorAll(navLinks);
+        const ctaElement = document.querySelector(cta);
+
+        // Reset animations
+        links.forEach((link) => {
+            link.style.animation = 'none';
+            link.offsetHeight; // Trigger reflow
+            link.style.animation = '';
             link.style.animationDelay = '';
         });
-        if (mobileMenuCta) {
-            mobileMenuCta.style.animationDelay = '';
+
+        // Set staggered delays
+        links.forEach((link, index) => {
+            link.style.animationDelay = `${0.25 + index * 0.1}s`;
+        });
+
+        // Animate CTA if exists
+        if (ctaElement) {
+            ctaElement.style.animation = 'none';
+            ctaElement.offsetHeight; // Trigger reflow
+            ctaElement.style.animation = '';
+            ctaElement.style.animationDelay = '0.5s';
         }
-    }
-
-    // Toggle mobile menu
-    mobileMenuBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        if (mobileMenu.classList.contains('active')) {
-            closeMobileMenu();
-        } else {
-            openMobileMenu();
-        }
-    });
-
-    // Close mobile menu
-    mobileMenuClose.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        closeMobileMenu();
-    });
-
-    mobileMenuOverlay.addEventListener('click', (e) => {
-        e.stopPropagation();
-        closeMobileMenu();
-    });
-
-    // Close menu when clicking on navigation links
-    mobileMenuLinks.forEach((link) => {
-        if (link) {
-            link.addEventListener('click', () => {
-                closeMobileMenu();
-            });
-        }
-    });
-
-    // Close menu when clicking on CTA button
-    if (mobileMenuCtaButton) {
-        mobileMenuCtaButton.addEventListener('click', (e) => {
-            if (mobileMenuCtaButton.getAttribute('href') === '#') {
-                e.preventDefault();
+    };
+    // Handle window resize
+    const handleResize = () => {
+        clearTimeout(window.mobileMenuResizeTimer);
+        window.mobileMenuResizeTimer = setTimeout(() => {
+            if (isOpen && window.innerWidth >= 1024) {
+                closeMenu();
             }
-            closeMobileMenu();
-        });
-    }
+        }, 250);
+    };
 
-    // Close menu when clicking on logo
-    if (mobileMenuLogo) {
-        mobileMenuLogo.addEventListener('click', () => {
-            closeMobileMenu();
-        });
-    }
-
-    // Close mobile menu on escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-            closeMobileMenu();
+    // Public API
+    return {
+        init,
+        open: openMenu,
+        close: closeMenu,
+        toggle: toggleMenu,
+        isOpen: () => isOpen,
+        handleResize,
+    };
+})();
+// Handle window resize
+const handleResize = () => {
+    clearTimeout(window.mobileMenuResizeTimer);
+    window.mobileMenuResizeTimer = setTimeout(() => {
+        if (isOpen && window.innerWidth >= 1024) {
+            closeMenu();
         }
-    });
+    }, 250);
+    // Public API
+    return {
+        init,
+        open: openMenu,
+        close: closeMenu,
+        toggle: toggleMenu,
+        isOpen: () => isOpen,
+        handleResize,
+    };
+};
+// Initialize all components
+const initAll = () => {
+    // Initialize mobile menu
+    MobileMenu.init();
 
-    // Prevent body scroll when menu is open
-    if (mobileMenu) {
-        mobileMenu.addEventListener('touchmove', (e) => {
-            e.stopPropagation();
-        });
-    }
+    // Remove the window resize event listener if it was added globally
+    window.removeEventListener('resize', handleResize);
+
+    // Add the resize handler through the MobileMenu's API
+    window.addEventListener('resize', () => MobileMenu.handleResize(), {
+        passive: true,
+    });
+};
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAll);
+} else {
+    // DOM already loaded, initialize immediately
+    initAll();
 }
 
-// Initialize mobile menu when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeMobileMenu);
-} else {
-    initializeMobileMenu();
+// Export for potential module usage
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { MobileMenu, initAll };
 }
 
 // Smooth scrolling
@@ -265,7 +436,9 @@ setInterval(() => {
     document.body.appendChild(tempElement);
 
     setTimeout(() => {
-        document.body.removeChild(tempElement);
+        if (tempElement && tempElement.parentNode === document.body) {
+            document.body.removeChild(tempElement);
+        }
     }, 3000);
 }, 5000);
 

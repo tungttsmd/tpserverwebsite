@@ -1,0 +1,309 @@
+{
+    "language": "English",
+    "language.vietnamese": "Tiếng Việt",
+    "language.english": "English",
+    "nav": {
+        "home": "HOME",
+        "features": "FEATURES",
+        "pricing": "PRICING",
+        "testimonials": "TESTIMONIALS",
+        "faq": "FAQ",
+        "contact": "CONTACT",
+        "shop": "SHOP",
+        "cta": "RENT DEDICATED SERVER NOW"
+    },
+    "hero": {
+        "subtitle1": "Dedicated Server",
+        "subtitle2": "High Quality, Affordable Price",
+        "discord": "Discord",
+        "facebook": "Facebook"
+    },
+    "stats": {
+        "members": "Active Members",
+        "machines": "Active Machines",
+        "customers": "Active Customers",
+        "countries": "Available Countries"
+    },
+    "features": {
+        "title": "System",
+        "subtitle": "Optimized for stable rendering & 24/7 operation",
+        "cpu": {
+            "title": "Xeon CPU",
+            "desc": "[Intel Xeon E5-2680v4 14-core 28-thread] Intel Xeon delivers powerful multi-threading performance, smooth handling of heavy tasks, and stable operation for extended periods."
+        },
+        "gpu": {
+            "title": "NVIDIA GeForce",
+            "desc": "[GTX 1070/1080/2060] NVIDIA graphics card optimized for multitasking, ensuring smooth visuals and stable performance."
+        },
+        "ram": {
+            "title": "DDR4 RAM",
+            "desc": "[32GB/64GB] High-capacity, high-speed memory for smooth multitasking, optimized for heavy workloads and running multiple applications simultaneously."
+        },
+        "storage": {
+            "title": "SSD Storage",
+            "desc": "[500GB/1TB] High-speed solid-state drive for fast system boot, quick application loading, and enhanced durability."
+        },
+        "power": {
+            "title": "650W Power",
+            "desc": "[Xigmatek X-Power III] Stable power supply, 24/7 operation, protects components during high load and reduces voltage drop risk."
+        },
+        "motherboard": {
+            "title": "X10X99-16D",
+            "desc": "[HUANANZHI X10X99-16D] High-end motherboard optimized for performance and temperature, ensuring long-term system stability."
+        }
+    },
+    "pricing": {
+        "title": "Pricing",
+        "subtitle": "Choose the configuration that suits your needs",
+        "pack1": {
+            "subtitle": "TRIAL",
+            "name": "OPTION 1",
+            "price": "12$",
+            "period": "/week",
+            "config1": "Chip: E2Xeon 2680v4",
+            "config2": "Core: 14 core / 28 vCore",
+            "config3": "RAM: 64GB",
+            "config4": "Disk: 256GB SSD NVMe",
+            "config5": "VGA: GTX 1060 3GB",
+            "config6": "Monthly price: 43$"
+        },
+        "pack2": {
+            "subtitle": "BASIC",
+            "name": "OPTION 2",
+            "price": "16$",
+            "period": "/week",
+            "config1": "Chip: Xeon 2696v4",
+            "config2": "Core: 22 core / 44 vCore",
+            "config3": "RAM: 128GB",
+            "config4": "Disk: 256GB SSD NVMe",
+            "config5": "VGA: GTX 1060 6GB/ GTX 1070 8GB",
+            "config6": "Monthly price: 60$"
+        },
+        "pack3": {
+            "featured": "RECOMMENDED",
+            "subtitle": "STANDARD",
+            "name": "OPTION 3",
+            "price": "18$",
+            "period": "/week",
+            "config1": "Chip: Dual Xeon 2680v4",
+            "config2": "Core: 28 core / 56 vCore",
+            "config3": "RAM: 128GB",
+            "config4": "Disk: 500GB SSD NVMe",
+            "config5": "VGA: GTX 1060 6GB/ RTX 2060 6GB or GTX 1070 8GB",
+            "config6": "Monthly price: 67$"
+        },
+        "pack4": {
+            "subtitle": "ADVANCED",
+            "name": "OPTION 4",
+            "price": "22$",
+            "period": "/week",
+            "config1": "Chip: Dual Xeon 2686v4",
+            "config2": "Core: 36 core / 72 vCore",
+            "config3": "RAM: 128GB",
+            "config4": "Disk: 500GB SSD NVMe",
+            "config5": "VGA: GTX 1070 6GB/ RTX 2060 6GB or GTX 1080 8GB",
+            "config6": "Monthly price: 80$"
+        },
+        "pack5": {
+            "subtitle": "PROFESSIONAL",
+            "name": "OPTION 5",
+            "price": "31$",
+            "period": "/week",
+            "config1": "Chip: Dual Xeon 2696v4",
+            "config2": "Core: 44 core / 88 vCore",
+            "config3": "RAM: 256GB",
+            "config4": "Disk: 1TB SSD NVMe",
+            "config5": "VGA: RTX 3060 12GB",
+            "config6": "Monthly price: 117$"
+        },
+        "btn": "Rent Server"
+    },
+    "testimonial": {
+        "title": "Testimonials",
+        "subtitle": "Genuine feedback from our customers",
+        "item1": {
+            "content": "I used to use ugphone for gaming but it was very laggy and often crashed. Since switching to TPSV, everything has been smooth with no crashes and 24/7 support.",
+            "name": "D.D.D (Discord)",
+            "kind": "Dedicated Server 3 Customer"
+        },
+        "item2": {
+            "content": "TPSV is the best Dedicated Server provider I've ever used. The support is top-notch and the servers are always stable.",
+            "name": "dontworry311 (Discord)",
+            "kind": "Dedicated Server 3 Customer"
+        },
+        "item3": {
+            "content": "10/10 Dedicated Server and the support is excellent.",
+            "name": "Thorfinn Karlsefni (Discord)",
+            "kind": "Dedicated Server 4 Customer"
+        },
+        "item4": {
+            "content": "Best service I've ever had! The only drawback is the lack of infinite stock of new machines.",
+            "name": "Maryto (Discord)",
+            "kind": "Dedicated Server 3 Customer"
+        },
+        "item5": {
+            "content": "I currently have 10 Dedicated Server from them — simply excellent. Perfect service, they always assist me when needed. The best Dedicated Server on the market for sure.",
+            "name": "lim (Discord)",
+            "kind": "Dedicated Server 2 Customer"
+        },
+        "item6": {
+            "content": "Amazing provider, support is extremely enthusiastic. Thank you!",
+            "name": "yeilqcs (Discord)",
+            "kind": "Dedicated Server 3 Customer"
+        },
+        "item7": {
+            "content": "10/10 Dedicated Server. I've rented many servers here and made profit 100% of the time.",
+            "name": "Nays (Discord)",
+            "kind": "Dedicated Server 1 Customer"
+        },
+        "item8": {
+            "content": "Awesome. Very responsive support.",
+            "name": "0x936 (Discord)",
+            "kind": "Dedicated Server 3 Customer"
+        },
+        "item9": {
+            "content": "10/10 support + friendly owner + powerful server.",
+            "name": "Zero (Discord)",
+            "kind": "Dedicated Server 4 Customer"
+        },
+        "item10": {
+            "content": "Good service, affordable Dedicated Server, great customer support.",
+            "name": "brick (Discord)",
+            "kind": "Dedicated Server 3 Customer"
+        },
+        "item11": {
+            "content": "I use this server for automation and running multiple parallel processes — extremely stable. No more random disconnections.",
+            "name": "N.P.L (Discord)",
+            "kind": "Dedicated Server 3 Customer"
+        },
+        "item12": {
+            "content": "Fast response and very reliable performance.",
+            "name": "R.L (Discord)",
+            "kind": "Dedicated Server 2 Customer"
+        },
+        "item13": {
+            "content": "Runs for an entire week without restart, CPU never overloads. What I love most is the support team — always responds instantly.",
+            "name": "T.N.K (Discord)",
+            "kind": "Dedicated Server 3 Customer"
+        },
+        "item14": {
+            "content": "The server runs 24/7. I use it to run heavy tools and tasks and it's still very smooth. Definitely worth the price.",
+            "name": "P.D.H (Discord)",
+            "kind": "Dedicated Server 3 Customer"
+        },
+        "item15": {
+            "content": "Excellent uptime and great hardware quality. Stable operation and high-quality hardware.",
+            "name": "M.J (Discord)",
+            "kind": "Dedicated Server 1 Customer"
+        },
+        "item16": {
+            "content": "Excellent service, lightning-fast response. I’ve migrated my entire system here.",
+            "name": "H.N.T (Discord)",
+            "kind": "Dedicated Server 2 Customer"
+        },
+        "item17": {
+            "content": "I run Node.js and Python API here. Uptime is always 99.99%. Totally worth the investment.",
+            "name": "T.P.Q (Discord)",
+            "kind": "Dedicated Server 4 Customer"
+        },
+        "item18": {
+            "content": "I rented this for small AI training tasks. The GPU is strong and stable, without the limitations of other clouds.",
+            "name": "K.L (Discord)",
+            "kind": "Dedicated Server 3 Customer"
+        },
+        "item19": {
+            "content": "The server runs stably without lag or crashes like others. Support is enthusiastic. Very satisfied.",
+            "name": "L.V.H (Discord)",
+            "kind": "Dedicated Server 2 Customer"
+        },
+        "item20": {
+            "content": "Affordable pricing, powerful specs — perfect for running multiple apps at once. The support team is very professional.",
+            "name": "N.T.K (Discord)",
+            "kind": "Dedicated Server 3 Customer"
+        },
+        "item21": {
+            "content": "I use it to render 4K videos — much faster processing than on my personal PC. Very satisfied with the service.",
+            "name": "P.V.D (Discord)",
+            "kind": "Dedicated Server 4 Customer"
+        },
+        "item22": {
+            "content": "99.9% uptime exactly as promised. Haven’t experienced a single issue throughout usage.",
+            "name": "T.M.H (Discord)",
+            "kind": "Dedicated Server 2 Customer"
+        },
+        "item23": {
+            "content": "Powerful server with stable connection — perfect for high-performance projects.",
+            "name": "N.V.T (Discord)",
+            "kind": "Dedicated Server 3 Customer"
+        },
+        "item24": {
+            "content": "I use it to run trading bots — operates non-stop 24/7. Technical support is fast and professional.",
+            "name": "L.Q.M (Discord)",
+            "kind": "Dedicated Server 1 Customer"
+        },
+        "item25": {
+            "content": "I'm from Singapore, and the latency to TPSV servers is fantastic. Highly recommended.",
+            "name": "A.L (Discord)",
+            "kind": "Dedicated Server 1 Customer"
+        }
+    },
+    "contact": {
+        "title": "Contact Us",
+        "subtitle": "For any inquiries, please feel free to contact us",
+        "name": "Full Name",
+        "email": "Email",
+        "message": "Message",
+        "send": "Send Message",
+        "facebook": {
+            "title": "Facebook Messenger",
+            "subtitle": "Message us directly via Facebook Messenger",
+            "btn": "Message Now"
+        },
+        "discord": {
+            "title": "Discord",
+            "subtitle": "Connect with our support team on Discord for the fastest assistance",
+            "btn": "Create Ticket"
+        },
+        "shopee": {
+            "title": "Shopee",
+            "subtitle": "Visit our store for affordable, high-quality components and motherboards",
+            "btn": "Visit Shopee"
+        }
+    },
+    "faq": {
+        "title": "FAQ",
+        "subtitle": "Frequently Asked Questions About Our Dedicated Server Services",
+        "item1": {
+            "title": "How to rent a server?",
+            "content": "Please contact us via Discord or Facebook for consultation and rental requests."
+        },
+        "item2": {
+            "title": "What's the process after contacting?",
+            "content": "Our 24/7 support team will receive your request. After confirming the quantity and configuration needed, you can proceed with payment. Our technical team will then prepare your server."
+        },
+        "item3": {
+            "title": "How soon will I receive my server after payment?",
+            "content": "Within just 30 minutes after successful payment, our technical team will complete the setup and send you the access information. You can connect via Remote Desktop Connection or other requested methods."
+        },
+        "item4": {
+            "title": "Can I try before renting a Dedicated Server?",
+            "content": "After payment, you always have 1 day to test the Dedicated Server. If you're not satisfied during the first day of use, you can request a 100% refund for any reason. This policy ensures we maintain server availability for all customers."
+        },
+        "item5": {
+            "title": "What payment methods are accepted?",
+            "content": "After consulting and deciding to rent a Dedicated Server, you can ask our support team to help you transfer money to our account."
+        },
+        "item6": {
+            "title": "Can I change the configuration after renting?",
+            "content": "During the rental period, if you're not satisfied with the current configuration, you can choose a higher configuration for your next rental period after the current one expires. We currently don't support configuration changes with price adjustments for upgrades."
+        }
+    },
+    "footer": {
+        "shop": "Visit Store",
+        "policy": "Policies & Terms of Service",
+        "guidance": "Guidance",
+        "contact": "Contact",
+        "home": "tpservers.com",
+        "copyright": "© 2025 TP Server. Website belongs to tpservers.com"
+    }
+}

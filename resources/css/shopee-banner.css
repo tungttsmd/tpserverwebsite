@@ -1,0 +1,67 @@
+/* Shopee Banner Styles */
+.shopee-banner {
+    display: block;
+    background: linear-gradient(135deg, #ff5c00, #ff1f1f);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(255, 92, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.shopee-banner:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 92, 0, 0.4);
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.banner-content i {
+    font-size: 1.5rem;
+}
+
+.banner-content i:last-child {
+    margin-left: 10px;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.shopee-banner:hover .banner-content i:last-child {
+    transform: translateX(5px);
+}
+
+/* Floating Reference Button */
+.floating-reference-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #ff5c00, #ff1f1f);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.floating-reference-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.floating-reference-btn i {
+    font-size: 1.2rem;
+}

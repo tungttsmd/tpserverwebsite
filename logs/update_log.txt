@@ -8,4 +8,7 @@ v1d1 (05/10/2025):
  - Cập nhật lại pricing.css, chỉnh sửa lại max-width cho pricing-grid
  - Sửa bố cục responsive cho pricing-grid và các section khác
  - Nâng từ 7 lên 25 feedback
+ - Cập nhật lại index.html, thêm link chính sách bảo mật và điều khoản dịch vụ
+ - Tạo băng rôn cho section trên contact trỏ về shopee
  - Tạo thêm store.html
+ - Phiên dịch tiếng Việt/English và tạo chức năng chuyển đổi qua lại 2 ngôn ngữ
