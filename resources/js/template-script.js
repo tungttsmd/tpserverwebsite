@@ -322,6 +322,8 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');
+    if (!nav) return; // Exit if nav element doesn't exist
+
     if (window.scrollY > 100) {
         nav.style.background = 'rgba(15, 15, 35, 0.95)';
         nav.style.boxShadow = '0 0 30px rgba(0, 255, 255, 0.2)';

@@ -23,6 +23,20 @@ class LanguageSwitcher {
     }
 
     async initLanguage() {
+        // Get saved language or default to 'vi'
+        this.currentLang = localStorage.getItem('language') || 'vi';
+        
+        // Update mobile dropdown's current language display
+        const mobileCurrentFlag = document.querySelector('.mobile-language-dropdown .current-flag');
+        const mobileCurrentText = document.querySelector('.mobile-language-dropdown .language-dropdown-toggle span[data-i18n]');
+        
+        if (mobileCurrentFlag) {
+            const flagImg = this.getFlagImage(this.currentLang);
+            if (flagImg) {
+                mobileCurrentFlag.src = flagImg;
+            }
+        }
+        
         const translations = await this.loadLanguage(this.currentLang);
         if (translations) {
             this.updateContent(translations);
@@ -117,15 +131,20 @@ class LanguageSwitcher {
         });
     }
 
-    updateFlag(lang) {
-        const flagImg = document.querySelector('.current-flag');
-        if (!flagImg) return;
+    getFlagImage(lang) {
+        const flagOption = document.querySelector(`.language-option[data-lang="${lang}"] img`);
+        return flagOption ? flagOption.src : null;
+    }
 
-        const newFlag = document.querySelector(
-            `.language-option[data-lang="${lang}"] img`
-        )?.src;
+    updateFlag(lang) {
+        // Update all flag images with class 'current-flag'
+        const flagImgs = document.querySelectorAll('.current-flag');
+        const newFlag = this.getFlagImage(lang);
+        
         if (newFlag) {
-            flagImg.src = newFlag;
+            flagImgs.forEach(flagImg => {
+                flagImg.src = newFlag;
+            });
         }
     }
 

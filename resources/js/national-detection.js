@@ -2,22 +2,69 @@
 document.documentElement.style.visibility = 'hidden';
 
 async function getMyIpAndCountry() {
+    console.log('Starting IP detection...');
+    const startTime = Date.now();
+
     try {
-        const response = await fetch('https://api.myip.com');
-        if (!response.ok)
+        console.log('Fetching IP information from api.myip.com...');
+        const response = await fetch('https://api.myip.com', {
+            method: 'GET',
+            cache: 'no-store',
+            headers: {
+                Accept: 'application/json',
+            },
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error(`HTTP error! status: ${response.status}`, errorText);
             throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
         const data = await response.json();
-        console.log('IP API response:', data);
+        const requestTime = Date.now() - startTime;
+
+        console.log('IP API response:', {
+            data,
+            status: response.status,
+            responseTime: `${requestTime}ms`,
+        });
 
         return {
+            ip: data.ip,
             country: data.cc,
             countryName: data.country,
+            responseTime: requestTime,
         };
     } catch (error) {
-        console.error('Error detecting country:', error);
+        console.error('Error in getMyIpAndCountry:', {
+            error: error.message,
+            stack: error.stack,
+            time: new Date().toISOString(),
+        });
+
+        // Fallback to a different IP API if the first one fails
+        try {
+            console.log('Trying fallback IP API (ipapi.co)...');
+            const fallbackResponse = await fetch('https://ipapi.co/json/');
+            if (fallbackResponse.ok) {
+                const fallbackData = await fallbackResponse.json();
+                console.log('Fallback IP API response:', fallbackData);
+                return {
+                    ip: fallbackData.ip,
+                    country: fallbackData.country_code,
+                    countryName: fallbackData.country_name,
+                    isFallback: true,
+                };
+            }
+        } catch (fallbackError) {
+            console.error('Fallback IP API also failed:', fallbackError);
+        }
+
         return {
             country: null,
             error: error.message,
+            timestamp: new Date().toISOString(),
         };
     }
 }
