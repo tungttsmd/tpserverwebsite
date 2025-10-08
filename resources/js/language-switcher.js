@@ -34,38 +34,56 @@ class LanguageSwitcher {
 
     async switchLanguage(lang, force = false) {
         if (!force && lang === this.currentLang) return false;
+
+        // Hide content while switching languages
+        document.documentElement.style.visibility = 'hidden';
+        document.body.classList.remove('i18n-loaded');
         
-        const translations = await this.loadLanguage(lang);
-        if (!translations) return false;
-
-        this.currentLang = lang;
-        localStorage.setItem('language', lang);
-        document.documentElement.lang = lang;
-
-        this.updateContent(translations);
-        this.updateActiveButton(lang);
-        this.updateFlag(lang);
-        
-        // Only add loaded class when translations are actually applied
-        document.body.classList.add('i18n-loaded');
-        // Show content if it was hidden
-        document.documentElement.style.visibility = '';
-        return true;
-
-        // Close mobile menu after language change
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-        const hamburgerBtn = document.querySelector('.mobile-menu-button');
-
-        if (mobileMenu && mobileMenuOverlay) {
-            mobileMenu.classList.remove('active');
-            mobileMenuOverlay.classList.remove('active');
-            document.body.classList.remove('no-scroll');
-
-            if (hamburgerBtn) {
-                hamburgerBtn.classList.remove('active');
-                hamburgerBtn.setAttribute('aria-expanded', 'false');
+        try {
+            const translations = await this.loadLanguage(lang);
+            if (!translations) {
+                // If loading fails, show content anyway but don't mark as loaded
+                document.documentElement.style.visibility = '';
+                return false;
             }
+
+            this.currentLang = lang;
+            localStorage.setItem('language', lang);
+            document.documentElement.lang = lang;
+
+            // Update content and UI
+            this.updateContent(translations);
+            this.updateActiveButton(lang);
+            this.updateFlag(lang);
+
+            // Show content and mark as loaded after a small delay to ensure rendering is complete
+            setTimeout(() => {
+                document.documentElement.style.visibility = '';
+                document.body.classList.add('i18n-loaded');
+            }, 50);
+
+            // Close mobile menu after language change
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+            const hamburgerBtn = document.querySelector('.mobile-menu-button');
+
+            if (mobileMenu && mobileMenuOverlay) {
+                mobileMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+
+                if (hamburgerBtn) {
+                    hamburgerBtn.classList.remove('active');
+                    hamburgerBtn.setAttribute('aria-expanded', 'false');
+                }
+            }
+
+            return true;
+        } catch (error) {
+            console.error('Error switching language:', error);
+            // Make sure content is visible even if there was an error
+            document.documentElement.style.visibility = '';
+            return false;
         }
     }
 
@@ -74,9 +92,15 @@ class LanguageSwitcher {
             const keys = element.getAttribute('data-i18n').split('.');
             let text = keys.reduce((obj, key) => obj?.[key], translations);
             if (text) {
-                if (element.tagName === 'INPUT' && element.hasAttribute('placeholder')) {
+                if (
+                    element.tagName === 'INPUT' &&
+                    element.hasAttribute('placeholder')
+                ) {
                     element.placeholder = text;
-                } else if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                } else if (
+                    element.tagName === 'INPUT' ||
+                    element.tagName === 'TEXTAREA'
+                ) {
                     element.value = text;
                 } else {
                     element.textContent = text;
@@ -97,7 +121,9 @@ class LanguageSwitcher {
         const flagImg = document.querySelector('.current-flag');
         if (!flagImg) return;
 
-        const newFlag = document.querySelector(`.language-option[data-lang="${lang}"] img`)?.src;
+        const newFlag = document.querySelector(
+            `.language-option[data-lang="${lang}"] img`
+        )?.src;
         if (newFlag) {
             flagImg.src = newFlag;
         }
@@ -120,7 +146,7 @@ class LanguageSwitcher {
             const dropdown = document.querySelector('.language-dropdown');
             const menu = document.querySelector('.language-dropdown-menu');
             const isClickInside = dropdown?.contains(e.target);
-            
+
             if (!isClickInside && menu) {
                 menu.classList.remove('show');
             }
@@ -150,23 +176,25 @@ if (document.readyState === 'loading') {
 document.addEventListener('DOMContentLoaded', function () {
     // Toggle dropdown menu
     document.querySelectorAll('.language-dropdown-toggle').forEach((toggle) => {
-        toggle.addEventListener('click', function(e) {
+        toggle.addEventListener('click', function (e) {
             e.stopPropagation();
             const menu = this.nextElementSibling;
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
 
             // Close all other dropdowns
-            document.querySelectorAll('.language-dropdown-menu').forEach((m) => {
-                if (m !== menu) {
-                    m.classList.remove('show');
-                    const toggleBtn = m.previousElementSibling;
-                    if (toggleBtn) {
-                        toggleBtn.setAttribute('aria-expanded', 'false');
-                        const svg = toggleBtn.querySelector('svg');
-                        if (svg) svg.style.transform = 'rotate(0deg)';
+            document
+                .querySelectorAll('.language-dropdown-menu')
+                .forEach((m) => {
+                    if (m !== menu) {
+                        m.classList.remove('show');
+                        const toggleBtn = m.previousElementSibling;
+                        if (toggleBtn) {
+                            toggleBtn.setAttribute('aria-expanded', 'false');
+                            const svg = toggleBtn.querySelector('svg');
+                            if (svg) svg.style.transform = 'rotate(0deg)';
+                        }
                     }
-                }
-            });
+                });
 
             // Toggle current dropdown
             if (isExpanded) {
@@ -186,21 +214,23 @@ document.addEventListener('DOMContentLoaded', function () {
     // Close dropdown when clicking outside
     document.addEventListener('click', function (e) {
         if (!e.target.closest('.language-dropdown')) {
-            document.querySelectorAll('.language-dropdown-menu').forEach((menu) => {
-                menu.classList.remove('show');
-                const toggle = menu.previousElementSibling;
-                if (toggle) {
-                    toggle.setAttribute('aria-expanded', 'false');
-                    const svg = toggle.querySelector('svg');
-                    if (svg) svg.style.transform = 'rotate(0deg)';
-                }
-            });
+            document
+                .querySelectorAll('.language-dropdown-menu')
+                .forEach((menu) => {
+                    menu.classList.remove('show');
+                    const toggle = menu.previousElementSibling;
+                    if (toggle) {
+                        toggle.setAttribute('aria-expanded', 'false');
+                        const svg = toggle.querySelector('svg');
+                        if (svg) svg.style.transform = 'rotate(0deg)';
+                    }
+                });
         }
     });
 
     // Handle language selection
     document.querySelectorAll('.language-option').forEach((option) => {
-        option.addEventListener('click', function() {
+        option.addEventListener('click', function () {
             const lang = this.getAttribute('data-lang');
             const dropdown = this.closest('.language-dropdown');
             if (!dropdown) return;
