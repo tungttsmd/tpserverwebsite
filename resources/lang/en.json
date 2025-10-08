@@ -60,7 +60,7 @@
             "name": "OPTION 1",
             "price": "12$",
             "period": "/week",
-            "config1": "Chip: E2Xeon 2680v4",
+            "config1": "Chip: Xeon 2680v4",
             "config2": "Core: 14 core / 28 vCore",
             "config3": "RAM: 64GB",
             "config4": "Disk: 256GB SSD NVMe",
@@ -101,7 +101,7 @@
             "config2": "Core: 36 core / 72 vCore",
             "config3": "RAM: 128GB",
             "config4": "Disk: 500GB SSD NVMe",
-            "config5": "VGA: GTX 1070 6GB/ RTX 2060 6GB or GTX 1080 8GB",
+            "config5": "VGA: GTX 1070 8GB/ RTX 2060 6GB or GTX 1080 8GB",
             "config6": "Monthly price: 80$"
         },
         "pack5": {
@@ -173,77 +173,77 @@
         },
         "item11": {
             "content": "I use this server for automation and running multiple parallel processes — extremely stable. No more random disconnections.",
-            "name": "N.P.L (Discord)",
+            "name": "Micky (Discord)",
             "kind": "Dedicated Server 3 Customer"
         },
         "item12": {
             "content": "Fast response and very reliable performance.",
-            "name": "R.L (Discord)",
+            "name": "Pinow (Discord)",
             "kind": "Dedicated Server 2 Customer"
         },
         "item13": {
             "content": "Runs for an entire week without restart, CPU never overloads. What I love most is the support team — always responds instantly.",
-            "name": "T.N.K (Discord)",
+            "name": "Tamersf (Discord)",
             "kind": "Dedicated Server 3 Customer"
         },
         "item14": {
             "content": "The server runs 24/7. I use it to run heavy tools and tasks and it's still very smooth. Definitely worth the price.",
-            "name": "P.D.H (Discord)",
+            "name": "snooprcm (Discord)",
             "kind": "Dedicated Server 3 Customer"
         },
         "item15": {
             "content": "Excellent uptime and great hardware quality. Stable operation and high-quality hardware.",
-            "name": "M.J (Discord)",
+            "name": "Luis (Discord)",
             "kind": "Dedicated Server 1 Customer"
         },
         "item16": {
-            "content": "Excellent service, lightning-fast response. I’ve migrated my entire system here.",
-            "name": "H.N.T (Discord)",
+            "content": "Excellent service, lightning-fast response. I've migrated my entire system here.",
+            "name": "Yoga (Discord)",
             "kind": "Dedicated Server 2 Customer"
         },
         "item17": {
             "content": "I run Node.js and Python API here. Uptime is always 99.99%. Totally worth the investment.",
-            "name": "T.P.Q (Discord)",
+            "name": "! mqze223 (Discord)",
             "kind": "Dedicated Server 4 Customer"
         },
         "item18": {
             "content": "I rented this for small AI training tasks. The GPU is strong and stable, without the limitations of other clouds.",
-            "name": "K.L (Discord)",
+            "name": "zero (Discord)",
             "kind": "Dedicated Server 3 Customer"
         },
         "item19": {
             "content": "The server runs stably without lag or crashes like others. Support is enthusiastic. Very satisfied.",
-            "name": "L.V.H (Discord)",
+            "name": "HoanqLam (Discord)",
             "kind": "Dedicated Server 2 Customer"
         },
         "item20": {
             "content": "Affordable pricing, powerful specs — perfect for running multiple apps at once. The support team is very professional.",
-            "name": "N.T.K (Discord)",
+            "name": "NawateShop (Discord)",
             "kind": "Dedicated Server 3 Customer"
         },
         "item21": {
             "content": "I use it to render 4K videos — much faster processing than on my personal PC. Very satisfied with the service.",
-            "name": "P.V.D (Discord)",
+            "name": "BeeeSociu (Discord)",
             "kind": "Dedicated Server 4 Customer"
         },
         "item22": {
-            "content": "99.9% uptime exactly as promised. Haven’t experienced a single issue throughout usage.",
-            "name": "T.M.H (Discord)",
+            "content": "99.9% uptime exactly as promised. Haven't experienced a single issue throughout usage.",
+            "name": "HinteudzXsquirtle (Discord)",
             "kind": "Dedicated Server 2 Customer"
         },
         "item23": {
             "content": "Powerful server with stable connection — perfect for high-performance projects.",
-            "name": "N.V.T (Discord)",
+            "name": "Tellor (Discord)",
             "kind": "Dedicated Server 3 Customer"
         },
         "item24": {
             "content": "I use it to run trading bots — operates non-stop 24/7. Technical support is fast and professional.",
-            "name": "L.Q.M (Discord)",
+            "name": "$$$ (Discord)",
             "kind": "Dedicated Server 1 Customer"
         },
         "item25": {
             "content": "I'm from Singapore, and the latency to TPSV servers is fantastic. Highly recommended.",
-            "name": "A.L (Discord)",
+            "name": "bob smith (Discord)",
             "kind": "Dedicated Server 1 Customer"
         }
     },

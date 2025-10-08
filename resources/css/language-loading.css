@@ -1,0 +1,11 @@
+/* Hide content until language is loaded */
+body:not(.i18n-loaded) [data-i18n] {
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.i18n-loaded [data-i18n] {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out;
+}

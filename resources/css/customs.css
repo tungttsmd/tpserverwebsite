@@ -1,3 +1,110 @@
 .shopee-icon {
     height: 10px !important;
 }
+
+/* Language Dropdown Styles */
+.language-dropdown {
+    position: relative;
+    margin-left: 1rem;
+}
+
+.language-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.language-dropdown-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.language-dropdown-toggle svg {
+    transition: transform 0.3s ease;
+}
+
+.language-dropdown-toggle[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+}
+
+.language-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 180px;
+    background: #1a1a2e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.language-dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.language-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.language-option img {
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile styles */
+@media (max-width: 1024px) {
+    .mobile-language-dropdown {
+        margin: 1rem 0;
+        width: 100%;
+    }
+    
+    .mobile-language-dropdown .language-dropdown-toggle {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0.75rem 1.25rem;
+    }
+    
+    .mobile-language-dropdown .language-dropdown-menu {
+        position: static;
+        width: 100%;
+        margin-top: 0.5rem;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+    }
+    
+    .mobile-language-dropdown .language-dropdown-menu.show {
+        display: block;
+    }
+}

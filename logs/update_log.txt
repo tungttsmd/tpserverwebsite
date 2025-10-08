@@ -12,3 +12,8 @@ v1d1 (05/10/2025):
  - Tạo băng rôn cho section trên contact trỏ về shopee
  - Tạo thêm store.html
  - Phiên dịch tiếng Việt/English và tạo chức năng chuyển đổi qua lại 2 ngôn ngữ
+ v1.2 (08/10/2025)
+ - Sửa lại bug tên người feedback
+ - Sửa lại bug khi đổi ngôn ngữ
+ - Sửa lại lỗi conent nhỏ
+ - Thêm chức năng kiểm tra ip 

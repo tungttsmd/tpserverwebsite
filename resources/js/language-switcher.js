@@ -1,9 +1,10 @@
 // Language Switcher
 class LanguageSwitcher {
     constructor() {
-        this.currentLang = localStorage.getItem('language') || 'vi';
         this.elements = document.querySelectorAll('[data-i18n]');
+        this.currentLang = localStorage.getItem('language') || 'vi';
         this.init();
+        // Don't initialize language here, it will be handled by national-detection.js
     }
 
     async loadLanguage(lang) {
@@ -13,15 +14,29 @@ class LanguageSwitcher {
             return await response.json();
         } catch (error) {
             console.error('Error loading language file:', error);
+            // Try to load default language if preferred language fails
+            if (lang !== 'vi') {
+                return this.loadLanguage('vi');
+            }
             return null;
         }
     }
 
-    async switchLanguage(lang) {
-        if (this.currentLang === lang) return;
+    async initLanguage() {
+        const translations = await this.loadLanguage(this.currentLang);
+        if (translations) {
+            this.updateContent(translations);
+            document.documentElement.lang = this.currentLang;
+            this.updateActiveButton(this.currentLang);
+            this.updateFlag(this.currentLang);
+        }
+    }
 
+    async switchLanguage(lang, force = false) {
+        if (!force && lang === this.currentLang) return false;
+        
         const translations = await this.loadLanguage(lang);
-        if (!translations) return;
+        if (!translations) return false;
 
         this.currentLang = lang;
         localStorage.setItem('language', lang);
@@ -30,6 +45,12 @@ class LanguageSwitcher {
         this.updateContent(translations);
         this.updateActiveButton(lang);
         this.updateFlag(lang);
+        
+        // Only add loaded class when translations are actually applied
+        document.body.classList.add('i18n-loaded');
+        // Show content if it was hidden
+        document.documentElement.style.visibility = '';
+        return true;
 
         // Close mobile menu after language change
         const mobileMenu = document.getElementById('mobileMenu');
@@ -53,15 +74,9 @@ class LanguageSwitcher {
             const keys = element.getAttribute('data-i18n').split('.');
             let text = keys.reduce((obj, key) => obj?.[key], translations);
             if (text) {
-                if (
-                    element.tagName === 'INPUT' &&
-                    element.hasAttribute('placeholder')
-                ) {
+                if (element.tagName === 'INPUT' && element.hasAttribute('placeholder')) {
                     element.placeholder = text;
-                } else if (
-                    element.tagName === 'INPUT' ||
-                    element.tagName === 'TEXTAREA'
-                ) {
+                } else if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                     element.value = text;
                 } else {
                     element.textContent = text;
@@ -82,9 +97,7 @@ class LanguageSwitcher {
         const flagImg = document.querySelector('.current-flag');
         if (!flagImg) return;
 
-        const newFlag = document.querySelector(
-            `.language-option[data-lang="${lang}"] img`
-        )?.src;
+        const newFlag = document.querySelector(`.language-option[data-lang="${lang}"] img`)?.src;
         if (newFlag) {
             flagImg.src = newFlag;
         }
@@ -102,21 +115,14 @@ class LanguageSwitcher {
             });
         });
 
-        // Load current language
-        const savedLang = localStorage.getItem('language') || 'vi';
-        if (savedLang) {
-            this.switchLanguage(savedLang);
-        }
-
         // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
             const dropdown = document.querySelector('.language-dropdown');
+            const menu = document.querySelector('.language-dropdown-menu');
             const isClickInside = dropdown?.contains(e.target);
-            if (!isClickInside) {
-                const menu = document.querySelector('.language-dropdown-menu');
-                if (menu) {
-                    menu.classList.remove('show');
-                }
+            
+            if (!isClickInside && menu) {
+                menu.classList.remove('show');
             }
         });
     }
@@ -124,11 +130,110 @@ class LanguageSwitcher {
 
 // Initialize language switcher when DOM is fully loaded
 function initLanguageSwitcher() {
-    new LanguageSwitcher();
+    if (!window.languageSwitcher) {
+        window.languageSwitcher = new LanguageSwitcher();
+        // If national detection hasn't set the language yet, set it now
+        if (!localStorage.getItem('language')) {
+            window.languageSwitcher.switchLanguage('en');
+        }
+    }
 }
 
+// Initialize when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
 } else {
     initLanguageSwitcher();
 }
+
+// Language Dropdown Functionality
+document.addEventListener('DOMContentLoaded', function () {
+    // Toggle dropdown menu
+    document.querySelectorAll('.language-dropdown-toggle').forEach((toggle) => {
+        toggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const menu = this.nextElementSibling;
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+            // Close all other dropdowns
+            document.querySelectorAll('.language-dropdown-menu').forEach((m) => {
+                if (m !== menu) {
+                    m.classList.remove('show');
+                    const toggleBtn = m.previousElementSibling;
+                    if (toggleBtn) {
+                        toggleBtn.setAttribute('aria-expanded', 'false');
+                        const svg = toggleBtn.querySelector('svg');
+                        if (svg) svg.style.transform = 'rotate(0deg)';
+                    }
+                }
+            });
+
+            // Toggle current dropdown
+            if (isExpanded) {
+                menu.classList.remove('show');
+                this.setAttribute('aria-expanded', 'false');
+                const svg = this.querySelector('svg');
+                if (svg) svg.style.transform = 'rotate(0deg)';
+            } else {
+                menu.classList.add('show');
+                this.setAttribute('aria-expanded', 'true');
+                const svg = this.querySelector('svg');
+                if (svg) svg.style.transform = 'rotate(180deg)';
+            }
+        });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('.language-dropdown')) {
+            document.querySelectorAll('.language-dropdown-menu').forEach((menu) => {
+                menu.classList.remove('show');
+                const toggle = menu.previousElementSibling;
+                if (toggle) {
+                    toggle.setAttribute('aria-expanded', 'false');
+                    const svg = toggle.querySelector('svg');
+                    if (svg) svg.style.transform = 'rotate(0deg)';
+                }
+            });
+        }
+    });
+
+    // Handle language selection
+    document.querySelectorAll('.language-option').forEach((option) => {
+        option.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            const dropdown = this.closest('.language-dropdown');
+            if (!dropdown) return;
+
+            const toggle = dropdown.querySelector('.language-dropdown-toggle');
+            const menu = dropdown.querySelector('.language-dropdown-menu');
+            const currentFlag = dropdown.querySelector('.current-flag');
+            const selectedFlag = this.querySelector('img')?.cloneNode(true);
+
+            if (currentFlag && selectedFlag) {
+                currentFlag.src = selectedFlag.src;
+                currentFlag.alt = selectedFlag.alt;
+            }
+
+            // Update toggle text if it exists (for mobile)
+            const toggleText = toggle?.querySelector('span[data-i18n]');
+            if (toggleText) {
+                const selectedText = this.textContent.trim();
+                toggleText.textContent = selectedText;
+            }
+
+            // Close the menu
+            if (menu) menu.classList.remove('show');
+            if (toggle) {
+                toggle.setAttribute('aria-expanded', 'false');
+                const svg = toggle.querySelector('svg');
+                if (svg) svg.style.transform = 'rotate(0deg)';
+            }
+
+            // Trigger language change
+            if (window.languageSwitcher) {
+                window.languageSwitcher.switchLanguage(lang);
+            }
+        });
+    });
+});

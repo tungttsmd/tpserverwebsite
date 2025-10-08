@@ -198,14 +198,15 @@ const Accordion = (() => {
             });
         }
 
-        // Set initial height for animation
         const content = itemData.content;
+        
+        // Set initial state before animation
         content.style.display = 'block';
-        const startHeight = content.offsetHeight;
         content.style.maxHeight = '0';
         content.style.opacity = '0';
-
-        // Trigger reflow
+        content.style.transform = 'translateY(-8px)';
+        
+        // Force reflow to ensure initial state is applied
         content.offsetHeight;
 
         // Start animation
@@ -215,47 +216,29 @@ const Accordion = (() => {
         itemData.header.setAttribute('aria-expanded', 'true');
         content.setAttribute('aria-hidden', 'false');
 
-        // Animate height
         if (animate && config.animate) {
-            const targetHeight = content.scrollHeight;
-            const startTime = performance.now();
-
-            const animateHeight = (currentTime) => {
-                const elapsedTime = currentTime - startTime;
-                const progress = Math.min(elapsedTime / config.duration, 1);
-
-                // Easing function (easeInOutQuad)
-                const easeInOutQuad = (t) =>
-                    t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-
-                const height =
-                    startHeight +
-                    (targetHeight - startHeight) * easeInOutQuad(progress);
-                const opacity = easeInOutQuad(progress);
-
-                content.style.maxHeight = `${height}px`;
-                content.style.opacity = opacity;
-
-                if (progress < 1) {
-                    requestAnimationFrame(animateHeight);
-                } else {
-                    // Animation complete
-                    content.style.maxHeight = '';
-                    content.style.opacity = '';
-                    isAnimating = false;
-
-                    // Call onOpen callback if provided
-                    if (typeof config.onOpen === 'function') {
-                        config.onOpen(itemData);
-                    }
+            // Use CSS transitions for better performance
+            content.style.maxHeight = '2000px';
+            content.style.opacity = '1';
+            content.style.transform = 'translateY(0)';
+            
+            // Set up transition end event
+            const onTransitionEnd = () => {
+                content.removeEventListener('transitionend', onTransitionEnd);
+                isAnimating = false;
+                
+                // Call onOpen callback if provided
+                if (typeof config.onOpen === 'function') {
+                    config.onOpen(itemData);
                 }
             };
-
-            requestAnimationFrame(animateHeight);
+            
+            content.addEventListener('transitionend', onTransitionEnd, { once: true });
         } else {
             // No animation
             content.style.maxHeight = '';
-            content.style.opacity = '';
+            content.style.opacity = '1';
+            content.style.transform = 'translateY(0)';
             isAnimating = false;
 
             // Call onOpen callback if provided
@@ -270,8 +253,7 @@ const Accordion = (() => {
         if (!itemData.isOpen || isAnimating) return;
 
         const content = itemData.content;
-        const startHeight = content.offsetHeight;
-
+        
         // Start animation
         isAnimating = true;
         itemData.isOpen = false;
@@ -279,46 +261,34 @@ const Accordion = (() => {
         itemData.header.setAttribute('aria-expanded', 'false');
         content.setAttribute('aria-hidden', 'true');
 
-        // Animate height
         if (animate && config.animate) {
-            const startTime = performance.now();
-
-            const animateHeight = (currentTime) => {
-                const elapsedTime = currentTime - startTime;
-                const progress = Math.min(elapsedTime / config.duration, 1);
-
-                // Easing function (easeInOutQuad)
-                const easeInOutQuad = (t) =>
-                    t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-
-                const height = startHeight * (1 - easeInOutQuad(progress));
-                const opacity = 1 - easeInOutQuad(progress);
-
-                content.style.maxHeight = `${height}px`;
-                content.style.opacity = opacity;
-
-                if (progress < 1) {
-                    requestAnimationFrame(animateHeight);
-                } else {
-                    // Animation complete
-                    content.style.display = 'none';
-                    content.style.maxHeight = '';
-                    content.style.opacity = '';
-                    isAnimating = false;
-
-                    // Call onClose callback if provided
-                    if (typeof config.onClose === 'function') {
-                        config.onClose(itemData);
-                    }
+            // Set up transition end event first
+            const onTransitionEnd = () => {
+                content.removeEventListener('transitionend', onTransitionEnd);
+                content.style.display = 'none';
+                content.style.maxHeight = '';
+                content.style.opacity = '';
+                content.style.transform = '';
+                isAnimating = false;
+                
+                // Call onClose callback if provided
+                if (typeof config.onClose === 'function') {
+                    config.onClose(itemData);
                 }
             };
-
-            requestAnimationFrame(animateHeight);
+            
+            content.addEventListener('transitionend', onTransitionEnd, { once: true });
+            
+            // Start close animation
+            content.style.maxHeight = '0';
+            content.style.opacity = '0';
+            content.style.transform = 'translateY(-8px)';
         } else {
             // No animation
             content.style.display = 'none';
             content.style.maxHeight = '';
             content.style.opacity = '';
+            content.style.transform = '';
             isAnimating = false;
 
             // Call onClose callback if provided

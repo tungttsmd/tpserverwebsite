@@ -60,7 +60,7 @@
             "name": "CẤU HÌNH 1",
             "price": "300.000 ₫",
             "period": "/tuần",
-            "config1": "Chip: E2Xeon 2680v4",
+            "config1": "Chip: Xeon 2680v4",
             "config2": "Nhân: 14 nhân / 28 luồng",
             "config3": "RAM: 64GB",
             "config4": "Ổ cứng: 256GB SSD NVMe",
@@ -101,7 +101,7 @@
             "config2": "Nhân: 36 nhân / 72 luồng",
             "config3": "RAM: 128GB",
             "config4": "Ổ cứng: 500GB SSD NVMe",
-            "config5": "VGA: GTX 1070 6GB/ RTX 2060 6GB hoặc GTX 1080 8GB",
+            "config5": "VGA: GTX 1070 8GB/ RTX 2060 6GB hoặc GTX 1080 8GB",
             "config6": "Giá thuê tháng: 2.000.000 ₫"
         },
         "pack5": {
@@ -173,77 +173,77 @@
         },
         "item11": {
             "content": "Tôi sử dụng máy chủ này để tự động hóa và chạy nhiều tiến trình song song, cực kỳ ổn định. Không còn bị ngắt kết nối giữa chừng nữa.",
-            "name": "N.P.L (Discord)",
+            "name": "Micky (Discord)",
             "kind": "Khách thuê Máy chủ Vật lý 3"
         },
         "item12": {
             "content": "Phản hồi nhanh và hiệu suất rất đáng tin cậy.",
-            "name": "R.L (Discord)",
+            "name": "Pinow (Discord)",
             "kind": "Khách thuê Máy chủ Vật lý 2"
         },
         "item13": {
             "content": "Chạy cả tuần không cần khởi động lại, CPU không bao giờ quá tải. Tuyệt nhất là đội ngũ hỗ trợ, họ phản hồi ngay lập tức.",
-            "name": "T.N.K (Discord)",
+            "name": "Tamersf (Discord)",
             "kind": "Khách thuê Máy chủ Vật lý 3"
         },
         "item14": {
             "content": "Máy chủ hoạt động 24/7, tôi dùng để chạy các công cụ và tác vụ nặng, vẫn rất mượt. Đáng đồng tiền bát gạo.",
-            "name": "P.D.H (Discord)",
+            "name": "snooprcm (Discord)",
             "kind": "Khách thuê Máy chủ Vật lý 3"
         },
         "item15": {
             "content": "Thời gian hoạt động tuyệt vời và chất lượng phần cứng cao cấp. Excellent uptime and great hardware quality.",
-            "name": "M.J (Discord)",
+            "name": "Luis (Discord)",
             "kind": "Khách thuê Máy chủ Vật lý 1"
         },
         "item16": {
             "content": "Dịch vụ tuyệt vời, phản hồi cực nhanh, mình đã chuyển toàn bộ hệ thống sang đây.",
-            "name": "H.N.T (Discord)",
+            "name": "Yoga (Discord)",
             "kind": "Khách thuê Máy chủ Vật lý 2"
         },
         "item17": {
             "content": "Mình chạy Node.js và Python API trên đây, uptime luôn 99.99%. Rất đáng tiền.",
-            "name": "T.P.Q (Discord)",
+            "name": "! mqze223 (Discord)",
             "kind": "Khách thuê Máy chủ Vật lý 4"
         },
         "item18": {
             "content": "Tôi thuê để chạy AI training nhỏ, GPU mạnh ổn định và không bị giới hạn như cloud khác.",
-            "name": "K.L (Discord)",
+            "name": "zero (Discord)",
             "kind": "Khách thuê Máy chủ Vật lý 3"
         },
         "item19": {
             "content": "Máy chạy ổn định, không bị treo giật như các nơi khác. Hỗ trợ nhiệt tình, rất hài lòng.",
-            "name": "L.V.H (Discord)",
+            "name": "HoanqLam (Discord)",
             "kind": "Khách thuê Máy chủ Vật lý 2"
         },
         "item20": {
             "content": "Giá cả hợp lý, cấu hình mạnh, phù hợp để chạy nhiều ứng dụng cùng lúc. Đội ngũ support rất chuyên nghiệp.",
-            "name": "N.T.K (Discord)",
+            "name": "NawateShop (Discord)",
             "kind": "Khách thuê Máy chủ Vật lý 3"
         },
         "item21": {
             "content": "Mình dùng để render video 4K, tốc độ xử lý nhanh hơn nhiều so với dùng máy cá nhân. Rất hài lòng với dịch vụ.",
-            "name": "P.V.D (Discord)",
+            "name": "BeeeSociu (Discord)",
             "kind": "Khách thuê Máy chủ Vật lý 4"
         },
         "item22": {
             "content": "Uptime 99.9% đúng như cam kết. Chưa gặp sự cố nào trong suốt thời gian sử dụng.",
-            "name": "T.M.H (Discord)",
+            "name": "HinteudzXsquirtle (Discord)",
             "kind": "Khách thuê Máy chủ Vật lý 2"
         },
         "item23": {
             "content": "Máy chủ mạnh, đường truyền ổn định. Phù hợp cho các dự án cần hiệu năng cao.",
-            "name": "N.V.T (Discord)",
+            "name": "Tellor (Discord)",
             "kind": "Khách thuê Máy chủ Vật lý 3"
         },
         "item24": {
             "content": "Mình dùng để chạy bot trade, hoạt động 24/7 không ngừng nghỉ. Hỗ trợ kỹ thuật rất nhanh và chuyên nghiệp.",
-            "name": "L.Q.M (Discord)",
+            "name": "$$$ (Discord)",
             "kind": "Khách thuê Máy chủ Vật lý 1"
         },
         "item25": {
             "content": "Tôi đến từ Singapore, và độ trễ đến các máy chủ TPSV rất tốt. Rất đáng để thử.",
-            "name": "A.L (Discord)",
+            "name": "bob smith (Discord)",
             "kind": "Khách thuê Máy chủ Vật lý 1"
         }
     },
