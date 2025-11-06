@@ -56,6 +56,10 @@
     <link rel="stylesheet" href="resources/css/language-loading.css">
     <!-- end Language Loading -->
 
+    <!-- start Terms Popup -->
+    <link rel="stylesheet" href="resources/css/terms-popup.css">
+    <!-- end Terms Popup -->
+
 </head>
 <!-- end <head> -->
 
@@ -83,13 +87,13 @@
     <!-- start Desktop navigation -->
     <nav>
         <div class="nav-container">
-            <a class="navbar-brand" href="#home">
+            <a class="navbar-brand" href="index">
                 <img class="" src="resources/images/logo-tp-full.webp" class="img-fluid" alt="logo"
                     style="max-width: 128px" />
             </a>
             <ul class="nav-links">
                 <li>
-                    <a href="#home" data-i18n="nav.home">TRANG CHỦ</a>
+                    <a href="index" data-i18n="nav.home">TRANG CHỦ</a>
                 </li>
                 <li>
                     <a href="#pricing" data-i18n="nav.pricing">BẢNG GIÁ</a>
@@ -98,10 +102,13 @@
                     <a href="#stats" data-i18n="nav.features">GIỚI THIỆU</a>
                 </li>
                 <li>
-                    <a href="https://shopee.vn/tpserver" target="_blank" data-i18n="nav.shop">CỬA HÀNG</a>
+                    <a href="https://shopee.vn/tpservers" target="_blank" data-i18n="nav.shop">CỬA HÀNG</a>
                 </li>
                 <li>
                     <a href="#contact" data-i18n="nav.contact">LIÊN HỆ</a>
+                </li>
+                <li>
+                    <a href="terms" data-i18n="nav.term">ĐIỀU KHOẢN</a>
                 </li>
                 <li class="language-dropdown">
                     <button class="language-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
@@ -148,7 +155,7 @@
         <nav class="mobile-menu-nav">
             <ul style="padding-top: 5.6rem">
                 <li>
-                    <a href="index.html #home" data-i18n="nav.home">TRANG CHỦ</a>
+                    <a href="index" data-i18n="nav.home">TRANG CHỦ</a>
                 </li>
                 <li>
                     <a href="#pricing" data-i18n="nav.pricing">BẢNG GIÁ</a>
@@ -157,10 +164,13 @@
                     <a href="#stats" target="_blank" data-i18n="nav.features">TÍNH NĂNG</a>
                 </li>
                 <li>
-                    <a href="https://shopee.vn/tpserver" target="_blank" data-i18n="nav.shop">CỬA HÀNG</a>
+                    <a href="https://shopee.vn/tpservers" target="_blank" data-i18n="nav.shop">CỬA HÀNG</a>
                 </li>
                 <li>
                     <a href="#contact" data-i18n="nav.contact">LIÊN HỆ</a>
+                </li>
+                <li>
+                    <a href="terms" data-i18n="nav.term">ĐIỀU KHOẢN</a>
                 </li>
                 <li class="language-dropdown mobile-language-dropdown">
                     <button class="language-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
@@ -242,8 +252,8 @@
         <div class="features-container">
             <div class="section-header">
                 <h2 class="section-title" data-i18n="features.title">Hệ Thống</h2>
-                <p class="section-subtitle" data-i18n="features.subtitle">Tối ưu treo & render ổn định. Hoạt động bền bỉ
-                    24/24
+                <p class="section-subtitle" data-i18n="features.subtitle">Tối ưu hiệu năng & render ổn định. Hoạt động
+                    bền bỉ 24/24
                 </p>
             </div>
             <div class="features-grid">
@@ -1034,7 +1044,7 @@
                         <h3 data-i18n="contact.shopee.title">Shopee</h3>
                         <p data-i18n="contact.shopee.subtitle">Ghé thăm cửa hàng của chúng tôi, chuyên các linh kiện, bo
                             mạch giá rẻ chất lượng cao</p>
-                        <a href="https://shopee.vn/tpserver" target="_blank" class="contact-btn shopee-btn">
+                        <a href="https://shopee.vn/tpservers" target="_blank" class="contact-btn shopee-btn">
                             <i class="fas fa-shopping-bag"></i> <span data-i18n="contact.shopee.btn">Ghé thăm
                                 Shopee</span>
                         </a>
@@ -1142,12 +1152,13 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-links">
-                <a href="https://shopee.vn/tpserver" target="_blank" data-i18n="footer.shop">Ghé thăm cửa hàng</a>
+                <span class="footer-separator">•</span>
+                <a href="https://shopee.vn/tpservers" target="_blank" data-i18n="footer.shop">Ghé thăm cửa hàng</a>
+                <span class="footer-separator">•</span>
+                <a href="terms" target="_blank" data-i18n="footer.policy">Điều khoản dịch vụ</a>
                 <span class="footer-separator">•</span>
                 <a href="https://discord.com/channels/1175455974287482900/1175462383968333865" target="_blank"
-                    data-i18n="footer.policy">Chính
-                    sách & điều khoản
-                    dịch vụ</a>
+                    data-i18n="footer.policy_service">Chính sách dịch vụ</a>
                 <span class="footer-separator">•</span>
                 <a href="https://discord.com/channels/1175455974287482900/1287435596977148049" target="_blank"
                     data-i18n="footer.guidance">Hướng
@@ -1170,6 +1181,50 @@
     </button>
     <!-- end Button Back to Top -->
 
+    <!-- start Terms Update Popup -->
+    <div class="terms-popup-overlay" id="termsPopup">
+        <div class="terms-popup">
+            <div class="terms-popup-body">
+                <div class="terms-update-info">
+                    <p><strong data-i18n="terms.popup.title">TP Server cập nhật điều khoản sử dụng dịch vụ</strong>
+                        <span data-i18n="terms.popup.subtitle">phù hợp với quy định pháp luật Việt Nam, có hiệu lực từ
+                            ngày 06/11/2025.</span>
+                    </p>
+                </div>
+
+                <div class="terms-highlights">
+                    <h3 data-i18n="terms.popup.highlightsTitle">Những điểm quan trọng cần lưu ý:</h3>
+                    <ul>
+                        <li data-i18n="terms.popup.dataResponsibility"><strong>Trách nhiệm dữ liệu:</strong> Khách hàng
+                            chịu trách nhiệm trước pháp luật Việt Nam về toàn bộ dữ liệu, đảm bảo không chứa phần mềm
+                            phá hoại và tuân thủ quy định về bản quyền, bí mật quốc gia, an ninh.</li>
+                        <li data-i18n="terms.popup.prohibitedActivities"><strong>Nghiêm cấm hoạt động:</strong> Không sử
+                            dụng dịch vụ cho mục đích đánh bạc, cá độ, hack, DDoS, lừa đảo, đào coin, Spam Mail.</li>
+                        <li data-i18n="terms.popup.securityAccess"><strong>Bảo mật truy cập:</strong> Khách hàng phải
+                            chịu trách nhiệm nếu cố ý để quyền truy cập từ xa bị bên thứ ba lợi dụng thực hiện hành vi
+                            phạm pháp.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="terms-popup-footer">
+                <p data-i18n="terms.popup.agreementText">Bằng việc tiếp tục sử dụng dịch vụ, bạn đồng ý với các điều
+                    khoản đã cập nhật.</p>
+                <div class="terms-popup-buttons">
+                    <a href="terms.html" class="terms-btn terms-btn-primary">
+                        <i class="fas fa-file-contract"></i>
+                        <span data-i18n="terms.popup.viewFullTerms">Xem Toàn Bộ Điều Khoản</span>
+                    </a>
+                    <button class="terms-btn terms-btn-secondary" id="acceptTerms">
+                        <i class="fas fa-check"></i>
+                        <span data-i18n="terms.popup.iUnderstand">Tôi Đã Hiểu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end Terms Update Popup -->
+
     <!-- start Scripts -->
     <script src="resources/js/template-script.js"></script>
     <script src="resources/js/swiper-custom.js"></script>
@@ -1177,6 +1232,7 @@
     <script src="resources/js/back-to-top-button.js"></script>
     <script src="resources/js/language-switcher.js"></script>
     <script src="resources/js/national-detection.js"></script>
+    <script src="resources/js/terms-popup.js"></script>
 
     <!-- Initialize AOS (Animate On Scroll) -->
     <script>

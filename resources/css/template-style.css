@@ -5,6 +5,35 @@
     box-sizing: border-box;
 }
 
+/* Back to Top Button */
+.scroll-top-btn {
+    background: rgba(59, 130, 246, 0.8) !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease !important;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100px);
+}
+
+.scroll-top-btn.visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+.scroll-top-btn.hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(100px) !important;
+}
+
+.scroll-top-btn:hover {
+    background: rgba(59, 130, 246, 1) !important;
+    transform: translateY(0) scale(1.1) !important;
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4) !important;
+}
+
 :root {
     --primary-grey: #e5e7eb;
     --primary-orange: #f97316;

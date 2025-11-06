@@ -1,0 +1,233 @@
+/* Terms Update Popup */
+.terms-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(8px);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.terms-popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.terms-popup {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 16px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    transform: scale(0.9) translateY(20px);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.terms-popup-overlay.active .terms-popup {
+    transform: scale(1) translateY(0);
+}
+
+.terms-popup-header {
+    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+    padding: 12px;
+    border-radius: 16px 16px 0 0;
+    position: relative;
+    min-height: auto;
+}
+
+.terms-popup-body {
+    padding: 32px;
+}
+
+.terms-update-info {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+
+.terms-update-info p {
+    margin: 0;
+    color: #991b1b;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.terms-update-info strong {
+    color: #7f1d1d;
+    font-weight: 600;
+}
+
+.terms-highlights {
+    margin-bottom: 24px;
+}
+
+.terms-highlights h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 16px;
+}
+
+.terms-highlights ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.terms-highlights li {
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    background: #f8fafc;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #475569;
+    position: relative;
+    padding-left: 40px;
+}
+
+.terms-highlights li::before {
+    content: '⚠️';
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    font-size: 1rem;
+}
+
+.terms-highlights strong {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.terms-popup-footer {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    padding: 24px;
+    border-radius: 0 0 16px 16px;
+    text-align: center;
+}
+
+.terms-popup-footer p {
+    margin: 0 0 16px 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.terms-popup-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.terms-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.terms-btn-primary {
+    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+    color: white;
+}
+
+.terms-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+.terms-btn-secondary {
+    background: white;
+    color: #64748b;
+}
+
+.terms-btn-secondary:hover {
+    background: #f8fafc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .terms-popup {
+        width: 95%;
+        max-height: 90vh;
+    }
+
+    .terms-popup-header {
+        padding: 20px;
+    }
+
+    .terms-popup-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .terms-popup-body {
+        padding: 24px 20px;
+    }
+
+    .terms-popup-footer {
+        padding: 20px;
+    }
+
+    .terms-popup-buttons {
+        flex-direction: column;
+    }
+
+    .terms-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Animation */
+@keyframes slideInUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.terms-popup {
+    animation: slideInUp 0.4s ease-out;
+}
+
+/* Scrollbar styling */
+.terms-popup::-webkit-scrollbar {
+    width: 6px;
+}
+
+.terms-popup::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 3px;
+}
+
+.terms-popup::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.terms-popup::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}

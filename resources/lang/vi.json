@@ -10,6 +10,7 @@
         "faq": "HỎI ĐÁP",
         "contact": "LIÊN HỆ",
         "shop": "CỬA HÀNG",
+        "term": "ĐIỀU KHOẢN",
         "cta": "THUÊ MÁY CHỦ VẬT LÍ NGAY"
     },
     "hero": {
@@ -26,7 +27,7 @@
     },
     "features": {
         "title": "Hệ Thống",
-        "subtitle": "Tối ưu treo & render ổn định. Hoạt động bền bỉ 24/24",
+        "subtitle": "Tối ưu hiệu năng & render ổn định. Bền bỉ 24/7",
         "cpu": {
             "title": "CPU Xeon",
             "desc": "[Intel Xeon E5-2680v4 14 nhân 28 luồng] Intel Xeon cho hiệu suất đa luồng mạnh mẽ, xử lý mượt các tác vụ nặng, hoạt động ổn định suốt nhiều giờ."
@@ -37,19 +38,19 @@
         },
         "ram": {
             "title": "RAM DDR4",
-            "desc": "[32GB/64GB] Bộ nhớ RAM dung lượng lớn, tốc độ cao, đa nhiệm mượt mà, tối ưu cho các tác vụ nặng và chạy nhiều ứng dụng cùng lúc."
+            "desc": "[32GB/64GB] Bộ nhớ dung lượng cao, tốc độ nhanh cho đa nhiệm mượt mà, tối ưu cho tác vụ nặng và chạy nhiều ứng dụng đồng thời."
         },
         "storage": {
-            "title": "Ổ Cứng SSD",
-            "desc": "[500GB/1TB] Ổ cứng thể rắn SSD tốc độ cao, khởi động hệ thống và tải ứng dụng nhanh chóng, độ bền cao."
+            "title": "Ổ cứng SSD",
+            "desc": "[500GB/1TB] Ổ SSD tốc độ cao cho khởi động hệ thống nhanh, tải ứng dụng nhanh và độ bền cao."
         },
         "power": {
             "title": "Nguồn 650W",
-            "desc": "[Xigmatek X-Power III] Nguồn ổn định, hoạt động 24/7, bảo vệ linh kiện khi tải cao, giảm thiểu nguy cơ sụt áp."
+            "desc": "[Xigmatek X-Power III] Nguồn ổn định, hoạt động 24/7, bảo vệ linh kiện khi tải cao và giảm nguy cơ sụt áp."
         },
         "motherboard": {
             "title": "X10X99-16D",
-            "desc": "[HUANANZHI X10X99-16D] Bo mạch chủ cao cấp, tối ưu hiệu năng và nhiệt độ, đảm bảo hệ thống hoạt động ổn định lâu dài."
+            "desc": "[HUANANZHI X10X99-16D] Bo mạch cao cấp tối ưu hiệu suất và nhiệt độ, đảm bảo hệ thống ổn định lâu dài."
         }
     },
     "pricing": {
@@ -57,61 +58,61 @@
         "subtitle": "Chọn cấu hình phù hợp với nhu cầu của bạn",
         "pack1": {
             "subtitle": "DÙNG THỬ",
-            "name": "CẤU HÌNH 1",
-            "price": "300.000 ₫",
+            "name": "Máy Chủ Vật Lý 1",
+            "price": "330.000 ₫",
             "period": "/tuần",
-            "config1": "Chip: Xeon 2680v4",
-            "config2": "Nhân: 14 nhân / 28 luồng",
-            "config3": "RAM: 64GB",
-            "config4": "Ổ cứng: 256GB SSD NVMe",
-            "config5": "VGA: GTX 1060 3GB",
-            "config6": "Giá thuê tháng: 1.100.000 ₫"
+            "config1": "Chip: 1x2680v4",
+            "config2": "Nhân: 14 core / 28 vcore",
+            "config3": "RAM: 64GB DDR4",
+            "config4": "Ổ cứng: 250GB SSD NVMe",
+            "config5": "VGA: GTX 1060 6GB",
+            "config6": "Giá thuê tháng: 1.200.000 ₫"
         },
         "pack2": {
             "subtitle": "CƠ BẢN",
-            "name": "CẤU HÌNH 2",
-            "price": "400.000 ₫",
+            "name": "Máy Chủ Vật Lý 2",
+            "price": "440.000 ₫",
             "period": "/tuần",
-            "config1": "Chip: Xeon 2696v4",
-            "config2": "Nhân: 22 nhân / 44 luồng",
-            "config3": "RAM: 128GB",
-            "config4": "Ổ cứng: 256GB SSD NVMe",
+            "config1": "Chip: 1x2696v4",
+            "config2": "Nhân: 22 core / 44 vcore",
+            "config3": "RAM: 128GB DDR4",
+            "config4": "Ổ cứng: 250GB SSD NVMe",
             "config5": "VGA: GTX 1060 6GB/ GTX 1070 8GB",
-            "config6": "Giá thuê tháng: 1.500.000 ₫"
+            "config6": "Giá thuê tháng: 1.600.000 ₫"
         },
         "pack3": {
-            "featured": "KHUYÊN DÙNG",
+            "featured": "ĐƯỢC KHUYẾN NGHỊ",
             "subtitle": "TIÊU CHUẨN",
-            "name": "CẤU HÌNH 3",
-            "price": "450.000 ₫",
+            "name": "Máy Chủ Vật Lý 3",
+            "price": "480.000 ₫",
             "period": "/tuần",
-            "config1": "Chip: Dual Xeon 2680v4",
-            "config2": "Nhân: 28 nhân / 56 luồng",
-            "config3": "RAM: 128GB",
+            "config1": "Chip: Dual 2680v4",
+            "config2": "Nhân: 28 core / 56 vcore",
+            "config3": "RAM: 128GB DDR4",
             "config4": "Ổ cứng: 500GB SSD NVMe",
             "config5": "VGA: GTX 1060 6GB/ RTX 2060 6GB hoặc GTX 1070 8GB",
-            "config6": "Giá thuê tháng: 1.700.000 ₫"
+            "config6": "Giá thuê tháng: 1.800.000 ₫"
         },
         "pack4": {
-            "subtitle": "CAO CẤP",
-            "name": "CẤU HÌNH 4",
-            "price": "550.000 ₫",
+            "subtitle": "NÂNG CAO",
+            "name": "Máy Chủ Vật Lý 4",
+            "price": "570.000 ₫",
             "period": "/tuần",
-            "config1": "Chip: Dual Xeon 2686v4",
-            "config2": "Nhân: 36 nhân / 72 luồng",
-            "config3": "RAM: 128GB",
+            "config1": "Chip: Dual 2686v4",
+            "config2": "Nhân: 36 core / 72 vcore",
+            "config3": "RAM: 128GB DDR4",
             "config4": "Ổ cứng: 500GB SSD NVMe",
             "config5": "VGA: GTX 1070 8GB/ RTX 2060 6GB hoặc GTX 1080 8GB",
-            "config6": "Giá thuê tháng: 2.000.000 ₫"
+            "config6": "Giá thuê tháng: 2.100.000 ₫"
         },
         "pack5": {
             "subtitle": "CHUYÊN NGHIỆP",
-            "name": "CẤU HÌNH 5",
+            "name": "Máy Chủ Vật Lý 5",
             "price": "800.000 ₫",
             "period": "/tuần",
-            "config1": "Chip: Dual Xeon 2696v4",
-            "config2": "Nhân: 44 nhân / 88 luồng",
-            "config3": "RAM: 256GB",
+            "config1": "Chip: Dual 2696v4",
+            "config2": "Nhân: 44 core / 88 vcore",
+            "config3": "RAM: 256GB DDR4",
             "config4": "Ổ cứng: 1TB SSD NVMe",
             "config5": "VGA: RTX 3060 12GB",
             "config6": "Giá thuê tháng: 3.000.000 ₫"
@@ -122,7 +123,7 @@
         "title": "Đánh Giá Từ Khách Hàng",
         "subtitle": "Những phản hồi chân thực từ khách hàng của chúng tôi",
         "item1": {
-            "content": "Mình từng dùng ugphone để chơi game nhưng rất lag và hay bị văng. Từ khi chuyển sang TPSV, mọi thứ đều mượt mà, không còn bị giật lag và được hỗ trợ 24/7.",
+            "content": "Mình từng dùng dịch vụ khác nhưng rất lag và hay bị văng. Từ khi chuyển sang TPSV, mọi thứ đều mượt mà, không còn bị giật lag và được hỗ trợ 24/7.",
             "name": "D.D.D (Discord)",
             "kind": "Khách thuê Máy chủ Vật lý 3"
         },
@@ -172,7 +173,7 @@
             "kind": "Khách thuê Máy chủ Vật lý 3"
         },
         "item11": {
-            "content": "Tôi sử dụng máy chủ này để tự động hóa và chạy nhiều tiến trình song song, cực kỳ ổn định. Không còn bị ngắt kết nối giữa chừng nữa.",
+            "content": "Tôi sử dụng máy chủ này để tự động hóa và chạy nhiều tiến trình song song, cực kỳ ổn định. Không còn bị ngắt kết nối giữa chừng anymore.",
             "name": "Micky (Discord)",
             "kind": "Khách thuê Máy chủ Vật lý 3"
         },
@@ -212,7 +213,7 @@
             "kind": "Khách thuê Máy chủ Vật lý 3"
         },
         "item19": {
-            "content": "Máy chạy ổn định, không bị treo giật như các nơi khác. Hỗ trợ nhiệt tình, rất hài lòng.",
+            "content": "Máy chạy ổn định, không bị giật lag như các nơi khác. Hỗ trợ nhiệt tình, rất hài lòng.",
             "name": "HoanqLam (Discord)",
             "kind": "Khách thuê Máy chủ Vật lý 2"
         },
@@ -237,7 +238,7 @@
             "kind": "Khách thuê Máy chủ Vật lý 3"
         },
         "item24": {
-            "content": "Mình dùng để chạy bot trade, hoạt động 24/7 không ngừng nghỉ. Hỗ trợ kỹ thuật rất nhanh và chuyên nghiệp.",
+            "content": "Máy chủ mạnh, đường truyền ổn định. Phù hợp cho các dự án cần hiệu năng cao.",
             "name": "$$$ (Discord)",
             "kind": "Khách thuê Máy chủ Vật lý 1"
         },
@@ -300,10 +301,84 @@
     },
     "footer": {
         "shop": "Ghé thăm cửa hàng",
-        "policy": "Chính sách & điều khoản dịch vụ",
+        "policy": "Điều khoản dịch vụ",
+        "policy_service": "Chính sách dịch vụ",
         "guidance": "Hướng dẫn",
         "contact": "Liên hệ",
         "home": "tpservers.com",
-        "copyright": "© 2025 TP Server. Bản quyền thuộc về tpservers.com"
+        "copyright": "© 2025 TP Server. Website thuộc về tpservers.com"
+    },
+    "terms": {
+        "title": "Điều Khoản Sử Dụng Dịch Vụ",
+        "subtitle": "Nội dung được cập nhật lần cuối vào lúc 16:35 PM – Ngày 06 tháng 11 năm 2025",
+        "serviceTerms": "Điều Khoản Sử Dụng Dịch Vụ",
+        "agreement": "Bằng việc sử dụng dịch vụ của chúng tôi, bạn đồng ý tuân thủ các điều khoản và điều kiện được nêu ra dưới đây.",
+        "sections": {
+            "1": {
+                "title": "1. Trách nhiệm của khách hàng",
+                "1_1": "1.1 Khách hàng không được sử dụng dịch vụ cho mục đích bất hợp pháp. Trong một số trường hợp, chúng tôi được quyền thực hiện trách nhiệm theo dõi, giám sát, cung cấp thông tin khi cơ quan có thẩm quyền yêu cầu.",
+                "1_2": "1.2 Khách hàng chịu trách nhiệm trước pháp luật Việt Nam về toàn bộ dữ liệu khi sử dụng dịch vụ thuê hạ tầng máy chủ tại TP Server. Đảm bảo các dữ liệu này không chứa phần mềm phá hoại và tuân thủ các quy định của pháp luật Việt Nam về quyền sở hữu công nghiệp, bản quyền, bí mật quốc gia, an ninh, văn hoá.",
+                "1_3": "1.3 Nghiêm cấm không sử dụng dịch vụ của TP Server cung cấp cho mục đích: tổ chức đánh bạc, cá độ, lô đề, hack, tấn công phá hoại (DDoS), lừa đảo, đào coin, Spam Mail. Nếu vi phạm điều khoản này hoặc các vi phạm pháp luật Việt Nam có liên quan, khách hàng sẽ hoàn toàn tự mình chịu trách nhiệm trước pháp luật mà không liên quan đến chúng tôi.",
+                "1_4": "1.4 Khách hàng cam kết thực hiện đúng quyền và nghĩa vụ pháp luật Việt Nam và các điều khoản đã nêu trong văn bản này. Bất kỳ vi phạm trách nhiệm pháp lý do không tuân thủ pháp luật Việt Nam và điều khoản trong văn bản này, chúng tôi có quyền ngưng cung cấp dịch vụ và báo cáo đến cơ quan chức năng nếu cần thiết.",
+                "1_5": "1.5 Khách hàng có trách nhiệm tự bảo quản dữ liệu và mã nguồn trên máy chủ của TP Server. Chúng tôi không chịu bất cứ trách nhiệm nào trong mọi trường hợp liên quan tới dữ liệu của người dùng. Khách hàng cần lưu giữ các thông tin nhận biết, mật khẩu hay những thông tin khác liên quan đến tài khoản của dịch vụ hoặc tài khoản quản lý khách hàng một cách an toàn.",
+                "1_6": "1.6 Khách hàng có trách nhiệm bảo mật quyền truy nhập từ xa do TP Server cấp, đồng thời khách hàng phải chịu trách nhiệm trước pháp luật nếu cố ý để quyền truy nhập từ xa bị bên thứ ba lợi dụng thực hiện các hành động phạm pháp.",
+                "1_7": "1.7 Trong trường hợp phát hiện các hình thức truy cập trái phép sử dụng tài khoản của bạn hoặc các sơ hở về bảo mật như mất mát, đánh cắp hoặc để lộ thông tin về mật khẩu và các thông tin khác cần báo cho chúng tôi ngay lập tức."
+            },
+            "2": {
+                "title": "2. Tạm ngừng và chấm dứt sử dụng dịch vụ",
+                "2_1": "2.1 Dịch vụ do TP Server cung cấp sẽ tự động chấm dứt/tạm ngừng theo thỏa thuận của hai bên hoặc đến thời điểm hết hiệu lực thuê dịch vụ đã được hai bên đồng ý trước đó.",
+                "2_2": "2.2 TP Server có quyền tạm dừng hoặc đơn phương chấm dứt việc cung cấp dịch vụ trong các trường hợp sau đây:",
+                "2_2_items": {
+                    "0": "Khách hàng có dấu hiệu, hành vi sử dụng dịch vụ của TP Server để thực hiện các hành vi vi phạm pháp luật Việt Nam.",
+                    "1": "Khách hàng có hành vi vi phạm quy định của Điều khoản sử dụng dịch vụ của TP Server trong quá trình sử dụng sản phẩm, dịch vụ của chúng tôi.",
+                    "2": "Khách hàng không hợp tác và không đáp ứng phối hợp bổ sung tài liệu cần thiết.",
+                    "3": "Khách hàng không thực hiện việc gia hạn và thanh toán các khoản phí do hai bên đồng ý hoặc đã được cập nhật trên các kênh thông tin của TP Server."
+                },
+                "2_3": "2.3 Trước khi chấm dứt sử dụng dịch vụ, khách hàng có trách nhiệm tự di chuyển và lưu trữ toàn bộ dữ liệu mà khách hàng đưa lên dịch vụ của chúng tôi. Chúng tôi sẽ không chuyển dữ liệu của bạn đến cho một nhà cung cấp khác. Đồng thời không chịu trách nhiệm về việc mất dữ liệu khi chúng tôi thu hồi, chấm dứt cung cấp dịch vụ.",
+                "2_4": "2.4 Nếu khách hàng không chuyển dữ liệu được lưu trên dịch vụ của chúng tôi ra khỏi hệ thống của chúng tôi trước khi chấm dứt dịch vụ thì những dữ liệu này sẽ bị xóa và chúng tôi sẽ không thể cung cấp bản sao lưu (backup) cho những dữ liệu này.",
+                "2_5": "2.5 Đối với những dịch vụ dùng thử (test), ngay khi kết thúc dịch vụ, tất cả những sản phẩm này cùng những dịch vụ, dữ liệu kèm theo (nếu có) sẽ bị hủy hoặc thu hồi. Chúng tôi sẽ không lưu trữ những sản phẩm, dữ liệu kèm theo của khách hàng khi sử dụng dịch vụ của chúng tôi.",
+                "2_6": "2.6 Nếu một trong hai bên vi phạm điều khoản trong văn bản này mà dịch vụ đó có liên quan đến đầu tư thiết bị hay tài sản cố định, Bên vi phạm phải chịu đền bù cho bên còn lại một khoản chi phí hợp lý do bên bị vi phạm đề xuất nhưng tối đa không vượt mức 8% (tám phần trăm) theo quy định pháp luật."
+            },
+            "3": {
+                "title": "3. Quy định về thanh toán",
+                "3_1": "3.1 Khách hàng sử dụng dịch vụ tại TP Server có trách nhiệm thanh toán đầy đủ và đúng hạn các khoản phí đã thoả thuận hoặc được thông báo trước tại các kênh thông tin của TP Server chúng tôi.",
+                "3_2": "3.2 Trong thời gian quy định để gia hạn dịch vụ, nếu khách hàng không thanh toán hoặc không có thông báo thanh toán liên quan đến cho phía chúng tôi, thì sau thời điểm hết hạn cung cấp dịch vụ, chúng tôi sẽ ngừng và thu hồi theo quy định.",
+                "3_3": "3.3 TP Server sẽ không chịu trách nhiệm đối với bất kỳ hậu quả hay thiệt hại nào phát sinh từ việc khách hàng đã không tuân thủ đầy đủ quy định về thanh toán này."
+            },
+            "4": {
+                "title": "4. Hỗ trợ khách hàng",
+                "4_1": "4.1 TP Server hỗ trợ nhanh khách hàng sử dụng dịch vụ qua đa dạng các kênh chính thức như Discord, Fanpage, ticket (nếu có).",
+                "4_2": "4.2 Chúng tôi chỉ có trách nhiệm hỗ trợ trong khả năng về các vấn đề phần cứng, hạ tầng mà dịch vụ bên phía chúng tôi cung cấp.",
+                "4_3": "4.3 Về các vấn đề liên quan đến phần mềm, không trực tiếp đến từ phần cứng, hạ tầng dịch vụ của chúng tôi, chúng tôi có quyền không nhận hỗ trợ.",
+                "4_4": "4.4 Dịch vụ chúng tôi cung cấp hỗ trợ 24/7."
+            },
+            "5": {
+                "title": "5. Bảo mật thông tin khách hàng",
+                "5_1": "5.1 TP Server tôn trọng sự riêng tư và quản lý nghiêm túc thông tin của khách hàng. Chúng tôi sẽ thu thập, sử dụng thông tin của khách hàng phù hợp với quy định của luật pháp Việt Nam.",
+                "5_2": "5.2 Chúng tôi tuyệt đối không mua bán, kinh doanh bất kì dữ liệu thông tin khách hàng cho bên thứ ba. Việc sử dụng dữ liệu khách hàng chỉ sử dụng cho việc vận hành và quản lý theo đúng quy định của luật pháp Việt Nam.",
+                "5_3": "5.3 Mọi thông tin khách hàng sử dụng dịch vụ đều nếu được thu thập đều sử dụng nội bộ cho việc quản lý, vận hành cho hệ thống (như agent) nhằm đảm bảo công tác bảo trì, kiểm soát, quản lý, vận hành toàn bộ hệ thông dịch vụ của chúng tôi."
+            },
+            "6": {
+                "title": "6. Về sự kiện bất khả kháng",
+                "6_1": "6.1 Nếu bất kỳ sự kiện nào như thiên tai, dịch họa, lũ lụt, hoả hoạn, động đất, đình công, can thiệp của Nhà nước hay bất cứ sự kiện nào khác xảy ra ngoài tầm kiểm soát của bất kỳ bên nào và không thể lường trước được, thì Bên bị ảnh hưởng bởi sự kiện bất khả kháng sẽ được tạm hoãn thực hiện nghĩa vụ theo thỏa thuận trước đó, với điều kiện là Bên bị ảnh hưởng đó đã áp dụng mọi biện pháp cần thiết để ngăn ngừa, hạn chế hoặc khắc phục hậu quả của sự kiện đó.",
+                "6_2": "6.2 Bên bị ảnh hưởng bởi sự kiện bất khả kháng có nghĩa vụ thông báo cho bên còn lại ngay khi có thể. Trường hợp sự kiện bất khả kháng xảy ra, các bên được miễn trách nhiệm bồi thường thiệt hại.",
+                "6_3": "6.3 Nếu sự kiện bất khả kháng không chấm dứt trong vòng 30 (ba mươi) ngày làm việc hoặc một khoảng thời gian lâu hơn và vẫn tiếp tục ảnh hưởng đến việc thực hiện nghĩa vụ theo thỏa thuận thì bên nào cũng có quyền đơn phương chấm dứt thỏa thuận và thông báo cho bên còn lại về quyết định."
+            }
+        },
+        "importantNote": {
+            "title": "Lưu ý quan trọng:",
+            "content": "Điều khoản sử dụng dịch sẽ được thay đổi và cập nhật cho phù hợp với từng thời điểm và các loại hình dịch vụ. Khách hàng có trách nhiệm thường xuyên theo dõi email hoặc văn bản này để đảm bảo luôn thực hiện đúng theo các điều khoản quy định."
+        },
+        "popup": {
+            "title": "TP Server cập nhật điều khoản sử dụng dịch vụ",
+            "subtitle": "phù hợp với quy định pháp luật Việt Nam, có hiệu lực từ ngày 06/11/2025.",
+            "highlightsTitle": "Những điểm quan trọng cần lưu ý:",
+            "dataResponsibility": "Trách nhiệm dữ liệu: Khách hàng chịu trách nhiệm trước pháp luật Việt Nam về toàn bộ dữ liệu, đảm bảo không chứa phần mềm phá hoại và tuân thủ quy định về bản quyền, bí mật quốc gia, an ninh.",
+            "prohibitedActivities": "Nghiêm cấm hoạt động: Không sử dụng dịch vụ cho mục đích đánh bạc, cá độ, hack, DDoS, lừa đảo, đào coin, Spam Mail.",
+            "securityAccess": "Bảo mật truy cập: Khách hàng phải chịu trách nhiệm nếu cố ý để quyền truy cập từ xa bị bên thứ ba lợi dụng thực hiện hành vi phạm pháp.",
+            "agreementText": "Bằng việc tiếp tục sử dụng dịch vụ, bạn đồng ý với các điều khoản đã cập nhật.",
+            "viewFullTerms": "Xem Toàn Bộ Điều Khoản",
+            "iUnderstand": "Tôi Đã Hiểu"
+        }
     }
 }

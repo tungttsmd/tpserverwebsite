@@ -1,3 +1,9 @@
+v1.2.2 (06/11/2025):
+    - Thêm điều khoản sử dụng
+    - Cập nhật lại link shopee
+    - Cập nhật lại giá và cấu hình
+    - Sửa lại một số feedback không phù hợp
+
 v1d1 (05/10/2025):
  - Cập nhật lại index.html cấu hình 2 và một số thông số chưa đúng trong bảng giá.
  - Cập nhật lại link facebook và discord trong index.html
