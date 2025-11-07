@@ -409,51 +409,6 @@ document.querySelectorAll('.feature-card').forEach((card) => {
     });
 });
 
-// Random cyber text effects
-const cyberTexts = [
-    'CONNECTING...',
-    'NEURAL LINK ESTABLISHED',
-    'QUANTUM SYNC ACTIVE',
-    'REALITY MATRIX LOADED',
-];
-
-setInterval(() => {
-    const randomText =
-        cyberTexts[Math.floor(Math.random() * cyberTexts.length)];
-    const tempElement = document.createElement('div');
-    tempElement.textContent = randomText;
-    tempElement.style.cssText = `
-                position: fixed;
-                top: ${Math.random() * 100}vh;
-                left: ${Math.random() * 100}vw;
-                color: var(--primary-cyan);
-                font-size: 0.8rem;
-                font-weight: 700;
-                z-index: 1000;
-                opacity: 0.7;
-                pointer-events: none;
-                animation: fadeOut 3s ease-out forwards;
-                text-shadow: 0 0 10px var(--primary-cyan);
-            `;
-    document.body.appendChild(tempElement);
-
-    setTimeout(() => {
-        if (tempElement && tempElement.parentNode === document.body) {
-            document.body.removeChild(tempElement);
-        }
-    }, 3000);
-}, 5000);
-
-// Add fadeOut animation
-const style = document.createElement('style');
-style.textContent = `
-            @keyframes fadeOut {
-                0% { opacity: 0.7; transform: translateY(0); }
-                100% { opacity: 0; transform: translateY(-50px); }
-            }
-        `;
-document.head.appendChild(style);
-
 // Contact form submission
 if (document.querySelector('.btn-submit')) {
     document

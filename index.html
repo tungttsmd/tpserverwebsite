@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 
 <!-- start <head> -->
@@ -13,10 +13,16 @@
     <meta http-equiv="Content-Language" content="vi">
     <!-- end SEO -->
 
+    <!-- start Browser Detection (must be first) -->
+    <script src="resources/js/browser-detection.js"></script>
+    <!-- end Browser Detection -->
+
     <!-- start Title and core css -->
     <title>TP Server - Thuê Máy Chủ Vật Lý Giá Rẻ</title>
     <link rel="icon" href="resources/images/favicon.ico" type="image/x-icon">
     <link href="resources/css/template-style.css" rel="stylesheet">
+    <link href="resources/css/browser-fallbacks.css" rel="stylesheet">
+    <link href="resources/css/compatibility-fixes.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
     <!-- end Title and core css -->
 
@@ -1188,7 +1194,7 @@
                 <div class="terms-update-info">
                     <p><strong data-i18n="terms.popup.title">TP Server cập nhật điều khoản sử dụng dịch vụ</strong>
                         <span data-i18n="terms.popup.subtitle">phù hợp với quy định pháp luật Việt Nam, có hiệu lực từ
-                            ngày 06/11/2025.</span>
+                            ngày 18/11/2023.</span>
                     </p>
                 </div>
 
@@ -1226,6 +1232,7 @@
     <!-- end Terms Update Popup -->
 
     <!-- start Scripts -->
+    <script src="resources/js/polyfills.js"></script>
     <script src="resources/js/template-script.js"></script>
     <script src="resources/js/swiper-custom.js"></script>
     <script src="resources/js/accordion-custom.js"></script>

@@ -1,3 +1,7 @@
+v1.2.3 (07/11/2025):
+    - Sửa bug back to top
+    - Tối ưu một số hiệu ứng
+
 v1.2.2 (06/11/2025):
     - Thêm điều khoản sử dụng
     - Cập nhật lại link shopee

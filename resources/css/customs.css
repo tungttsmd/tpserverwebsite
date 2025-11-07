@@ -16,6 +16,7 @@
     color: var(--text-primary);
     cursor: pointer;
     transition: all 0.3s ease;
+    border: none;
 }
 
 .language-dropdown-toggle:hover {

@@ -14,6 +14,7 @@
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
+    border: none;
 }
 
 .scroll-top-btn.hidden {

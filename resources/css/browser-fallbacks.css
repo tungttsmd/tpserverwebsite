@@ -1,0 +1,255 @@
+/**
+ * Browser Fallbacks for Older Browsers
+ * Add this CSS AFTER main styles but BEFORE responsive styles
+ */
+
+/* 1. CSS Variables Fallback for IE11 */
+:root {
+    --primary-grey: #e5e7eb;
+    --primary-orange: #f97316;
+    --primary-purple: #7c3aed;
+    --secondary-amber: #fbbf24;
+    --dark-bg: #1a0b2e;
+    --darker-bg: #0f051a;
+    --card-bg: rgba(229, 231, 235, 0.03);
+    --border-color: rgba(229, 231, 235, 0.2);
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --primary-cyan: #00ffff;
+    --primary-pink: #ff00ff;
+}
+
+/* Fallback colors for browsers that don't support CSS variables */
+.no-cssvars .hero {
+    background: #0f051a;
+    color: #ffffff;
+}
+
+.no-cssvars .btn-primary {
+    background: #00ffff;
+    color: #0f051a;
+}
+
+.no-cssvars .card {
+    background: rgba(229, 231, 235, 0.03);
+    border: 1px solid rgba(229, 231, 235, 0.2);
+}
+
+/* 2. Backdrop-filter fallback for older browsers */
+.backdrop-filter-blur {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@supports (backdrop-filter: blur(10px)) {
+    .backdrop-filter-blur {
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+    }
+}
+
+/* 3. CSS Grid fallback for IE11 */
+.grid-fallback {
+    display: block;
+}
+
+.grid-fallback .grid-item {
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    margin: 10px;
+}
+
+@supports (display: grid) {
+    .grid-fallback {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    
+    .grid-fallback .grid-item {
+        display: block;
+        width: auto;
+        margin: 0;
+    }
+}
+
+/* 4. Gap property fallback for older browsers */
+.gap-fallback {
+    margin: -10px;
+}
+
+.gap-fallback > * {
+    margin: 10px;
+}
+
+@supports (gap: 20px) {
+    .gap-fallback {
+        margin: 0;
+        gap: 20px;
+    }
+    
+    .gap-fallback > * {
+        margin: 0;
+    }
+}
+
+/* 5. Clamp function fallback for older browsers */
+.clamp-fallback {
+    font-size: 3rem;
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+    .clamp-fallback {
+        font-size: 4.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .clamp-fallback {
+        font-size: 6rem;
+    }
+}
+
+@supports (font-size: clamp(3rem, 8vw, 6rem)) {
+    .clamp-fallback {
+        font-size: clamp(3rem, 8vw, 6rem);
+    }
+}
+
+/* 6. Transform and animation fallbacks */
+.transform-fallback {
+    /* No transform for browsers that don't support it */
+}
+
+@supports (transform: translateY(100px)) {
+    .transform-fallback {
+        transform: translateY(100px);
+        transition: transform 0.3s ease;
+    }
+}
+
+/* 7. Flexbox fallback for very old browsers */
+.flex-fallback {
+    display: block;
+}
+
+.flex-fallback .flex-item {
+    display: inline-block;
+    vertical-align: top;
+}
+
+@supports (display: flex) {
+    .flex-fallback {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .flex-fallback .flex-item {
+        display: block;
+    }
+}
+
+/* 8. Position sticky fallback */
+.sticky-fallback {
+    position: relative;
+}
+
+@supports (position: sticky) {
+    .sticky-fallback {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+}
+
+/* 9. Custom properties fallback for animations */
+@keyframes glowFallback {
+    0% { box-shadow: 0 0 5px #00ffff; }
+    50% { box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff; }
+    100% { box-shadow: 0 0 5px #00ffff; }
+}
+
+.glow-effect {
+    animation: glowFallback 2s ease-in-out infinite;
+}
+
+/* 10. Scroll behavior fallback */
+.scroll-smooth-fallback {
+    /* Fallback - no smooth scroll */
+}
+
+@supports (scroll-behavior: smooth) {
+    .scroll-smooth-fallback {
+        scroll-behavior: smooth;
+    }
+}
+
+/* 11. Object-fit fallback for images */
+.object-fit-fallback {
+    background-size: cover;
+    background-position: center;
+}
+
+@supports (object-fit: cover) {
+    .object-fit-fallback {
+        object-fit: cover;
+        background: none;
+    }
+}
+
+/* 12. CSS calc() fallback */
+.calc-fallback {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+@supports (width: calc(100% - 40px)) {
+    .calc-fallback {
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+/* 13. Filter effects fallback */
+.filter-blur-fallback {
+    /* No blur effect for older browsers */
+}
+
+@supports (filter: blur(5px)) {
+    .filter-blur-fallback {
+        filter: blur(5px);
+    }
+}
+
+/* 14. Box-shadow fallback for transparency */
+.shadow-fallback {
+    border: 1px solid #333;
+}
+
+@supports (box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)) {
+    .shadow-fallback {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: none;
+    }
+}
+
+/* 15. CSS feature detection for JavaScript */
+.css-features-test {
+    position: absolute;
+    visibility: hidden;
+}
+
+.css-features-test::before {
+    content: 'test';
+}
+
+/* JavaScript can check for CSS variable support */
+.css-vars-test {
+    color: var(--test-color, #000);
+}
+
+console.log('Browser fallbacks CSS loaded');
