@@ -30,19 +30,19 @@
         "subtitle": "Tối ưu hiệu năng & render ổn định. Bền bỉ 24/7",
         "cpu": {
             "title": "CPU Xeon",
-            "desc": "[Intel Xeon E5-2680v4 14 nhân 28 luồng] Intel Xeon cho hiệu suất đa luồng mạnh mẽ, xử lý mượt các tác vụ nặng, hoạt động ổn định suốt nhiều giờ."
+            "desc": "[Intel Xeon E5-2680v4] Dual CPU Xeon E5-2680v4, 28 nhân 56 luồng. Hiệu suất đa luồng mạnh mẽ, xử lý mượt các tác vụ nặng, hoạt động ổn định suốt nhiều giờ."
         },
         "gpu": {
             "title": "NVIDIA GeForce",
-            "desc": "[GTX 1070/1080/2060] Card đồ họa NVIDIA tối ưu cho hiển thị đa nhiệm, đảm bảo hình ảnh mượt mà và hiệu suất ổn định."
+            "desc": "[GTX 1070/RTX 2060] Card đồ họa NVIDIA GTX 1070 8GB hoặc RTX 2060 6GB. Tối ưu cho đa nhiệm, render đồ họa, AI training, đảm bảo hình ảnh mượt mà và hiệu suất ổn định."
         },
         "ram": {
             "title": "RAM DDR4",
-            "desc": "[32GB/64GB] Bộ nhớ dung lượng cao, tốc độ nhanh cho đa nhiệm mượt mà, tối ưu cho tác vụ nặng và chạy nhiều ứng dụng đồng thời."
+            "desc": "[128GB] Bộ nhớ dung lượng cao, tốc độ nhanh cho đa nhiệm mượt mà, tối ưu cho tác vụ nặng, render video, AI training và chạy nhiều ứng dụng đồng thời."
         },
         "storage": {
-            "title": "Ổ cứng SSD",
-            "desc": "[500GB/1TB] Ổ SSD tốc độ cao cho khởi động hệ thống nhanh, tải ứng dụng nhanh và độ bền cao."
+            "title": "Ổ cứng SSD NVMe",
+            "desc": "[500GB] Ổ SSD NVMe tốc độ cực cao cho khởi động hệ thống nhanh, tải ứng dụng tức thì, đọc/ghi dữ liệu nhanh và độ bền cao."
         },
         "power": {
             "title": "Nguồn 650W",
@@ -59,63 +59,63 @@
         "pack1": {
             "subtitle": "DÙNG THỬ",
             "name": "Máy Chủ Vật Lý 1",
-            "price": "330.000 ₫",
+            "price": "360.000 ₫",
             "period": "/tuần",
             "config1": "Chip: 1x2680v4",
             "config2": "Nhân: 14 core / 28 vcore",
             "config3": "RAM: 64GB DDR4",
             "config4": "Ổ cứng: 250GB SSD NVMe",
             "config5": "VGA: GTX 1060 6GB",
-            "config6": "Giá thuê tháng: 1.200.000 ₫"
+            "config6": "Giá thuê tháng: 1.300.000 ₫"
         },
         "pack2": {
             "subtitle": "CƠ BẢN",
             "name": "Máy Chủ Vật Lý 2",
-            "price": "440.000 ₫",
+            "price": "480.000 ₫",
             "period": "/tuần",
             "config1": "Chip: 1x2696v4",
             "config2": "Nhân: 22 core / 44 vcore",
             "config3": "RAM: 128GB DDR4",
             "config4": "Ổ cứng: 250GB SSD NVMe",
             "config5": "VGA: GTX 1060 6GB/ GTX 1070 8GB",
-            "config6": "Giá thuê tháng: 1.600.000 ₫"
+            "config6": "Giá thuê tháng: 1.800.000 ₫"
         },
         "pack3": {
             "featured": "ĐƯỢC KHUYẾN NGHỊ",
             "subtitle": "TIÊU CHUẨN",
             "name": "Máy Chủ Vật Lý 3",
-            "price": "480.000 ₫",
+            "price": "550.000 ₫",
             "period": "/tuần",
             "config1": "Chip: Dual 2680v4",
             "config2": "Nhân: 28 core / 56 vcore",
             "config3": "RAM: 128GB DDR4",
             "config4": "Ổ cứng: 500GB SSD NVMe",
-            "config5": "VGA: GTX 1060 6GB/ RTX 2060 6GB hoặc GTX 1070 8GB",
-            "config6": "Giá thuê tháng: 1.800.000 ₫"
+            "config5": "VGA: GTX 1070 8GB/ RTX 2060 6GB",
+            "config6": "Giá thuê tháng: 2.000.000 ₫"
         },
         "pack4": {
             "subtitle": "NÂNG CAO",
             "name": "Máy Chủ Vật Lý 4",
-            "price": "570.000 ₫",
+            "price": "600.000 ₫",
             "period": "/tuần",
             "config1": "Chip: Dual 2686v4",
             "config2": "Nhân: 36 core / 72 vcore",
             "config3": "RAM: 128GB DDR4",
             "config4": "Ổ cứng: 500GB SSD NVMe",
-            "config5": "VGA: GTX 1070 8GB/ RTX 2060 6GB hoặc GTX 1080 8GB",
-            "config6": "Giá thuê tháng: 2.100.000 ₫"
+            "config5": "VGA: GTX 1070 8GB/ GTX 1080 8GB/ RTX 2060 6GB",
+            "config6": "Giá thuê tháng: 2.200.000 ₫"
         },
         "pack5": {
             "subtitle": "CHUYÊN NGHIỆP",
             "name": "Máy Chủ Vật Lý 5",
-            "price": "800.000 ₫",
+            "price": "900.000 ₫",
             "period": "/tuần",
             "config1": "Chip: Dual 2696v4",
             "config2": "Nhân: 44 core / 88 vcore",
             "config3": "RAM: 256GB DDR4",
             "config4": "Ổ cứng: 1TB SSD NVMe",
             "config5": "VGA: RTX 3060 12GB",
-            "config6": "Giá thuê tháng: 3.000.000 ₫"
+            "config6": "Giá thuê tháng: 3.300.000 ₫"
         },
         "btn": "Thuê Máy Ngay"
     },

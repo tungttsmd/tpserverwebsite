@@ -1,3 +1,6 @@
+v1.2.4 (09/11/2025):
+    - Sửa lại bảng giá
+
 v1.2.3 (07/11/2025):
     - Sửa bug back to top
     - Tối ưu một số hiệu ứng
